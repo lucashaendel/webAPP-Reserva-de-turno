@@ -1,0 +1,549 @@
+.topBanner {
+  position: absolute;
+  width: 1368px;
+  height: 36px;
+  left: 0px;
+  top: 0px;
+  background: $grey2;
+}
+.txt {
+  position: absolute;
+  height: 16px;
+  left: 96px;
+  right: 96px;
+  top: calc(50% - 16px / 2 + 2px);
+  display: contents;
+
+  p {
+    /* Body/SemiBold · 12 · 16 */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    //display: flex;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: "ss01" on, "case" on;
+
+    /* Principal */
+
+    color: #a442f1;
+  }
+}
+.userInterface {
+  /* User Interface */
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 96px;
+  top: 12px;
+  svg {
+    /* Vector */
+    position: absolute;
+    left: 20.84%;
+    right: 20.83%;
+    top: 20.83%;
+    bottom: 20.83%;
+
+    /* Grey 7 */
+
+    background: $grey7;
+  }
+}
+.navbar {
+  /* Header */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 96px;
+  gap: 14px;
+
+  position: absolute;
+  width: 1368px;
+  height: 76px;
+  left: calc(50% - 1368px / 2);
+  top: 36px;
+
+  /* White */
+
+  background: #ffffff;
+  /* Shadow */
+
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form {
+  /* Formulario */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 40px 32px;
+  gap: 16px;
+
+  position: absolute;
+  width: 878px;
+  height: 512px;
+  left: 245px;
+  top: 160px;
+  /* White */
+  background: #ffffff;
+  /* Shadow */
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.newSucursal {
+  /* Crear una nueva sucursal */
+  width: 798px;
+  height: 24px;
+  /* SemiBold · 20 · 24 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+  font-feature-settings: "zero" on;
+  /* Black */
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.input2 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 798px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 798px;
+    height: 44px;
+
+    /* White */
+
+    background: #ffffff;
+    /* Grey 3 */
+
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.fila {
+  /* Fila */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.inputDesktop2 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+
+  width: 391px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 391px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 391px;
+    height: 44px;
+
+    /* White */
+
+    background: #ffffff;
+    /* Grey 3 */
+
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.inputDesktop3 {
+  /* Input Desktop 3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+
+  width: 391px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 391px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 391px;
+    height: 44px;
+
+    /* White */
+
+    background: #ffffff;
+    /* Grey 3 */
+
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.Horario {
+  /* Horario */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 798px;
+  height: 90px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* Input Desktop 2 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 2px;
+
+    width: 798px;
+    height: 66px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    label {
+      /* Txt */
+
+      /* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
+
+      width: 798px;
+      height: 20px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+    input {
+      /* Input Desktop 1 */
+
+      box-sizing: border-box;
+
+      /* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 12px 8px 12px 12px;
+      gap: 8px;
+
+      width: 798px;
+      height: 44px;
+
+      /* White */
+
+      background: #ffffff;
+      /* Grey 3 */
+
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+}
+.inputEditarContraseña {
+  /* Input Desktop 3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 798px;
+  height: 16px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+
+  /* Txt */
+
+  width: 798px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: #a442f1;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.buttonProfileUser {
+  /* CTA-Desktop-1 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 798px;
+  height: 48px;
+
+  /* Principal */
+
+  background: #a442f1;
+  border-radius: 8px;
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+
+  /* Semibold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+}
