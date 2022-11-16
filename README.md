@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pitch Battle
 
-## Getting Started
+# Plataforma 5 - Coding Bootcamp
 
-First, run the development server:
+Empresa: _CRUCE_
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# webAPP Reserva de turno
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Descripción del proyecto: Desarrollar una aplicación web que permita la reserva de turnos para empresas con sucursales físicas, permitiendo la administración de la cantidad de clientes en la locación.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Cada sucursal podrá diferenciar la cantidad de clientes en simultáneo que podrá recibir y los rangos horarios, desde el usuario administrador. Cada turno será de 15 minutos, y se pueden cancelar hasta con 2 horas de antelación.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Estas reservas deben estar visibles para el comercio en un panel gráfico Adicionalmente, obtener métricas en base a las reservas realizadas
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Stack de tecnologías:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Back End:
+  Node.js
+  Express
+- Front End:
+  React.js
+  NextJS
+- Base de datos:
+  MongoDB
+  MySQL
+  (Mongoose o PostgreSQL)
+- Gráficos:
+  D3.js
