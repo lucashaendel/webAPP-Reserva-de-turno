@@ -204,7 +204,7 @@
   font-feature-settings: "zero" on;
 
   /* Principal */
-  color: #a442f1;
+  color: $primaryColor;
 
   /* Inside auto layout */
   flex: none;
@@ -227,7 +227,7 @@
   height: 44px;
 
   /* Principal */
-  background: #a442f1;
+  background: $primaryColor;
   border-radius: 8px;
 
   /* Inside auto layout */
@@ -237,33 +237,8 @@
   flex-grow: 0;
   border: none;
 
-  span {
-    /* Text */
-
-    width: 468px;
-    height: 20px;
-
-    /* Semibold · 16 · 20 */
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-
-    /* identical to box height, or 125% */
-    // display: flex;
-    align-items: center;
-    text-align: center;
-    font-feature-settings: "zero" on;
-
-    /* White */
-    color: #ffffff;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
+  @include semiBold1620();
+  color: #ffffff;
 }
 
 .btn-register {
@@ -276,45 +251,16 @@
   align-items: center;
   padding: 12px 24px;
   gap: 4px;
-
   width: 516px;
   height: 44px;
-
   background: rgba(164, 66, 241, 0.1);
   border-radius: 8px;
-
   /* Inside auto layout */
   flex: none;
   order: 4;
   align-self: stretch;
   flex-grow: 0;
   border: none;
-
-  span {
-    /* Txt */
-
-    width: 468px;
-    height: 20px;
-
-    /* Semibold · 16 · 20 */
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-
-    /* identical to box height, or 125% */
-    // display: flex;
-    align-items: center;
-    text-align: center;
-    font-feature-settings: "zero" on;
-
-    /* Principal */
-    color: #a442f1;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
+  @include semiBold1620();
+  color: $primaryColor;
 }

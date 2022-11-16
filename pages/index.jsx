@@ -37,12 +37,12 @@ const login = () => {
         <div className="inputs-login">
           <div className="input-login">
             <label>Usuario</label>
-            <input type="text"></input>
+            <input type="text" />
           </div>
 
           <div className="input-login">
             <label>Contraseña</label>
-            <input type="password"></input>
+            <input type="password" />
           </div>
 
           <Link href="#" className="forgot-pw">
@@ -53,9 +53,7 @@ const login = () => {
           <span>ingresar</span>
         </button>
 
-        <button className="btn-register">
-          <span>¿No tenés cuenta? Registrate</span>
-        </button>
+        <button className="btn-register">¿No tenés cuenta? Registrate</button>
       </div>
     </div>
   );
