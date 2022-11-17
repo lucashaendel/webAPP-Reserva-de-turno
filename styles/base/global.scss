@@ -60,7 +60,7 @@ $success: #00a541;
   /* identical to box height, or 133% */
   color: #000000;
 }
-
+/* Regular · 13 · 16 */
 @mixin regular1316 {
   font-family: "Roboto";
   font-style: normal;
@@ -79,7 +79,6 @@ $success: #00a541;
   font-feature-settings: "zero" on;
   color: #000000;
 }
-
 
 /* Regular · 14 · 20 */
 @mixin regular1420 {
