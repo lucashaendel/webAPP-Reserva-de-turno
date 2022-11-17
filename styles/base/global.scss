@@ -61,6 +61,26 @@ $success: #00a541;
   color: #000000;
 }
 
+@mixin regular1316 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+/* Semibold · 14 · 16 */
+@mixin semiBold1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "zero" on;
+  color: #000000;
+}
+
+
 /* Regular · 14 · 20 */
 @mixin regular1420 {
   font-family: "Roboto";
@@ -123,7 +143,7 @@ $success: #00a541;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
   /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
@@ -140,6 +160,13 @@ $success: #00a541;
   /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
   color: #000000;
+}
+@mixin semiBold1924 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
 }
 /* Semibold · 22 · 32 */
 @mixin semiBold2232 {
