@@ -1,0 +1,591 @@
+.divFormulario {
+  /* Formulario */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 40px 32px;
+  gap: 16px;
+
+  position: absolute;
+  width: 878px;
+  height: 512px;
+  left: 245px;
+  top: 136px;
+  /* White */
+
+  background: $white;
+  /* Shadow */
+
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.textHeader {
+  /* Mis datos */
+
+  width: 798px;
+  height: 24px;
+
+  /* SemiBold · 20 · 24 */
+  @include semiBold2024;
+  /* identical to box height, or 120% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: $black;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divInputDesktop2 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+  @include autoLayoutCol(2px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divFormulario-txt {
+  /* Txt */
+
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+
+  width: 798px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.textName {
+  /* Título */
+
+  width: 798px;
+  height: 20px;
+
+  /* Regular · 14 · 20 */
+  @include regular1420;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.divInput-Desktop1 {
+  /* Input Desktop 1 */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+
+  width: 798px;
+  height: 44px;
+
+  /* White */
+
+  background: $white;
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divInputDesktop3 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+  @include autoLayoutCol(2px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divFormulario-txt {
+  /* Txt */
+
+  /* Auto layout */
+
+  @include autoLayoutRow(4px);
+
+  width: 798px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.textName {
+  /* Título */
+
+  width: 798px;
+  height: 20px;
+
+  /* Regular · 14 · 20 */
+  @include regular1420;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.divInput-Desktop2 {
+  /* Input Desktop 1 */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+
+  width: 798px;
+  height: 44px;
+
+  /* White */
+
+  background: $white;
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divFila {
+  /* Fila */
+
+  /* Auto layout */
+
+  @include autoLayoutRow(16px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divFilaInput {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(2px);
+
+  width: 391px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.txtFila {
+  /* Txt */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 391px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.txtDNI {
+  /* Título */
+
+  width: 391px;
+  height: 20px;
+
+  /* Regular · 14 · 20 */
+  @include regular1420;
+
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.filaInput-Desktop1 {
+  /* Input Desktop 1 */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+
+  width: 391px;
+  height: 44px;
+
+  /* White */
+
+  background: $white;
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.filaInput-Desktop2 {
+  /* Input Desktop 1 */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+
+  width: 391px;
+  height: 44px;
+
+  /* White */
+
+  background: $white;
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.txtSucursal {
+  /* Txt */
+
+  width: 343px;
+  height: 20px;
+
+  /* Regular · 14 · 20 */
+  @include regular1420;
+
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey 5 */
+
+  color: $grey5;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.formulario-user-interface {
+  /* User Interface */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.divHorario {
+  /* Horario */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(8px);
+
+  width: 798px;
+  height: 90px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divInputDesktop4 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(2px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.txtHorario {
+  /* Txt */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 798px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.txtContraseña {
+  /* Título */
+
+  width: 798px;
+  height: 20px;
+
+  /* Regular · 14 · 20 */
+  @include regular1420;
+
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+.horarioInputinput-desktop1 {
+  /* Input Desktop 1 */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+
+  width: 798px;
+  height: 44px;
+
+  /* White */
+
+  background: $white;
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.horarioInput-desktop2 {
+  /* Input Desktop 3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 798px;
+  height: 16px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.txtHorario2 {
+  /* Txt */
+
+  width: 798px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.HorarioButton-desktop1 {
+  /* CTA-Desktop-1 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 798px;
+  height: 48px;
+
+  /* Principal */
+
+  background: $primaryColor;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.textHorarioButton {
+  /* Text */
+
+  width: 750px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+
+  @include semiBold1620;
+  /* identical to box height, or 125% */
+
+  //display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* White */
+
+  color: $white;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
