@@ -1,4 +1,4 @@
-// import "../styles/globals.scss";
+import "../styles/base/global.scss";
 import "../styles/style.scss";
 // import Navbar from "../../comps/Navbar";
 // <Navbar />
