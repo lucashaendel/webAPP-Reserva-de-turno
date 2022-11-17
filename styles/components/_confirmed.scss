@@ -1,0 +1,1023 @@
+.container-confirmed {
+  /* Mensaje */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+
+  position: absolute;
+  width: 1176px;
+  height: 236px;
+  left: 96px;
+  // top: 104px;
+}
+.clientefinal-paneldereservas-mensaje {
+  /* Mensaje */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+
+  position: absolute;
+  width: 1176px;
+  height: 236px;
+  left: 96px;
+  top: 144px;
+}
+.clientefinal-paneldereservas-user-interface {
+  /* User Interface */
+
+  width: 48px;
+  height: 48px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-union {
+  /* Union */
+
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 4px;
+  top: 4px;
+
+  /* Secundario */
+
+  background: #cc6aff;
+}
+.clientefinal-paneldereservas-text {
+  /* Título */
+
+  width: 1176px;
+  height: 32px;
+
+  /* Headline/SemiBold · 26 · 32 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  /* identical to box height, or 123% */
+
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: #a442f1;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text02 {
+  /* Txt */
+
+  width: 1176px;
+  height: 40px;
+
+  /* Body/Regular · 14 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  text-align: center;
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-c-t-a-desktop1 {
+  /* CTA-Desktop-1 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 382px;
+  height: 44px;
+
+  /* Principal */
+
+  background: #a442f1;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text07 {
+  /* Text */
+
+  width: 334px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  // display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* White */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.clientefinal-paneldereservas-pedido {
+  /* Pedido */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+
+  position: absolute;
+  width: 1176px;
+  height: 260px;
+  left: 96px;
+  top: 436px;
+}
+.clientefinal-paneldereservas-border {
+  /* Border */
+
+  width: 1176px;
+  height: 0px;
+
+  /* Grey 1 */
+
+  border: 2px solid #f5f5f5;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-content {
+  /* Content */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 1176px;
+  height: 96px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-pedido1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 977px;
+  height: 64px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text09 {
+  /* codigo */
+
+  width: 977px;
+  height: 32px;
+
+  /* Headline/SemiBold · 26 · 32 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  /* identical to box height, or 123% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text10 {
+  /* codigo */
+
+  width: 977px;
+  height: 32px;
+
+  /* Headline/SemiBold · 26 · 32 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  /* identical to box height, or 123% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.num-reserva {
+  color: #a442f1;
+}
+
+.clientefinal-paneldereservas-info {
+  /* Info */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 977px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text12 {
+  /* Txt */
+
+  width: 977px;
+  height: 20px;
+
+  /* Body/SemiBold · 14 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  font-feature-settings: "ordn" on, "liga" off;
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-c-t-a {
+  /* CTA */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 183px;
+  height: 96px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.clientefinal-paneldereservas-c-t-a-desktop2 {
+  /* CTA-Desktop-2 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 183px;
+  height: 44px;
+
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-user-interface1 {
+  /* User Interface */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text14 {
+  /* Txt */
+
+  width: 150px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: #a442f1;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-c-t-a-desktop4 {
+  /* CTA-Desktop-4 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 183px;
+  height: 44px;
+
+  /* Grey 1 */
+
+  background: #f5f5f5;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-user-interface2 {
+  /* User Interface */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text16 {
+  /* Txt */
+
+  width: 154px;
+  height: 20px;
+
+  /* Semibold · 15 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Error */
+
+  color: #e53939;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-info1 {
+  /* Info */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 48px;
+
+  width: 1176px;
+  height: 100px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-informacin {
+  /* Información */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 360px;
+  height: 100px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+.clientefinal-paneldereservas-text18 {
+  /* Nombre */
+
+  width: 360px;
+  height: 20px;
+
+  /* SemiBold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-data {
+  /* Data */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 360px;
+  height: 44px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-txt {
+  /* Txt */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 171px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text20 {
+  /* Txt */
+  width: 31px;
+  height: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text22 {
+  /* Txt */
+
+  width: 136px;
+  height: 20px;
+
+  /* Body/Regular · 14 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-txt1 {
+  /* Txt */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 142px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text24 {
+  /* Txt */
+
+  width: 59px;
+  height: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text26 {
+  /* Txt */
+
+  width: 79px;
+  height: 20px;
+
+  /* Body/Regular · 14 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-informacin1 {
+  /* Información */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 360px;
+  height: 100px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.clientefinal-paneldereservas-text28 {
+  /* Nombre */
+  width: 360px;
+  height: 20px;
+
+  /* SemiBold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-data1 {
+  /* Data */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 360px;
+  height: 44px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-txt2 {
+  /* Txt */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 158px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text30 {
+  /* Txt */
+
+  width: 65px;
+  height: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text32 {
+  /* Txt */
+
+  width: 95px;
+  height: 20px;
+
+  /* Body/Regular · 14 · 20 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-txt3 {
+  /* Txt */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 139px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text34 {
+  /* Txt */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  width: 69px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-text36 {
+  /* Txt */
+  width: 84px;
+  height: 20px;
+
+  /* Body/Regular · 14 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Grey 8 */
+
+  color: #505050;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.clientefinal-paneldereservas-informacin2 {
+  /* Información */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 360px;
+  height: 100px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 1;
+}
+.clientefinal-paneldereservas-text38 {
+  color: var(--dl-color-default-black);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 20px;
+  margin-right: 0;
+  margin-bottom: 12px;
+}
+.clientefinal-paneldereservas-data2 {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: transparent;
+  flex-direction: column;
+}
+.clientefinal-paneldereservas-txt4 {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+  margin-bottom: 4px;
+}
+.clientefinal-paneldereservas-text39 {
+  color: var(--dl-color-default-grey8);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  margin-right: 4px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.clientefinal-paneldereservas-text40 {
+  color: var(--dl-color-default-grey8);
+  height: auto;
+  align-self: auto;
+  text-align: left;
+  line-height: 20px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.clientefinal-paneldereservas-txt5 {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+}
+.clientefinal-paneldereservas-text41 {
+  color: var(--dl-color-default-grey8);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 20px;
+  font-stretch: normal;
+  margin-right: 4px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.clientefinal-paneldereservas-text42 {
+  color: var(--dl-color-default-grey8);
+  height: auto;
+  align-self: auto;
+  text-align: left;
+  line-height: 20px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
