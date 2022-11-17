@@ -1,9 +1,16 @@
 import React from "react";
+
+// import styles from "../styles/Index.module.scss";
+
 import Link from "next/link";
+
 
 const login = () => {
   return (
     <div>
+
+      <h1 className="login">login</h1>
+
       <div className="topBanner">
         <div className="txt">
           <p>Mensaje Promocional</p>
@@ -55,6 +62,7 @@ const login = () => {
 
         <button className="btn-register">¿No tenés cuenta? Registrate</button>
       </div>
+
     </div>
   );
 };
