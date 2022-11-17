@@ -3,6 +3,13 @@
 @import "./base/global";
 @import "./general.scss";
 //componentes
+
 @import "./components/index";
 
+@import "./components/login";
+
 @import "./components/userProfile";
+@import "./components/confirmed";
+@import "./components/operatorProfile";
+@import "./components/indexOperator";
+@import "./components/cancelled";
