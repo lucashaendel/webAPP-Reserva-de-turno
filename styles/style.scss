@@ -3,7 +3,7 @@
 @import "./base/global";
 @import "./general.scss";
 //componentes
-
+@import "./components/navbar";
 @import "./components/index";
 @import "./components/userProfile";
 @import "./components/adminProfile";
@@ -16,7 +16,4 @@
 @import "./components/operatorProfile";
 @import "./components/indexOperator";
 @import "./components/cancelled";
-
-
-
 
