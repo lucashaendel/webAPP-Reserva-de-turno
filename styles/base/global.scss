@@ -34,116 +34,86 @@ $success: #00a541;
 
 /* Regular · 12 · 16 */
 @mixin regular1216 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  /* identical to box height, or 133% */
   color: #000000;
 }
 
 /* Semibold · 14 · 16 */
 @mixin semiBold1416 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  /* identical to box height, or 114% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
 
 /* Regular · 14 · 20 */
 @mixin regular1420 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
   color: #000000;
 }
 
 /* Medium · 14 · 20 */
 @mixin medium1420 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
   color: #000000;
 }
 
 /* Semibold · 14 · 20 */
 @mixin semiBold1420 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
   font-feature-settings: "ordn" on, "liga" off;
   color: #000000;
 }
 
 /* Semibold · 15 · 20 */
 @mixin semiBold1520 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;
-  /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
 
 /* Semibold · 16 · 20 */
 @mixin semiBold1620 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
 
 /* Semibold · 18 · 24 */
 @mixin semiBold1824 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
 /* Semibold · 22 · 32 */
 @mixin semiBold2232 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
 
 /* SemiBold · 20 · 24 */
 @mixin semiBold2024 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  /* identical to box height, or 120% */
   font-feature-settings: "zero" on;
   color: #000000;
 }
