@@ -1,0 +1,84 @@
+.container-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 32px 32px;
+  gap: 20px;
+  position: absolute;
+  width: 580px;
+  height: 444px;
+  left: calc(50% - 580px / 2);
+  top: 160px;
+  background: $white;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.head-login {
+  width: 516px;
+  height: 32px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+
+  h2 {
+    width: 516px;
+    height: 32px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    font-feature-settings: "zero" on;
+    color: $black;
+  }
+}
+
+.inputs-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 516px;
+  height: 172px;
+}
+
+.input-login {
+  width: 516px;
+  height: 66px;
+  input {
+    width: 516px;
+    height: 44px;
+    background: $white;
+    border: 1px solid $grey3;
+    border-radius: 8px;
+  }
+}
+.forgot-pw {
+  width: 516px;
+  height: 16px;
+  @include semiBold1416();
+  text-align: center;
+  color: $primaryColor;
+}
+
+.btn-login {
+  width: 516px;
+  height: 44px;
+  background: $primaryColor;
+  border-radius: 8px;
+  border: none;
+  @include semiBold1620();
+  color: $white;
+}
+
+.btn-register {
+  width: 516px;
+  height: 44px;
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+  border: none;
+  @include semiBold1620();
+  color: $primaryColor;
+}
