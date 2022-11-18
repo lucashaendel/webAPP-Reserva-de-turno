@@ -1,5 +1,9 @@
 import React from "react";
+
+// import styles from "../styles/Index.module.scss";
+
 import Link from "next/link";
+
 
 const login = () => {
   return (
@@ -27,6 +31,7 @@ const login = () => {
 
         <button className="btn-register">¿No tenés cuenta? Registrate</button>
       </div>
+
     </div>
   );
 };

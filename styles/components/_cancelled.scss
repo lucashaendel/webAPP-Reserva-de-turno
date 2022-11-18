@@ -1,0 +1,534 @@
+.containerCancelled {
+  background-color: white;
+}
+@mixin border($numOrder) {
+  /* Border */
+  width: 779px;
+  height: 0px;
+  /* Grey 4 */
+  border: 1px solid $grey4;
+  /* Inside auto layout */
+  flex: none;
+  order: $numOrder;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+@mixin autoLayout($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+@mixin autoLayoutRow($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+
+.infoReserva {
+  /* Información reserva */
+  /* Auto layout */
+  @include autoLayout(16px);
+
+  position: absolute;
+  height: 146px;
+  left: 990px;
+  right: 96px;
+  top: 160px;
+  div {
+    /* Datos-Usuario */
+    /* Auto layout */
+    @include autoLayout(8px);
+
+    width: 282px;
+    height: 48px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.spanInfo {
+  /* Txt */
+  width: 282px;
+  height: 16px;
+
+  @include regular1316;
+  /* identical to box height, or 123% */
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 6 */
+  color: $grey6;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.spanInfo2 {
+  /* Txt */
+  width: 282px;
+  height: 24px;
+
+  @include semiBold1924;
+  /* identical to box height, or 126% */
+  font-feature-settings: "zero" on;
+  /* Black */
+  color: $black;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.contentReserva {
+  /* Content */
+  /* Auto layout */
+  @include autoLayout(8px);
+
+  width: 282px;
+  height: 66px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.contentReserva1 {
+  /* Txt */
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+
+  width: 282px;
+  height: 16px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.spanReserva1 {
+  /* Txt */
+  width: 21px;
+  height: 16px;
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+  /* Grey 7 */
+  color: $grey7;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.spanReserva2 {
+  /* Txt */
+  width: 257px;
+  height: 16px;
+
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+
+  /* Grey 6 */
+  color: $grey6;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelarReserva {
+  /* Cancelar reserva */
+  position: absolute;
+  width: 779px;
+  height: 32px;
+  left: 96px;
+  top: 160px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  font-feature-settings: "zero" on;
+
+  /* Black */
+  color: $black;
+}
+.cancelar {
+  @include autoLayout(24px);
+
+  position: absolute;
+  width: 779px;
+  height: 560px;
+  left: 96px;
+  top: 224px;
+}
+.cancelarHeader {
+  @include autoLayout(12px);
+
+  width: 779px;
+  height: 48px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.tituloHeader {
+  /* Txt */
+  width: 779px;
+  height: 16px;
+
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+  /* Grey 8 */
+  color: $grey8;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.preguntaHeader {
+  /* Txt */
+  width: 779px;
+  height: 20px;
+
+  @include semiBold1620;
+  /* identical to box height, or 125% */
+
+  font-feature-settings: "zero" on;
+  /* Grey 8 */
+  color: $grey8;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.border {
+  @include border(1);
+}
+.checkboxDiv {
+  /* Checkbox-Desktop */
+  @include autoLayoutRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  span {
+    /* txt */
+    width: 755px;
+    height: 16px;
+
+    @include semiBold1416;
+    /* identical to box height, or 114% */
+    display: flex;
+    align-items: center;
+
+    /* Grey 8 */
+    color: $grey8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+}
+.border1 {
+  @include border(2);
+}
+.card {
+  /* Card */
+  /* Auto layout */
+  @include autoLayout(12px);
+
+  width: 779px;
+  height: 148px;
+
+  /* Grey 1 */
+  background: $grey1;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+  button {
+    /* CTA-Desktop-4 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+
+    width: 200px;
+    height: 44px;
+
+    /* Error */
+    background: $error;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    span {
+      /* Txt */
+      width: 152px;
+      height: 20px;
+
+      /* Semibold · 15 · 20 */
+      @include semiBold1520;
+      /* identical to box height, or 133% */
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-feature-settings: "zero" on;
+
+      /* White */
+      color: $white;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+}
+.divCard1 {
+  /* Txt */
+  width: 731px;
+  height: 16px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 8 */
+  color: $grey8;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.divCard2 {
+  /* Txt */
+  width: 731px;
+  height: 16px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 8 */
+  color: $grey8;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.border2 {
+  @include border(5);
+}
+.checkboxDiv2 {
+  /* Checkbox-Desktop */
+  @include autoLayoutRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  span {
+    /* txt */
+    width: 755px;
+    height: 16px;
+
+    @include semiBold1416;
+    /* identical to box height, or 114% */
+    display: flex;
+    align-items: center;
+
+    /* Grey 8 */
+    color: $grey8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+}
+.checkboxDiv3 {
+  /* Checkbox-Desktop */
+  @include autoLayoutRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 9;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  span {
+    /* txt */
+    width: 755px;
+    height: 16px;
+
+    @include semiBold1416;
+    /* identical to box height, or 114% */
+
+    display: flex;
+    align-items: center;
+
+    /* Grey 8 */
+    color: $grey8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+}
+.checkboxDiv4 {
+  /* Checkbox-Desktop */
+  @include autoLayoutRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 11;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  span {
+    /* txt */
+    width: 755px;
+    height: 16px;
+
+    @include semiBold1416;
+    /* identical to box height, or 114% */
+    display: flex;
+    align-items: center;
+
+    /* Grey 8 */
+    color: $grey8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+}
+.border3 {
+  @include border(8);
+}
+.border4 {
+  @include border(10);
+}
+.divFlecha {
+  /* CTA-Desktop-3 */
+  @include autoLayoutRow(4px);
+
+  position: absolute;
+  width: 779px;
+  height: 20px;
+  left: 96px;
+  top: 132px;
+
+  border-radius: 8px;
+  div {
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  p {
+    color: $primaryColor;
+    margin: 0;
+  }
+}
