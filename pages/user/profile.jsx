@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import Navbar from "../../comps/Navbar";
 
 const profile = () => {
   return (
     <>
+      <Navbar />
       <div className="topBanner">
         <div className="txt">
           <p>Mensaje Promocional</p>
@@ -25,9 +27,6 @@ const profile = () => {
             </svg>
           </Link>
         </div>
-      </div>
-      <div className="navbar">
-        <h1>navbar</h1>
       </div>
 
       {/*Formulario*/}
