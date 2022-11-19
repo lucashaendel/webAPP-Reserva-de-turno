@@ -11,7 +11,7 @@
   position: absolute;
   width: 878px;
   height: 512px;
-  left: 245px;
+  left: 515px; // antes estaba en 245px
   top: 136px;
   /* White */
 
@@ -248,11 +248,7 @@
 
   /* Auto layout */
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCenterRow(4px);
 
   width: 391px;
   height: 20px;
@@ -420,13 +416,7 @@
 .txtHorario {
   /* Txt */
 
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCenterRow(4px);
 
   width: 798px;
   height: 20px;
@@ -492,13 +482,7 @@
 .horarioInput-desktop2 {
   /* Input Desktop 3 */
 
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCenterRow(4px);
 
   width: 798px;
   height: 16px;
