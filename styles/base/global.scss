@@ -29,6 +29,38 @@ $success: #00a541;
 }
 
 /*------------------------
+      *** AutoLayout ***
+-----------------------*/
+@mixin autoLayoutCol($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+@mixin autoLayoutRow($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+@mixin autoLayoutCenterRow($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
+}
+@mixin autoLayoutCenterCol($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
+}
+
+/*------------------------
       *** LETTERS ***
 -----------------------*/
 
@@ -42,11 +74,19 @@ $success: #00a541;
   /* identical to box height, or 133% */
   color: #000000;
 }
+/* Regular · 13 · 16 */
 @mixin regular1316 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
+  line-height: 16px;
+}
+@mixin regular1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 16px;
 }
 /* Semibold · 14 · 16 */
@@ -80,6 +120,17 @@ $success: #00a541;
   font-size: 14px;
   line-height: 20px;
   /* identical to box height, or 143% */
+  color: #000000;
+}
+/* Semibold · 14 · 16 */
+@mixin semiBold1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "zero" on;
   color: #000000;
 }
 
@@ -159,4 +210,20 @@ $success: #00a541;
   /* identical to box height, or 120% */
   font-feature-settings: "zero" on;
   color: #000000;
+}
+/* SemiBold · 24 · 32 */
+@mixin semiBold2432 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin lato1416 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
 }
