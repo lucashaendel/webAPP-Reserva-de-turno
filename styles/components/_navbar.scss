@@ -1,0 +1,638 @@
+//SASS USER NAVBAR
+.container-navbar {
+  /* Header */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 96px;
+  gap: 14px;
+
+  position: absolute;
+  width: 1368px;
+  height: 76px;
+  left: 0px;
+  top: 36px;
+
+  /* White */
+  background: $white;
+  /* Shadow */
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+.div-reservar {
+  /* CTA-Desktop-2 */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 112px;
+  height: 44px;
+
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.span-navbar {
+  /* Txt */
+  width: 64px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+  @include semiBold1620;
+
+  /* identical to box height, or 125% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-men {
+  /* Menú */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 1050px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 1;
+}
+.header-men-reservas {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 103px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.header-text-reservas {
+  /* Txt */
+
+  width: 81px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-div {
+  /* User Interface */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.div-cuenta {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 86px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.cuenta-text {
+  /* Txt */
+
+  width: 64px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.cuenta-user-interface1 {
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+//SASS Operator
+
+.header-men-operator-reservas {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 80px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.header-text-operator {
+  /* Txt */
+
+  width: 58px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-operator-interface {
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.header-operator-cuenta {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 86px;
+  height: 20px;
+
+  /* Shadow Active */
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.span-operator-cuenta {
+  /* Txt */
+
+  width: 64px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+//SASS Admin
+
+.div-button1-admin {
+  /* CTA-Desktop-2 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 153px;
+  height: 44px;
+
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.span-admin-crearSucursal {
+  /* Txt */
+
+  width: 105px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+  @include semiBold1620;
+
+  /* identical to box height, or 125% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.div-button2-admin {
+  /* CTA-Desktop-2 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 111px;
+  height: 44px;
+
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.span-admin-sucursal {
+  /* Txt */
+
+  width: 63px;
+  height: 20px;
+
+  /* Semibold · 16 · 20 */
+  @include semiBold1620;
+
+  /* identical to box height, or 125% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-men-admin {
+  /* Menú */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 884px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 1;
+}
+.header-men-admin-sucursales {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 92px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.span-admin-sucursales {
+  /* Txt */
+
+  width: 70px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-location {
+  /* Location */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.header-men-admin-operadores {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 95px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.span-admin-operadores {
+  /* Txt */
+
+  width: 73px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-communication {
+  /* Communication */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.header-men-admin-reportes {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 80px;
+  height: 20px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.span-admin-reportes {
+  /* Txt */
+
+  width: 58px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.header-men-admin-cuenta {
+  /* CTA-Desktop-3 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+
+  width: 86px;
+  height: 20px;
+
+  /* Shadow Active */
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.span-admin-cuenta {
+  /* Txt */
+
+  width: 64px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.header-user-interface {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
