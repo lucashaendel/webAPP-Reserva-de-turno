@@ -3,18 +3,18 @@ import React from "react";
 const confirmed = () => {
   return (
     <div className="container-confirmed">
-      <div class="clientefinal-paneldereservas-mensaje">
-        <div class="clientefinal-paneldereservas-user-interface">
+      <div className="clientefinal-paneldereservas-mensaje">
+        <div className="clientefinal-paneldereservas-user-interface">
           <img
             src="/playground_assets/unioni125-icxo.svg"
             alt="UnionI125"
-            class="clientefinal-paneldereservas-union"
+            className="clientefinal-paneldereservas-union"
           />
         </div>
-        <span class="clientefinal-paneldereservas-text HeadlineSemiBold·26·32">
+        <span className="clientefinal-paneldereservas-text HeadlineSemiBold·26·32">
           <span>¡Gracias por tu reserva!</span>
         </span>
-        <span class="clientefinal-paneldereservas-text02 BodyRegular·14·20">
+        <span className="clientefinal-paneldereservas-text02 BodyRegular·14·20">
           <span>
             <span>
               En hasta 5 minutos, recibirás un correo electrónico en
@@ -26,26 +26,28 @@ const confirmed = () => {
             </span>
           </span>
         </span>
-        <div class="clientefinal-paneldereservas-c-t-a-desktop1">
-          <span class="clientefinal-paneldereservas-text07 Semibold·16·20">
+        <div className="clientefinal-paneldereservas-c-t-a-desktop1">
+          <span className="clientefinal-paneldereservas-text07 Semibold·16·20">
             <span>¿Quéres imprimir tu comprobante?</span>
           </span>
         </div>
       </div>
-      <div class="clientefinal-paneldereservas-pedido">
+      <div className="clientefinal-paneldereservas-pedido">
         <img
           src="/playground_assets/border1264-zxq.svg"
           alt=" "
           class="clientefinal-paneldereservas-border"
         />
-        <div class="clientefinal-paneldereservas-content">
-          <div class="clientefinal-paneldereservas-pedido1">
-            <span class="clientefinal-paneldereservas-text09 HeadlineSemiBold·26·32">
-              <span class="clientefinal-paneldereservas-text10">Reserva</span>
+        <div className="clientefinal-paneldereservas-content">
+          <div className="clientefinal-paneldereservas-pedido1">
+            <span className="clientefinal-paneldereservas-text09 HeadlineSemiBold·26·32">
+              <span className="clientefinal-paneldereservas-text10">
+                Reserva
+              </span>
               <span className="num-reserva">#1043812955480-01</span>
             </span>
-            <div class="clientefinal-paneldereservas-info">
-              <span class="clientefinal-paneldereservas-text12 BodySemiBold·14·20">
+            <div className="clientefinal-paneldereservas-info">
+              <span className="clientefinal-paneldereservas-text12 BodySemiBold·14·20">
                 <span>
                   Hecho el 10/10/2022 a las 11:35 hs para el 12/10/2022 a las
                   13:00 hs
@@ -53,8 +55,8 @@ const confirmed = () => {
               </span>
             </div>
           </div>
-          <div class="clientefinal-paneldereservas-c-t-a">
-            <div class="clientefinal-paneldereservas-c-t-a-desktop2">
+          <div className="clientefinal-paneldereservas-c-t-a">
+            <div className="clientefinal-paneldereservas-c-t-a-desktop2">
               <svg
                 width="17"
                 height="18"
@@ -69,11 +71,11 @@ const confirmed = () => {
                 />
               </svg>
 
-              <span class="clientefinal-paneldereservas-text14 Semibold·16·20">
+              <span className="clientefinal-paneldereservas-text14 Semibold·16·20">
                 <span>Editar reserva</span>
               </span>
             </div>
-            <div class="clientefinal-paneldereservas-c-t-a-desktop4">
+            <div className="clientefinal-paneldereservas-c-t-a-desktop4">
               <svg
                 width="11"
                 height="12"
@@ -88,69 +90,69 @@ const confirmed = () => {
                 />
               </svg>
 
-              <span class="clientefinal-paneldereservas-text16 Semibold·15·20">
+              <span className="clientefinal-paneldereservas-text16 Semibold·15·20">
                 <span>Cancelar reserva</span>
               </span>
             </div>
           </div>
         </div>
-        <div class="clientefinal-paneldereservas-info1">
-          <div class="clientefinal-paneldereservas-informacin">
-            <span class="clientefinal-paneldereservas-text18 SemiBold·16·20">
+        <div className="clientefinal-paneldereservas-info1">
+          <div className="clientefinal-paneldereservas-informacin">
+            <span className="clientefinal-paneldereservas-text18 SemiBold·16·20">
               <span>Ivan Cruce</span>
             </span>
-            <div class="clientefinal-paneldereservas-data">
-              <div class="clientefinal-paneldereservas-txt">
-                <span class="clientefinal-paneldereservas-text20">
+            <div className="clientefinal-paneldereservas-data">
+              <div className="clientefinal-paneldereservas-txt">
+                <span className="clientefinal-paneldereservas-text20">
                   <span>Mail:</span>
                 </span>
-                <span class="clientefinal-paneldereservas-text22 BodyRegular·14·20">
+                <span className="clientefinal-paneldereservas-text22 BodyRegular·14·20">
                   <span>ivan@e-cruce.com</span>
                 </span>
               </div>
-              <div class="clientefinal-paneldereservas-txt1">
-                <span class="clientefinal-paneldereservas-text24">
+              <div className="clientefinal-paneldereservas-txt1">
+                <span className="clientefinal-paneldereservas-text24">
                   <span>Teléfono:</span>
                 </span>
-                <span class="clientefinal-paneldereservas-text26 BodyRegular·14·20">
+                <span className="clientefinal-paneldereservas-text26 BodyRegular·14·20">
                   <span>1123456789</span>
                 </span>
               </div>
             </div>
           </div>
-          <div class="clientefinal-paneldereservas-informacin1">
-            <span class="clientefinal-paneldereservas-text28 SemiBold·16·20">
+          <div className="clientefinal-paneldereservas-informacin1">
+            <span className="clientefinal-paneldereservas-text28 SemiBold·16·20">
               <span>Reserva</span>
             </span>
-            <div class="clientefinal-paneldereservas-data1">
-              <div class="clientefinal-paneldereservas-txt2">
-                <span class="clientefinal-paneldereservas-text30">
+            <div className="clientefinal-paneldereservas-data1">
+              <div className="clientefinal-paneldereservas-txt2">
+                <span className="clientefinal-paneldereservas-text30">
                   <span>Sucursal:</span>
                 </span>
-                <span class="clientefinal-paneldereservas-text32 BodyRegular·14·20">
+                <span className="clientefinal-paneldereservas-text32 BodyRegular·14·20">
                   <span>Villa Crespo</span>
                 </span>
               </div>
-              <div class="clientefinal-paneldereservas-txt3">
-                <span class="clientefinal-paneldereservas-text34">
+              <div className="clientefinal-paneldereservas-txt3">
+                <span className="clientefinal-paneldereservas-text34">
                   <span>Horario:</span>
                 </span>
-                <span class="clientefinal-paneldereservas-text36 BodyRegular·14·20">
+                <span className="clientefinal-paneldereservas-text36 BodyRegular·14·20">
                   <span>13:00 hs</span>
                 </span>
               </div>
             </div>
           </div>
-          <div class="clientefinal-paneldereservas-informacin2">
-            <span class="clientefinal-paneldereservas-text38 SemiBold·16·20"></span>
-            <div class="clientefinal-paneldereservas-data2">
-              <div class="clientefinal-paneldereservas-txt4">
-                <span class="clientefinal-paneldereservas-text39"></span>
-                <span class="clientefinal-paneldereservas-text40 BodyRegular·14·20"></span>
+          <div className="clientefinal-paneldereservas-informacin2">
+            <span className="clientefinal-paneldereservas-text38 SemiBold·16·20"></span>
+            <div className="clientefinal-paneldereservas-data2">
+              <div className="clientefinal-paneldereservas-txt4">
+                <span className="clientefinal-paneldereservas-text39"></span>
+                <span className="clientefinal-paneldereservas-text40 BodyRegular·14·20"></span>
               </div>
-              <div class="clientefinal-paneldereservas-txt5">
-                <span class="clientefinal-paneldereservas-text41"></span>
-                <span class="clientefinal-paneldereservas-text42 BodyRegular·14·20"></span>
+              <div className="clientefinal-paneldereservas-txt5">
+                <span className="clientefinal-paneldereservas-text41"></span>
+                <span className="clientefinal-paneldereservas-text42 BodyRegular·14·20"></span>
               </div>
             </div>
           </div>

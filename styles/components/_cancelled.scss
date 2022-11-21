@@ -1,71 +1,80 @@
-.containerCancelled {
-  background-color: white;
+.container-cancelado {
+  /* Cancelado */
+  position: relative;
+  width: 1920px;
+  height: 904px;
+  /* White */
+  background: $white;
 }
-@mixin border($numOrder) {
-  /* Border */
-  width: 779px;
-  height: 0px;
-  /* Grey 4 */
-  border: 1px solid $grey4;
-  /* Inside auto layout */
-  flex: none;
-  order: $numOrder;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-@mixin autoLayout($gap) {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: $gap;
-}
-@mixin autoLayoutRow($gap) {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: $gap;
-}
-
-.infoReserva {
-  /* Información reserva */
+.cancelado-vector {
   /* Auto layout */
-  @include autoLayout(16px);
+  @include autoLayoutCenterRow(4px);
 
   position: absolute;
-  height: 146px;
-  left: 990px;
-  right: 96px;
-  top: 160px;
-  div {
-    /* Datos-Usuario */
-    /* Auto layout */
-    @include autoLayout(8px);
+  width: 779px;
+  height: 20px;
+  left: 380px; //antes tenia 96px
+  top: 132px;
 
-    width: 282px;
-    height: 48px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-  }
+  border-radius: 8px;
 }
-.spanInfo {
+.cancelado-user-interface {
+  /* User Interface */
+  width: 20px;
+  height: 20px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.cancelado-text-vector {
   /* Txt */
-  width: 282px;
+
+  width: 755px;
   height: 16px;
 
-  @include regular1316;
-  /* identical to box height, or 123% */
-  font-feature-settings: "ss01" on, "case" on;
+  /* Semibold · 14 · 16 */
+  @include semiBold1416;
 
-  /* Grey 6 */
-  color: $grey6;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.div-cancelar {
+  /* Cancelar */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(24px);
+
+  position: absolute;
+  width: 779px;
+  height: 560px;
+  left: 380px; //antes tenia 96px
+  top: 224px;
+}
+.cancelado-header {
+  /* Txt */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(12px);
+
+  width: 779px;
+  height: 48px;
+
   /* Inside auto layout */
 
   flex: none;
@@ -73,16 +82,551 @@
   align-self: stretch;
   flex-grow: 0;
 }
-.spanInfo2 {
+.cancelado-nombre {
   /* Txt */
+
+  width: 779px;
+  height: 16px;
+
+  @include regular1416;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-pregunta {
+  /* Txt */
+
+  width: 779px;
+  height: 20px;
+
+  @include semiBold1620;
+  /* identical to box height, or 125% */
+
+  font-feature-settings: "zero" on;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-border {
+  /* Border */
+
+  width: 779px;
+  height: 0px;
+
+  /* Grey 4 */
+
+  border: 1px solid $grey4;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-div-checkbox {
+  /* Checkbox-Desktop */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-user-interface1 {
+  /* User Interface */
+
+  width: 20px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.cancelado-text06 {
+  /* txt */
+
+  width: 755px;
+  height: 16px;
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-border1 {
+  /* Border */
+
+  width: 779px;
+  height: 0px;
+
+  /* Grey 4 */
+
+  border: 1px solid $grey4;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-div-checkbox2 {
+  /* Checkbox-Desktop */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cancelado-text08 {
+  /* txt */
+
+  width: 755px;
+  height: 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black */
+
+  color: $black;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-card {
+  /* Card */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 12px;
+
+  width: 779px;
+  height: 148px;
+
+  /* Grey 1 */
+
+  background: $grey1;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-text10 {
+  /* Txt */
+
+  width: 731px;
+  height: 16px;
+
+  @include lato1416;
+  /* identical to box height, or 114% */
+
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-text12 {
+  /* Txt */
+
+  width: 731px;
+  height: 16px;
+
+  @include lato1416;
+  /* identical to box height, or 114% */
+
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-button-red {
+  /* CTA-Desktop-4 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+
+  width: 200px;
+  height: 44px;
+
+  /* Error */
+
+  background: $error;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.cancelado-span-text {
+  /* Txt */
+
+  width: 152px;
+  height: 20px;
+
+  /* Semibold · 15 · 20 */
+
+  @include semiBold1520;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+
+  /* White */
+
+  color: $white;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.cancelado-border2 {
+  /* Border */
+
+  width: 779px;
+  height: 0px;
+
+  /* Grey 4 */
+
+  border: 1px solid $grey4;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-div-checkbox3 {
+  /* Checkbox-Desktop */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cancelado-text16 {
+  /* txt */
+
+  width: 755px;
+  height: 16px;
+
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-border3 {
+  /* Border */
+
+  width: 779px;
+  height: 0px;
+
+  /* Grey 4 */
+
+  border: 1px solid $grey4;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 8;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-div-checkbox4 {
+  /* Checkbox-Desktop */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 9;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cancelado-text18 {
+  /* txt */
+
+  width: 755px;
+  height: 16px;
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-border4 {
+  /* Border */
+
+  width: 779px;
+  height: 0px;
+
+  /* Grey 4 */
+
+  border: 1px solid $grey4;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 10;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-div-checkbox5 {
+  /* Checkbox-Desktop */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 779px;
+  height: 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 11;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cancelado-text22 {
+  /* txt */
+
+  width: 755px;
+  height: 16px;
+
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey 8 */
+
+  color: $grey8;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-text22 {
+  /* Cancelar reserva */
+
+  position: absolute;
+  width: 779px;
+  height: 32px;
+  left: 380px; //antes tenia 96px
+  top: 160px;
+
+  @include semiBold2432;
+  /* identical to box height, or 133% */
+
+  font-feature-settings: "zero" on;
+
+  /* Black */
+
+  color: $black;
+}
+.cancelado-div-informacinreserva {
+  /* Información reserva */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(16px);
+
+  position: absolute;
+  height: 146px;
+  left: 1400px; // antes tenia 990px
+  right: 96px;
+  top: 160px;
+}
+.cancelado-datos-usuario {
+  /* Datos-Usuario */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(8px);
+
+  width: 282px;
+  height: 48px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-text24 {
+  /* Txt */
+
+  width: 282px;
+  height: 16px;
+
+  @include regular1316;
+  /* identical to box height, or 123% */
+
+  font-feature-settings: "ss01" on, "case" on;
+
+  /* Grey 6 */
+
+  color: $grey6;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.cancelado-text26 {
+  /* Txt */
+
   width: 282px;
   height: 24px;
 
   @include semiBold1924;
   /* identical to box height, or 126% */
+
   font-feature-settings: "zero" on;
+
   /* Black */
+
   color: $black;
+
   /* Inside auto layout */
 
   flex: none;
@@ -90,41 +634,51 @@
   align-self: stretch;
   flex-grow: 0;
 }
-.contentReserva {
+.cancelado-div-content {
   /* Content */
+
   /* Auto layout */
-  @include autoLayout(8px);
+
+  @include autoLayoutCol(8px);
 
   width: 282px;
   height: 66px;
 
   /* Inside auto layout */
+
   flex: none;
   order: 1;
   align-self: stretch;
   flex-grow: 0;
 }
-.contentReserva1 {
+.cancelado-div-txt1 {
   /* Txt */
+
   /* Auto layout */
+
   @include autoLayoutRow(4px);
 
   width: 282px;
   height: 16px;
 
   /* Inside auto layout */
+
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
-.spanReserva1 {
+.cancelado-text28 {
   /* Txt */
+
   width: 21px;
   height: 16px;
+
   @include semiBold1416;
   /* identical to box height, or 114% */
+
   /* Grey 7 */
+
   color: $grey7;
 
   /* Inside auto layout */
@@ -133,402 +687,147 @@
   order: 0;
   flex-grow: 0;
 }
-.spanReserva2 {
+.cancelado-text30 {
   /* Txt */
+
   width: 257px;
   height: 16px;
 
-  @include semiBold1416;
+  @include regular1416;
   /* identical to box height, or 114% */
 
   /* Grey 6 */
+
   color: $grey6;
+
   /* Inside auto layout */
+
   flex: none;
   order: 1;
   flex-grow: 1;
 }
-.cancelarReserva {
-  /* Cancelar reserva */
-  position: absolute;
-  width: 779px;
-  height: 32px;
-  left: 96px;
-  top: 160px;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-  /* identical to box height, or 133% */
-  font-feature-settings: "zero" on;
-
-  /* Black */
-  color: $black;
-}
-.cancelar {
-  @include autoLayout(24px);
-
-  position: absolute;
-  width: 779px;
-  height: 560px;
-  left: 96px;
-  top: 224px;
-}
-.cancelarHeader {
-  @include autoLayout(12px);
-
-  width: 779px;
-  height: 48px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-.tituloHeader {
+.cancelado-div-txt2 {
   /* Txt */
-  width: 779px;
-  height: 16px;
 
-  @include semiBold1416;
-  /* identical to box height, or 114% */
-  /* Grey 8 */
-  color: $grey8;
-  /* Inside auto layout */
+  /* Auto layout */
 
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-.preguntaHeader {
-  /* Txt */
-  width: 779px;
-  height: 20px;
+  @include autoLayoutRow(4px);
 
-  @include semiBold1620;
-  /* identical to box height, or 125% */
+  width: 282px;
+  height: 17px;
 
-  font-feature-settings: "zero" on;
-  /* Grey 8 */
-  color: $grey8;
   /* Inside auto layout */
 
   flex: none;
   order: 1;
-  align-self: stretch;
   flex-grow: 0;
 }
-.border {
-  @include border(1);
-}
-.checkboxDiv {
-  /* Checkbox-Desktop */
-  @include autoLayoutRow(4px);
+.cancelado-text32 {
+  /* Txt */
 
-  width: 779px;
-  height: 20px;
+  width: 51px;
+  height: 17px;
+
+  @include semiBold1416;
+  /* identical to box height */
+
+  /* Grey 7 */
+
+  color: $grey7;
 
   /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.cancelado-text34 {
+  /* Txt */
+
+  width: 227px;
+  height: 16px;
+
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  /* Grey 6 */
+
+  color: $grey6;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-div-txt3 {
+  /* Txt */
+
+  /* Auto layout */
+
+  @include autoLayoutRow(4px);
+
+  width: 282px;
+  height: 17px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.cancelado-text36 {
+  /* Txt */
+
+  width: 59px;
+  height: 17px;
+
+  @include semiBold1416;
+  /* identical to box height */
+
+  /* Grey 7 */
+
+  color: $grey7;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.cancelado-text38 {
+  /* Txt */
+
+  width: 219px;
+  height: 16px;
+
+  @include regular1416;
+  /* identical to box height, or 114% */
+
+  /* Grey 6 */
+
+  color: $grey6;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.cancelado-border5 {
+  /* Border */
+
+  width: 282px;
+  height: 0px;
+
+  /* Grey 3 */
+
+  border: 1px solid $grey3;
+
+  /* Inside auto layout */
+
   flex: none;
   order: 2;
   align-self: stretch;
   flex-grow: 0;
-  div {
-    /* User Interface */
-    width: 20px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  span {
-    /* txt */
-    width: 755px;
-    height: 16px;
-
-    @include semiBold1416;
-    /* identical to box height, or 114% */
-    display: flex;
-    align-items: center;
-
-    /* Grey 8 */
-    color: $grey8;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
-}
-.border1 {
-  @include border(2);
-}
-.card {
-  /* Card */
-  /* Auto layout */
-  @include autoLayout(12px);
-
-  width: 779px;
-  height: 148px;
-
-  /* Grey 1 */
-  background: $grey1;
-  border-radius: 8px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 5;
-  align-self: stretch;
-  flex-grow: 0;
-  button {
-    /* CTA-Desktop-4 */
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 24px;
-
-    width: 200px;
-    height: 44px;
-
-    /* Error */
-    background: $error;
-    border-radius: 8px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    span {
-      /* Txt */
-      width: 152px;
-      height: 20px;
-
-      /* Semibold · 15 · 20 */
-      @include semiBold1520;
-      /* identical to box height, or 133% */
-      display: flex;
-      align-items: center;
-      text-align: center;
-      font-feature-settings: "zero" on;
-
-      /* White */
-      color: $white;
-
-      /* Inside auto layout */
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-    }
-  }
-}
-.divCard1 {
-  /* Txt */
-  width: 731px;
-  height: 16px;
-
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-  font-feature-settings: "ss01" on, "case" on;
-
-  /* Grey 8 */
-  color: $grey8;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-.divCard2 {
-  /* Txt */
-  width: 731px;
-  height: 16px;
-
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-  font-feature-settings: "ss01" on, "case" on;
-
-  /* Grey 8 */
-  color: $grey8;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-.border2 {
-  @include border(5);
-}
-.checkboxDiv2 {
-  /* Checkbox-Desktop */
-  @include autoLayoutRow(4px);
-
-  width: 779px;
-  height: 20px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 7;
-  align-self: stretch;
-  flex-grow: 0;
-  div {
-    /* User Interface */
-    width: 20px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  span {
-    /* txt */
-    width: 755px;
-    height: 16px;
-
-    @include semiBold1416;
-    /* identical to box height, or 114% */
-    display: flex;
-    align-items: center;
-
-    /* Grey 8 */
-    color: $grey8;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
-}
-.checkboxDiv3 {
-  /* Checkbox-Desktop */
-  @include autoLayoutRow(4px);
-
-  width: 779px;
-  height: 20px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 9;
-  align-self: stretch;
-  flex-grow: 0;
-  div {
-    /* User Interface */
-    width: 20px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  span {
-    /* txt */
-    width: 755px;
-    height: 16px;
-
-    @include semiBold1416;
-    /* identical to box height, or 114% */
-
-    display: flex;
-    align-items: center;
-
-    /* Grey 8 */
-    color: $grey8;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
-}
-.checkboxDiv4 {
-  /* Checkbox-Desktop */
-  @include autoLayoutRow(4px);
-
-  width: 779px;
-  height: 20px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 11;
-  align-self: stretch;
-  flex-grow: 0;
-  div {
-    /* User Interface */
-    width: 20px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  span {
-    /* txt */
-    width: 755px;
-    height: 16px;
-
-    @include semiBold1416;
-    /* identical to box height, or 114% */
-    display: flex;
-    align-items: center;
-
-    /* Grey 8 */
-    color: $grey8;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
-}
-.border3 {
-  @include border(8);
-}
-.border4 {
-  @include border(10);
-}
-.divFlecha {
-  /* CTA-Desktop-3 */
-  @include autoLayoutRow(4px);
-
-  position: absolute;
-  width: 779px;
-  height: 20px;
-  left: 96px;
-  top: 132px;
-
-  border-radius: 8px;
-  div {
-    /* User Interface */
-    width: 20px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-  p {
-    color: $primaryColor;
-    margin: 0;
-  }
 }
