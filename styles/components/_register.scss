@@ -1,7 +1,5 @@
 
 .divRegistar {
-   /* Login Mail */
-/* Auto layout */
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -11,33 +9,22 @@ gap: 20px;
 position: absolute;
 width: 580px;
 height: 622px;
-left: calc(50% - 580px/2);
+left: calc(50% - 628px/2);
 top: 84px;
-/* White */
 background: #FFFFFF;
-
-
+box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
 border-radius: 12px;
   }
-  .login-mail-head {
-/* Head */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+  .loginMailHead {
+@include autoLayoutCol(0);
 width: 516px;
 height: 52px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
   }
-
-  .CTA-Desktop-3{
-/* CTA-Desktop-3 */
-/* Auto layout */
+  .CTADesktop3{
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -47,169 +34,72 @@ gap: 4px;
 width: 516px;
 height: 20px;
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
   }
-
   .loginVector {
-    /* User Interface */
-  
-    width: 20px;
-    height: 20px;
-                                             //ver despues
-    /* Inside auto layout */
-  
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+width: 20px;
+height: 20px;
+flex: none;
+order: 0;
+flex-grow: 0;
   }
-
-  .back-text {
-/* Txt */
+  .backText {
 width: 492px;
 height: 16px;
-/* Semibold · 14 · 16 */
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 14px;
 line-height: 16px;
-/* identical to box height, or 114% */
 display: flex;
 align-items: center;
 font-feature-settings: 'zero' on;
-/* Principal */
-color: #A442F1;
-/* Inside auto layout */
+color: $primaryColor;
 flex: none;
 order: 1;
 flex-grow: 1;
-
   }
-  .title {
-/* Título */
-width: 516px;
-height: 32px;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 32px;
-/* identical to box height, or 133% */
-text-align: center;
-font-feature-settings: 'zero' on;
-/* Black */
-color: #000000;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-  .container-inputs {
-   /* Inputs */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 12px;
-
+  .containerInputs {
+@include autoLayoutColCenter(12px);
 width: 516px;
 height: 338px;
-
-/* Inside auto layout */
-
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
-
   }
-  .input-fila-one {
- /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 16px;
+  .inputFilaOne {
+    @include autoLayoutRowCenter(16px);
 width: 516px;
 height: 66px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
   }
-
-  .Input-Desktop-2 {
-/* Input Desktop 2 */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
+  .InputDesktop2 {
+@include autoLayoutCol(2px);
 width: 250px;
 height: 66px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-  .login-mail-txt {
-/* Txt */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 4px;
+  .loginMailText04 {
 width: 250px;
 height: 20px;
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-
-  .login-mail-text04 {
-/* Título */
-width: 250px;
-height: 20px;
-
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
+@include regular1420();
 display: flex;
 align-items: center;
-
-/* Black */
-
-color: #000000;
-/* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-
-.pass{
-    /* Input Desktop 1 */
+  .loginMailInputDesktop11 {
 box-sizing: border-box;
-/* Auto layout */
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -217,497 +107,154 @@ padding: 12px 8px 12px 12px;
 gap: 8px;
 width: 250px;
 height: 44px;
-/* White */
 background: #FFFFFF;
-/* Grey 3 */
 border: 1px solid #E1E1E1;
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
-}
-
-  .login-mail-input-desktop1 {
-/* Input Desktop 1 */
+  }
+  .loginMailInputDesktop22 {
+@include autoLayoutCol(2px);
+width: 516px;
+height: 66px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .loginMailInputDesktop12 {
 box-sizing: border-box;
-/* Auto layout */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 12px 8px 12px 12px;
 gap: 8px;
-width: 250px;
+width: 516px;
 height: 44px;
-/* White */
 background: #FFFFFF;
-/* Grey 3 */
 border: 1px solid #E1E1E1;
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
   }
-  .login-mail-input-desktop21 {
-/* Input Desktop 2 */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
-width: 250px;
-height: 66px;
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 1;
-  }
-
-  .login-mail-txt1 {
-/* Txt */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 4px;
-width: 250px;
-height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-  .login-mail-text06 {
-/* Título */
-width: 250px;
-height: 20px;
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
-display: flex;
-align-items: center;
-/* Black */
-color: #000000;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
-  }
-  .login-mail-input-desktop11 {
-   /* Input Desktop 1 */
-box-sizing: border-box;
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 8px 12px 12px;
-gap: 8px;
-width: 250px;
-height: 44px;
-/* White */
-background: #FFFFFF;
-/* Grey 3 */
-border: 1px solid #E1E1E1;
-border-radius: 8px;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-  }
-  .login-mail-input-desktop22 {
-  /* Input Desktop 2 */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
+  .loginMailFila1 {
+@include autoLayoutRowCenter(16px);
 width: 516px;
 height: 66px;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-  }
-  .login-mail-txt2 {
- /* Txt */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 4px;
-width: 516px;
-height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-  .login-mail-text08 {
- /* Título */
-width: 516px;
-height: 20px;
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
-display: flex;
-align-items: center;
-/* Black */
-color: #000000;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
-  }
-
-  .login-mail-input-desktop12 {
-    /* Título */
-width: 516px;
-height: 20px;
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
-display: flex;
-align-items: center;
-/* Black */
-color: #000000;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
-border-radius: 8px;
-border: none;
-  }
-  .login-mail-fila1 {
-    /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 16px;
-width: 516px;
-height: 66px;
-/* Inside auto layout */
 flex: none;
 order: 2;
 align-self: stretch;
 flex-grow: 0;
   }
-
-  .login-mail-input-desktop23 {
-  /* Input Desktop 2 */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
+  .loginMailInputDesktop23 {
+@include autoLayoutCol(2px);
 width: 250px;
 height: 66px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-  .login-mail-txt3 {
-   /* Txt */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 4px;
+  .loginMailText10 {
 width: 250px;
 height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-  .login-mail-text10 {
-    /* Título */
-width: 250px;
-height: 20px;
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
+@include regular1420();
 display: flex;
 align-items: center;
-/* Black */
-color: #000000;
-/* Inside auto layout */
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-  .login-mail-input-desktop13 {
-   /* Input Desktop 1 */
-box-sizing: border-box;
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 8px 12px 12px;
-gap: 8px;
-width: 250px;
-height: 44px;
-/* White */
-background: #FFFFFF;
-/* Grey 3 */
-border: 1px solid #E1E1E1;
-border-radius: 8px;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-  }
-
-  .login-mail-text12 {
-  /* Txt */
-width: 202px;
-height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
-  }
-
-  .login-mail-user-interface1 {
-  /* User Interface */
+.login-mail-input-desktop1{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+  width: 250px;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;}
+  .loginMailUserInterface1 {
 width: 20px;
 height: 20px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
 
-
-  .login-mail-union {
- /* Union */
-position: absolute;
-width: 15px;
-height: 10.83px;
-left: 2.5px;
-top: 5px;
-/* Grey 5 */
-background: #AFAFAF;
-  }
-
-.input-password{/* Input Desktop 1 */
-
-    box-sizing: border-box;
-    
-    /* Auto layout */
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 12px 8px 12px 12px;
-    gap: 8px;
-    
-    width: 250px;
-    height: 44px;
-    
-    /* White */
-    
-    background: #FFFFFF;
-    /* Grey 3 */
-    
-    border: 1px solid #E1E1E1;
-    border-radius: 8px;
-    
-    /* Inside auto layout */
-    
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;}
-
-
-  .login-mail-input-desktop24 {
-    /* Input Desktop 2 */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
+  .loginMailInputDesktop24 {
+@include autoLayoutCol(2px);
 width: 250px;
 height: 66px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 1;
   }
-
-  .login-mail-txt4 {
-    /* Título */
+  .loginMailText13 {
 width: 250px;
 height: 20px;
-/* Regular · 14 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
+@include regular1420();
 display: flex;
 align-items: center;
-/* Black */
-color: #000000;
-/* Inside auto layout */
 
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-
-  .login-mail-text13 {
-   /* Txt */
-width: 202px;
-height: 20px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 1;
-  }
-
-
-
-  .login-mail-input-desktop14 {
-   /* Input Desktop 1 */
-box-sizing: border-box;
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 8px 12px 12px;
-gap: 8px;
-width: 250px;
-height: 44px;
-/* White */
-background: #FFFFFF;
-/* Grey 3 */
-border: 1px solid #E1E1E1;
-border-radius: 8px;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-  }
-  .login-mail-text15 {
-   /* Txt */
-width: 202px;
-height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
-  }
-  .login-mail-user-interface2 {
-  /* User Interface */
+.pass{  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+  width: 250px;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;}
+  .loginMailUserInterface2 {
 width: 20px;
 height: 20px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
-
-  .login-mail-union1 {
- /* Union */
-position: absolute;
-width: 15px;
-height: 10.83px;
-left: 2.5px;
-top: 5px;
-/* Grey 5 */
-background: #AFAFAF;
-  }
-
-
-
-
-
-
-
-
-
-  .login-mail-advertencia {
-   /* Advertencia */
-/* Auto layout */
+  .loginMailAdvertencia {
+    margin-top: 20px;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 16px 20px;
-gap: 12px;
+gap: 20px;
 width: 516px;
 height: 104px;
-/* Grey 1 */
-background: #F5F5F5;
+background: $grey1;
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 3;
 align-self: stretch;
 flex-grow: 0;
   }
-
-  .login-mail-head1 {
-   /* Head */
-/* Auto layout */
-display: flex;
-flex-direction: column;
+.crearCuenta{ display: flex;
 justify-content: center;
 align-items: center;
-padding: 0px;
-gap: 4px;
-width: 476px;
-height: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-  }
-  .login-mail-text16 {
-  /* La contraseña debe contener: */
+width: 100%;
+height: 100%;}
+  .loginMailText16 {
 width: 476px;
 height: 16px;
 font-family: 'Roboto';
@@ -715,312 +262,162 @@ font-style: normal;
 font-weight: 500;
 font-size: 12px;
 line-height: 16px;
-/* identical to box height, or 133% */
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
+color:$grey7;
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
+margin-top: px;
   }
-
-  .login-mail-border {
-  /* Border */
-width: 476px;
-height: 0px;
-/* Grey 3 */
-border: 1px solid #E1E1E1;
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-  }
-  .login-mail-content {
-    /* Content */
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 8px;
+  .loginMailContent {
+@include autoLayoutCol(8px);
 width: 476px;
 height: 40px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
   }
-
-  .login-mail-fila2 {
-    /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 16px;
+  .loginMailFila2 {
+@include autoLayoutRow(16px);
 width: 476px;
 height: 16px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
   }
-  .login-mail-fila3 {
-   /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
+  .loginMailFila3 {
+@include autoLayoutRow(4px);
 width: 230px;
 height: 16px;
-
-/* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-  .login-mail-text18 {
-  /* ABC */
+  .loginMailText18 {
 width: 24px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
-  .login-mail-text20 {
-   /* Una letra mayúscula */
-width: 202px;
-height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
-display: flex;
-align-items: center;
-font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 1;
+  .loginMailText20 {
+    width: 202px;
+    height: 16px;
+    @include semiBold3030();
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'ss01' on, 'case' on;
+    flex: none;
+    order: 2;
+    flex-grow: 1;
   }
-  .login-mail-fila4 {
-   /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
+  .loginMailFila4 {
+@include autoLayoutRow(4px);
 width: 230px;
 height: 16px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 1;
   }
-  .login-mail-text22 {
-   /* abc */
+  .loginMailText22 {
 width: 20px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
-  .login-mail-text24 {
-    /* Una letra minúscula */
+  .loginMailText24 {
 width: 206px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 2;
 flex-grow: 1;
   }
-  .login-mail-fila5 {
-  /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 16px;
+  .loginMailFila5 {
+@include autoLayoutRow(16px);
 width: 476px;
 height: 16px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
   }
-  .login-mail-fila6 {
-    /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
+  .loginMailFila6 {
+@include autoLayoutRow(4px);
 width: 230px;
 height: 16px;
-/* Inside auto layout */
 flex: none;
 order: 0;
 flex-grow: 1;
   }
-  .login-mail-text26 {
- /* 123 */
+  .loginMailText26 {
 width: 21px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
-  .login-mail-text28 {
-  /* Un número */
+  .loginMailText28 {
 width: 205px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
-font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 2;
 flex-grow: 1;
   }
-  .login-mail-fila7 {
-   /* Fila */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 8px;
+  .loginMailFila7 {
+@include autoLayoutRow(8px);
 width: 230px;
 height: 16px;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 1;
   }
-  .login-mail-text30 {
-    /* *** */
+  .loginMailText30 {
 width: 16px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
-display: flex;
+@include semiBold3030();
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;
   }
-  .login-mail-text32 {
-    /* Mínimo 8 caracteres */
+  .loginMailText32 {
 width: 206px;
 height: 16px;
-/* Body/Regular · 12 · 16 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+@include semiBold3030();
 display: flex;
 align-items: center;
 font-feature-settings: 'ss01' on, 'case' on;
-/* Grey 7 */
-color: #6E6E6E;
-/* Inside auto layout */
 flex: none;
 order: 2;
 flex-grow: 1;
   }
-  .login-mail-c-t-a-desktop1 {
-    /* CTA-Desktop-1 */
-/* Auto layout */
+  .loginMailCtaDesktop1 {
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -1029,53 +426,27 @@ padding: 12px 24px;
 gap: 4px;
 width: 516px;
 height: 44px;
-/* Principal */
-background: #A442F1;
+background: $primaryColor;
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 2;
 align-self: stretch;
 flex-grow: 0;
-
   }
-  .login-mail-text34 {
-    /* Text */
+  .loginMailText34 {
+    
 width: 468px;
 height: 20px;
-/* Semibold · 16 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height, or 125% */
-// display: flex;
+@include semiBold3032();
 align-items: center;
 text-align: center;
 font-feature-settings: 'zero' on;
-/* White */
-color: #FFFFFF;
-/* Inside auto layout */
+color:$white;
 flex: none;
 order: 1;
 flex-grow: 1;
   }
-  .login-mail-border1 {
-  /* Border */
-width: 516px;
-height: 0px;
-/* Grey 3 */
-border: 1px solid #E1E1E1;
-/* Inside auto layout */
-flex: none;
-order: 3;
-align-self: stretch;
-flex-grow: 0;
-  }
-  .login-mail-c-t-a-desktop2 {
-   /* CTA-Desktop-2 */
-/* Auto layout */
+  .loginMailCtaDesktop2 {
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -1086,36 +457,33 @@ width: 516px;
 height: 44px;
 background: rgba(164, 66, 241, 0.1);
 border-radius: 8px;
-/* Inside auto layout */
 flex: none;
 order: 4;
 align-self: stretch;
 flex-grow: 0;
   }
-
-
-
-
-  .login-mail-text36 {
-    /* Txt */
+  .loginMailText36 {
 width: 468px;
 height: 20px;
-/* Semibold · 16 · 20 */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height, or 125% */
-
+@include semiBold3032();
 align-items: center;
 text-align: center;
 font-feature-settings: 'zero' on;
-/* Principal */
-color: #A442F1;
-/* Inside auto layout */
+color: $primaryColor;
 flex: none;
 order: 1;
 flex-grow: 1;
+  }
+
+
+
+  .loginMailUserInterface1{
+/* User Interface */
+width: 20px;
+height: 20px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
   }
 
