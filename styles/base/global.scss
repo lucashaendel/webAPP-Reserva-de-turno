@@ -46,6 +46,23 @@ $success: #00a541;
   gap: $gap;
 }
 
+@mixin autoLayoutColCenter($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
+
+}
+
+@mixin autoLayoutRowCenter($gap){
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: $gap;
+}
+
 /*------------------------
       *** LETTERS ***
 -----------------------*/
@@ -189,4 +206,22 @@ $success: #00a541;
   /* identical to box height, or 120% */
   font-feature-settings: "zero" on;
   color: #000000;
+}
+
+@mixin semiBold3030 {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+color: #6E6E6E;
+}
+
+
+@mixin  semiBold3032 {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
 }
