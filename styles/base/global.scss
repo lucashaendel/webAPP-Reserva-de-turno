@@ -46,6 +46,8 @@ $success: #00a541;
   gap: $gap;
 }
 
+
+
 @mixin autoLayoutCenterRow($gap) {
   display: flex;
   flex-direction: row;
@@ -53,13 +55,27 @@ $success: #00a541;
   padding: 0px;
   gap: $gap;
 }
+
 @mixin autoLayoutCenterCol($gap) {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
   gap: $gap;
+
+
 }
+
+@mixin autoLayoutCenterRow($gap){
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: $gap;
+}
+
+}
+
 
 
 
