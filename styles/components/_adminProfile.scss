@@ -1,782 +1,219 @@
 .perfil-administrador-perfil-administrador {
   /* Perfil Administrador */
-
   position: relative;
   width: 1368px;
   height: 768px;
-
-  /* Grey 1 */
-  background: #f5f5f5;
+  background: $grey1;
 }
 .perfil-administrador-formulario {
   /* Formulario */
 
   /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  @include autoLayoutCol(16px);
   padding: 40px 40px 32px;
-  gap: 16px;
-
   position: absolute;
   width: 878px;
   height: 512px;
   left: 245px;
   top: 160px;
-
-  /* White */
-
-  background: #ffffff;
-  /* Shadow */
-
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  background: $white;
+  @include shadowBox();
   border-radius: 12px;
 }
 .perfil-administrador-text {
   /* Mis datos */
-
   width: 798px;
   height: 24px;
-
-  /* SemiBold · 20 · 24 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  /* identical to box height, or 120% */
-
-  font-feature-settings: "zero" on;
-
-  /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  @include semiBold2024();
+  color: $black;
 }
 .perfil-administrador-input-desktop2 {
   /* Input Desktop 2 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-
+  @include autoLayoutCol(2px);
   width: 798px;
   height: 66px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-txt {
   /* Txt */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   align-items: center;
-  padding: 0px;
-  gap: 4px;
-
   width: 798px;
   height: 20px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-text02 {
   /* Título */
-
   width: 798px;
   height: 20px;
-
-  /* Regular · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-
+  @include regular1420();
   display: flex;
   align-items: center;
-
-  /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  color: $black;
 }
 .perfil-administrador-input-desktop1 {
   /* Input Desktop 1 */
-
   box-sizing: border-box;
 
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(8px);
   align-items: center;
   padding: 12px 8px 12px 12px;
-  gap: 8px;
-
   width: 798px;
   height: 44px;
-
-  /* White */
-
-  background: #ffffff;
-  /* Grey 3 */
-
-  border: 1px solid #e1e1e1;
+  background: $white;
+  border: 1px solid $grey3;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-input-desktop21 {
   /* Input Desktop 2 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-
+  @include autoLayoutCol(2px);
   width: 798px;
   height: 66px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-txt1 {
   /* Txt */
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   align-items: center;
-  padding: 0px;
-  gap: 4px;
-
   width: 798px;
   height: 20px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-text04 {
   /* Título */
-
   width: 798px;
   height: 20px;
-
-  /* Regular · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-
-  display: flex;
+  @include regular1420();
   align-items: center;
-
-  /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  color: $black;
 }
 .perfil-administrador-input-desktop11 {
   /* Input Desktop 1 */
-
   box-sizing: border-box;
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(8px);
   align-items: center;
   padding: 12px 8px 12px 12px;
-  gap: 8px;
-
   width: 798px;
   height: 44px;
-
-  /* White */
-
-  background: #ffffff;
-  /* Grey 3 */
-
-  border: 1px solid #e1e1e1;
+  background: $white;
+  border: 1px solid $grey3;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-input-desktop22 {
   /* Input Desktop 2 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-
+  @include autoLayoutCol(2px);
   width: 798px;
   height: 66px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 3;
-  flex-grow: 1;
 }
 .perfil-administrador-txt2 {
   /* Txt */
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   align-items: center;
-  padding: 0px;
-  gap: 4px;
-
   width: 798px;
   height: 20px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-text06 {
   /* Título */
-
   width: 798px;
   height: 20px;
-
-  /* Regular · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-
+  @include regular1420();
   display: flex;
   align-items: center;
-
-  /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  color: $black;
 }
 .perfil-administrador-input-desktop12 {
   /* Input Desktop 1 */
-
   box-sizing: border-box;
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(8px);
   align-items: center;
   padding: 12px 8px 12px 12px;
-  gap: 8px;
-
   width: 798px;
   height: 44px;
-
-  /* White */
-
-  background: #ffffff;
-  /* Grey 3 */
-
-  border: 1px solid #e1e1e1;
+  background: $white;
+  border: 1px solid $grey3;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-horario {
   /* Horario */
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-
+  @include autoLayoutCol(8px);
   width: 798px;
   height: 90px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 5;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-input-desktop23 {
   /* Input Desktop 2 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-
+  @include autoLayoutCol(2px);
   width: 798px;
   height: 66px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-txt3 {
   /* Txt */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   align-items: center;
-  padding: 0px;
-  gap: 4px;
-
   width: 798px;
   height: 20px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-text08 {
   /* Título */
-
   width: 798px;
   height: 20px;
-
-  /* Regular · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-
+  @include regular1420();
   display: flex;
   align-items: center;
-
-  /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  color: $black;
 }
 .perfil-administrador-input-desktop13 {
   /* Input Desktop 1 */
-
   box-sizing: border-box;
-
   /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(8px);
   align-items: center;
   padding: 12px 8px 12px 12px;
-  gap: 8px;
-
   width: 798px;
   height: 44px;
-
-  /* White */
-
-  background: #ffffff;
-  /* Grey 3 */
-
-  border: 1px solid #e1e1e1;
+  background: $white;
+  border: 1px solid $grey3;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-input-desktop3 {
   /* Input Desktop 3 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   align-items: center;
-  padding: 0px;
-  gap: 4px;
-
   width: 798px;
   height: 16px;
-
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .editpassword {
   /* Txt */
-
   width: 798px;
   height: 16px;
-
-  /* Semibold · 14 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-
+  @include semiBold1416();
   display: flex;
   align-items: center;
-  font-feature-settings: "zero" on;
-
-  /* Principal */
-
-  color: #a442f1;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 1;
+  color: $primaryColor;
 }
 .perfil-administrador-c-t-a-desktop1 {
   /* CTA-Desktop-1 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(4px);
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
-  gap: 4px;
-
   width: 798px;
   height: 48px;
-
-  /* Principal */
-
-  background: #a442f1;
+  background: $primaryColor;
   border-radius: 8px;
-
-  /* Inside auto layout */
-  border: none;
-  flex: none;
-  order: 6;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .perfil-administrador-text10 {
   /* Text */
-
   width: 750px;
   height: 20px;
-
-  /* Semibold · 16 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  /* identical to box height, or 125% */
-
   display: flex;
-  align-items: center;
-  text-align: center;
-  font-feature-settings: "zero" on;
-
-  /* White */
-
-  color: #ffffff;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 1;
-  justify-content: center;
-}
-.perfil-administrador-top-banner {
-  top: 0px;
-  left: 0px;
-  width: 1368px;
-  height: 36px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  border-color: transparent;
-  background-color: var(--dl-color-default-grey2);
-}
-.perfil-administrador-text12 {
-  top: 12px;
-  left: 96px;
-  color: var(--dl-color-default-principal);
-  width: 1176px;
-  height: auto;
-  position: absolute;
-  align-self: auto;
-  text-align: center;
-  line-height: 16px;
-  margin-right: 0;
-  margin-bottom: 0;
-}
-.perfil-administrador-user-interface {
-  top: 12px;
-  left: 1256px;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-}
-.perfil-administrador-header {
-  top: 36px;
-  left: 0px;
-  width: 1368px;
-  display: flex;
-  padding: 16px 96px;
-  position: absolute;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07999999821186066);
-  align-items: center;
-  flex-shrink: 0;
-  border-color: transparent;
-  background-color: var(--dl-color-default-white);
-}
-.perfil-administrador-c-t-a-desktop2 {
-  display: flex;
-  padding: 12px 24px;
-  overflow: hidden;
-  position: relative;
-  align-self: stretch;
-  align-items: center;
-  border-color: transparent;
-  margin-right: 14px;
-  border-radius: 8px;
-  justify-content: center;
-  background-color: rgba(164, 66, 241, 0.10000000149011612);
-}
-.perfil-administrador-text14 {
-  color: var(--dl-color-default-principal);
-  height: auto;
-  align-self: auto;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 0;
-  margin-bottom: 0;
-}
-.perfil-administrador-c-t-a-desktop21 {
-  display: flex;
-  padding: 12px 24px;
-  overflow: hidden;
-  position: relative;
-  align-self: stretch;
-  align-items: center;
-  border-color: transparent;
-  margin-right: 14px;
-  border-radius: 8px;
-  justify-content: center;
-  background-color: rgba(164, 66, 241, 0.10000000149011612);
-}
-.perfil-administrador-text16 {
-  color: var(--dl-color-default-principal);
-  height: auto;
-  align-self: auto;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 0;
-  margin-bottom: 0;
-}
-.perfil-administrador-men {
-  display: flex;
-  position: relative;
-  flex-grow: 1;
-  align-items: center;
-  border-color: transparent;
-  justify-content: flex-end;
-}
-.perfil-administrador-c-t-a-desktop3 {
-  display: flex;
-  position: relative;
-  align-items: center;
-  border-color: transparent;
-  margin-right: 20px;
-  border-radius: 8px;
-}
-.perfil-administrador-text18 {
-  color: var(--dl-color-default-black);
-  height: auto;
-  align-self: auto;
-  text-align: left;
-  line-height: 16px;
-  margin-right: 2px;
-  margin-bottom: 0;
-}
-.perfil-administrador-location {
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-.perfil-administrador-c-t-a-desktop31 {
-  display: flex;
-  position: relative;
-  align-items: center;
-  border-color: transparent;
-  margin-right: 20px;
-  border-radius: 8px;
-}
-.perfil-administrador-text20 {
-  color: var(--dl-color-default-black);
-  height: auto;
-  align-self: auto;
-  text-align: left;
-  line-height: 16px;
-  margin-right: 2px;
-  margin-bottom: 0;
-}
-.perfil-administrador-communication {
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-.perfil-administrador-c-t-a-desktop32 {
-  display: flex;
-  position: relative;
-  align-items: center;
-  border-color: transparent;
-  margin-right: 20px;
-  border-radius: 8px;
-}
-.perfil-administrador-text22 {
-  color: var(--dl-color-default-black);
-  height: auto;
-  align-self: auto;
-  text-align: left;
-  line-height: 16px;
-  margin-right: 2px;
-  margin-bottom: 0;
-}
-.perfil-administrador-files {
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-.perfil-administrador-c-t-a-desktop33 {
-  display: flex;
-  position: relative;
-  align-items: center;
-  border-color: transparent;
-  border-radius: 8px;
-}
-.perfil-administrador-text24 {
-  color: var(--dl-color-default-principal);
-  height: auto;
-  align-self: auto;
-  text-align: left;
-  line-height: 16px;
-  margin-right: 2px;
-  margin-bottom: 0;
-}
-.perfil-administrador-user-interface1 {
-  width: 20px;
-  height: 20px;
-  position: relative;
+  span {
+    @include semiBold1620();
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    color: $white;
+  }
 }
