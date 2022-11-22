@@ -28,6 +28,11 @@ $success: #00a541;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Shadow box */
+@mixin shadowBox {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+}
+
 /*------------------------
       *** AutoLayout ***
 -----------------------*/
