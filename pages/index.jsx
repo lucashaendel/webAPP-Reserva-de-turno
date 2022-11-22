@@ -11,21 +11,22 @@ const login = () => {
         <form className="inputs-login">
           <div className="input-login">
             <label>Usuario</label>
-            <input type="text" />
+            <input type="text" required />
           </div>
 
           <div className="input-login">
             <label>Contraseña</label>
-            <input type="password" />
+            <input type="password" required />
           </div>
 
           <Link href="#" className="forgot-pw">
             ¿olvidaste tu contraseña?
           </Link>
+          <button className="btn-login">ingresar</button>
         </form>
-        <button className="btn-login">ingresar</button>
-
-        <button className="btn-register">¿No tenés cuenta? Registrate</button>
+        <Link href="/register">
+          <button className="btn-register">¿No tenés cuenta? Registrate</button>
+        </Link>
       </div>
     </div>
   );
