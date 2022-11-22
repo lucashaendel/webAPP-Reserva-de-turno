@@ -95,6 +95,9 @@ gap: $gap;
   line-height: 16px;
   color: #000000;
 }
+
+
+
 /* Regular · 13 · 16 */
 @mixin regular1316 {
   font-family: "Roboto";
@@ -110,6 +113,7 @@ gap: $gap;
   font-size: 14px;
   line-height: 16px;
 }
+
 /* Semibold · 14 · 16 */
 @mixin semiBold1416 {
   font-weight: 600;
@@ -132,6 +136,8 @@ gap: $gap;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+
+
   color: #000000;
 }
 /* Semibold · 14 · 16 */
@@ -154,6 +160,7 @@ gap: $gap;
   line-height: 16px;
   /* identical to box height, or 114% */
   font-feature-settings: "zero" on;
+
   color: #000000;
 }
 
@@ -192,6 +199,8 @@ gap: $gap;
   font-feature-settings: "zero" on;
   color: #000000;
 }
+
+
 @mixin semiBold1924 {
   font-family: "Roboto";
   font-style: normal;
@@ -199,6 +208,7 @@ gap: $gap;
   font-size: 19px;
   line-height: 24px;
 }
+
 /* Semibold · 22 · 32 */
 @mixin semiBold2232 {
   font-weight: 600;
