@@ -28,6 +28,62 @@ $success: #00a541;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Shadow box */
+@mixin shadowBox {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+}
+
+/*------------------------
+      *** AutoLayout ***
+-----------------------*/
+@mixin autoLayoutCol($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+@mixin autoLayoutRow($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: $gap;
+}
+
+
+
+@mixin autoLayoutCenterRow($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
+}
+
+@mixin autoLayoutCenterCol($gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
+
+
+}
+
+@mixin autoLayoutCenterRow($gap){
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: $gap;
+}
+
+}
+
+
+
+
 /*------------------------
       *** LETTERS ***
 -----------------------*/
@@ -38,6 +94,24 @@ $success: #00a541;
   font-size: 12px;
   line-height: 16px;
   color: #000000;
+}
+
+
+
+/* Regular · 13 · 16 */
+@mixin regular1316 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+@mixin regular1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 /* Semibold · 14 · 16 */
@@ -62,6 +136,31 @@ $success: #00a541;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+
+
+  color: #000000;
+}
+/* Semibold · 14 · 16 */
+@mixin semiBold1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "zero" on;
+  color: #000000;
+}
+/* Semibold · 14 · 16 */
+@mixin semiBold1416 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  font-feature-settings: "zero" on;
+
   color: #000000;
 }
 
@@ -100,6 +199,16 @@ $success: #00a541;
   font-feature-settings: "zero" on;
   color: #000000;
 }
+
+
+@mixin semiBold1924 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+}
+
 /* Semibold · 22 · 32 */
 @mixin semiBold2232 {
   font-weight: 600;
@@ -116,4 +225,20 @@ $success: #00a541;
   line-height: 24px;
   font-feature-settings: "zero" on;
   color: #000000;
+}
+/* SemiBold · 24 · 32 */
+@mixin semiBold2432 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin lato1416 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
 }

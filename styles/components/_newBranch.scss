@@ -1,0 +1,470 @@
+.branchContainer {
+  max-width: 1920px;
+  height: 768px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  background: $grey1;
+}
+
+.form {
+  /* Formulario */
+  @include autoLayoutCol(16px);
+  padding: 40px 40px 32px;
+  position: absolute;
+  width: 878px;
+  height: 488px;
+  left: 305px;
+  top: 160px;
+  background: $white;
+  @include shadowBox();
+  border-radius: 12px;
+}
+.newBranch {
+  /* Crear una nueva sucursal */
+  width: 798px;
+  height: 24px;
+  @include semiBold2024();
+  color: $black;
+}
+
+.administrador-creacindesucursales-input-desktop2 {
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt {
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+.administrador-creacindesucursales-text02 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop1 {
+  box-sizing: border-box;
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+
+.administrador-creacindesucursales-input-desktop21 {
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt1 {
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+
+.administrador-creacindesucursales-text04 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop11 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-fila {
+  /* Fila */
+
+  /* Auto layout */
+  @include autoLayoutRow(16px);
+  width: 798px;
+  height: 66px;
+}
+.administrador-creacindesucursales-input-desktop22 {
+  /* Input Desktop 2 */
+  @include autoLayoutCol(2px);
+  width: 391px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt2 {
+  /* Txt */
+
+  @include autoLayoutRow(4px);
+  width: 391px;
+  height: 20px;
+}
+.administrador-creacindesucursales-text06 {
+  /* Título */
+  width: 391px;
+  height: 20px;
+  @include regular1420;
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop12 {
+  box-sizing: border-box;
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  gap: 8px;
+  width: 391px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-input-desktop3 {
+  @include autoLayoutCol(2px);
+  width: 391px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt3 {
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 391px;
+  height: 20px;
+}
+.administrador-creacindesucursales-text08 {
+  /* Título */
+  width: 391px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop13 {
+  box-sizing: border-box;
+  /* Auto layout */
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 391px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text10 {
+  width: 343px;
+  height: 20px;
+}
+.administrador-creacindesucursales-user-interface {
+  /* User Interface */
+  width: 20px;
+  height: 20px;
+}
+.dropdown-vector {
+  position: absolute;
+  left: 14.96%;
+  right: 14.96%;
+  top: 29.54%;
+  bottom: 29.54%;
+  background: $grey5;
+}
+
+.administrador-creacindesucursales-horario {
+  /* Horario */
+  @include autoLayoutRow(16px);
+  width: 798px;
+  height: 66px;
+}
+.administrador-creacindesucursales-input-desktop23 {
+  /* Input Desktop 2 */
+  /* Auto layout */
+  @include autoLayoutCol(2px);
+  width: 391px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt4 {
+  /* Txt */
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 391px;
+  height: 20px;
+}
+.administrador-creacindesucursales-text11 {
+  /* Título */
+  width: 391px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop14 {
+  box-sizing: border-box;
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 391px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text13 {
+  width: 343px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $grey5;
+}
+.administrador-creacindesucursales-user-interface1 {
+  /* User Interface */
+  width: 20px;
+  height: 20px;
+}
+.administrador-creacindesucursales-input-desktop31 {
+  /* Input Desktop 3 */
+  @include autoLayoutCol(2px);
+  width: 391px;
+  height: 66px;
+}
+.administrador-creacindesucursales-txt5 {
+  /* Txt */
+  @include autoLayoutCol(4px);
+  align-items: center;
+  width: 391px;
+  height: 20px;
+}
+.administrador-creacindesucursales-text15 {
+  /* Título */
+  width: 391px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-input-desktop15 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+  /* Auto layout */
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 391px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text17 {
+  /* Txt */
+  width: 343px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $grey5;
+}
+
+.administrador-creacindesucursales-user-interface2 {
+  /* User Interface */
+  width: 20px;
+  height: 20px;
+}
+
+.buttonSend {
+  /* CTA-Desktop-1 */
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border: none;
+  width: 798px;
+  height: 48px;
+  background: $primaryColor;
+  border-radius: 8px;
+}
+.buttonSendText {
+  /* Text */
+  width: 750px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  span {
+    @include semiBold1620();
+    display: flex;
+    text-align: center;
+    color: $white;
+  }
+}
+
+.administrador-creacindesucursales-header {
+  /* Header */
+  @include autoLayoutRow(14px);
+  align-items: center;
+  padding: 16px 96px;
+  position: absolute;
+  width: 1368px;
+  height: 76px;
+  left: 0px;
+  top: 36px;
+  background: $white;
+  @include shadowBox();
+}
+
+.administrador-creacindesucursales-c-t-a-desktop2 {
+  @include autoLayoutRow(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  width: 153px;
+  height: 44px;
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text23 {
+  /* Txt */
+  width: 105px;
+  height: 20px;
+  @include semiBold1620();
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $primaryColor;
+}
+.administrador-creacindesucursales-c-t-a-desktop21 {
+  /* CTA-Desktop-2 */
+  @include autoLayoutRow(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  width: 111px;
+  height: 44px;
+  background: rgba(164, 66, 241, 0.1);
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text25 {
+  /* Txt */
+  width: 63px;
+  height: 20px;
+  @include semiBold1620();
+  color: $primaryColor;
+}
+
+.administrador-creacindesucursales-men {
+  /* Menú */
+  /* Auto layout */
+  @include autoLayoutRow(20px);
+  justify-content: flex-end;
+  align-items: center;
+  width: 884px;
+  height: 20px;
+}
+.administrador-creacindesucursales-c-t-a-desktop3 {
+  /* CTA-Desktop-3 */
+  @include autoLayoutRow(2px);
+  align-items: center;
+  width: 92px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.administrador-creacindesucursales-text27 {
+  /* Txt */
+  width: 70px;
+  height: 16px;
+  @include semiBold1620();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-location {
+  /* Location */
+  width: 20px;
+  height: 20px;
+}
+.administrador-creacindesucursales-c-t-a-desktop31 {
+  /* CTA-Desktop-3 */
+  @include autoLayoutRow(2px);
+  align-items: center;
+  width: 95px;
+  height: 20px;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text29 {
+  /* Txt */
+  width: 73px;
+  height: 16px;
+  @include semiBold1416();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-communication {
+  /* Communication */
+  width: 20px;
+  height: 20px;
+}
+.administrador-creacindesucursales-c-t-a-desktop32 {
+  /* CTA-Desktop-3 */
+  @include autoLayoutRow(2px);
+  align-items: center;
+  width: 80px;
+  height: 20px;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text31 {
+  /* Txt */
+  width: 58px;
+  height: 16px;
+  @include semiBold1416();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-files {
+  /* Files */
+  width: 20px;
+  height: 20px;
+}
+.administrador-creacindesucursales-c-t-a-desktop33 {
+  /* CTA-Desktop-3 */
+  @include autoLayoutRow(2px);
+  align-items: center;
+  width: 86px;
+  height: 20px;
+  border-radius: 8px;
+}
+.administrador-creacindesucursales-text33 {
+  /* Txt */
+  width: 64px;
+  height: 16px;
+  @include semiBold1416();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.administrador-creacindesucursales-user-interface4 {
+  /* User Interface */
+  width: 20px;
+  height: 20px;
+}

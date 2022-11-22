@@ -1,5 +1,13 @@
 import React from "react";
+
+import styles from "../styles/Index.module.scss";
+
+import Navbar from "../comps/Navbar";
+
+// import styles from "../styles/Index.module.scss";
+
 import Link from "next/link";
+
 
 const login = () => {
   return (
