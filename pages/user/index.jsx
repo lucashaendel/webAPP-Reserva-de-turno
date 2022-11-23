@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { Stepper } from "react-form-stepper";
 
 const index = () => {
+  const [value, onChange] = useState(new Date());
   return (
     <div>
+      {/* <Stepper
+        steps={[{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]}
+        activeStep={2}
+        >
+        </Stepper> */}
+      {/* <Step label="Children Step 1" />
+        <Step label="Children Step 2" />
+        <Step label="Children Step 3" /> */}
       <div className="containerCalendar">
-        <h2>calendar desde REACT</h2>
+        <Calendar onChange={onChange} value={value} />
+        {/* {console.log(value)} */}
       </div>
+
       <div class="reserva-reserva">
         <div class="reserva-content">
           <div class="reserva-head">

@@ -1,19 +1,25 @@
 .containerCalendar {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   gap: 10px;
-
   position: absolute;
   width: 457px;
   height: 362px;
   left: 815px;
   top: 208px;
-
-  /* White */
-  background: #ffffff;
+  background: $white;
   border-radius: 8px;
+  button {
+    width: 20px;
+  }
+  span {
+    width: 155px;
+    color: black;
+    font-size: 14px;
+  }
 }
 
 .reserva-reserva {
