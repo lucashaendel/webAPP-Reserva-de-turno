@@ -1,0 +1,413 @@
+.form {
+  /* Formulario */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 40px 32px;
+  gap: 16px;
+
+  position: absolute;
+  width: 878px;
+  height: 512px;
+  left: 483px; //estaba en 245px
+  top: 160px;
+  /* White */
+  background: $white;
+  /* Shadow */
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.newSucursal {
+  /* Crear una nueva sucursal */
+  width: 798px;
+  height: 24px;
+  /* SemiBold · 20 · 24 */
+  @include semiBold2024;
+  /* identical to box height, or 120% */
+  font-feature-settings: "zero" on;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.input2 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(2px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    @include autoLayoutCenterRow(4px);
+
+    width: 798px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 798px;
+    height: 44px;
+
+    /* White */
+
+    background: $white;
+    /* Grey 3 */
+
+    border: 1px solid $grey3;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.fila {
+  /* Fila */
+
+  /* Auto layout */
+
+  @include autoLayoutRow(16px);
+
+  width: 798px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.inputDesktop2 {
+  /* Input Desktop 2 */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(2px);
+
+  width: 391px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    @include autoLayoutCenterRow(4px);
+
+    width: 391px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 391px;
+    height: 44px;
+
+    /* White */
+
+    background: $white;
+    /* Grey 3 */
+
+    border: 1px solid $grey3;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.inputDesktop3 {
+  /* Input Desktop 3 */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(2px);
+  width: 391px;
+  height: 66px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  label {
+    /* Txt */
+
+    /* Auto layout */
+
+    @include autoLayoutCenterRow(4px);
+
+    width: 391px;
+    height: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  input {
+    /* Input Desktop 1 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 8px 12px 12px;
+    gap: 8px;
+
+    width: 391px;
+    height: 44px;
+
+    /* White */
+
+    background: $white;
+    /* Grey 3 */
+
+    border: 1px solid $grey3;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+.Horario {
+  /* Horario */
+
+  /* Auto layout */
+
+  @include autoLayoutCol(8px);
+
+  width: 798px;
+  height: 90px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+  div {
+    /* Input Desktop 2 */
+
+    /* Auto layout */
+
+    @include autoLayoutCol(2px);
+
+    width: 798px;
+    height: 66px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    label {
+      /* Txt */
+
+      /* Auto layout */
+
+      @include autoLayoutCenterRow(4px);
+
+      width: 798px;
+      height: 20px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+    input {
+      /* Input Desktop 1 */
+
+      box-sizing: border-box;
+
+      /* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 12px 8px 12px 12px;
+      gap: 8px;
+
+      width: 798px;
+      height: 44px;
+
+      /* White */
+
+      background: $white;
+      /* Grey 3 */
+
+      border: 1px solid $grey3;
+      border-radius: 8px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+}
+.inputEditarContraseña {
+  /* Input Desktop 3 */
+
+  /* Auto layout */
+
+  @include autoLayoutCenterRow(4px);
+
+  width: 798px;
+  height: 16px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+
+  /* Txt */
+
+  width: 798px;
+  height: 16px;
+
+  /* Semibold · 14 · 16 */
+
+  @include semiBold1416;
+  /* identical to box height, or 114% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: "zero" on;
+
+  /* Principal */
+
+  color: $primaryColor;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.buttonProfileUser {
+  /* CTA-Desktop-1 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 4px;
+
+  width: 798px;
+  height: 48px;
+
+  /* Principal */
+
+  background: $primaryColor;
+  border-radius: 8px;
+  color: $white;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+
+  /* Semibold · 16 · 20 */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "zero" on;
+}
