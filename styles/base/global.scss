@@ -51,8 +51,6 @@ $success: #00a541;
   gap: $gap;
 }
 
-
-
 @mixin autoLayoutCenterRow($gap) {
   display: flex;
   flex-direction: row;
@@ -67,22 +65,15 @@ $success: #00a541;
   align-items: center;
   padding: 0px;
   gap: $gap;
-
-
 }
 
-@mixin autoLayoutCenterRow($gap){
+@mixin autoLayoutCenterRow($gap) {
   display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: $gap;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: $gap;
 }
-
-}
-
-
-
 
 /*------------------------
       *** LETTERS ***
@@ -95,8 +86,6 @@ gap: $gap;
   line-height: 16px;
   color: #000000;
 }
-
-
 
 /* Regular · 13 · 16 */
 @mixin regular1316 {
@@ -136,7 +125,6 @@ gap: $gap;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-
 
   color: #000000;
 }
@@ -199,7 +187,6 @@ gap: $gap;
   font-feature-settings: "zero" on;
   color: #000000;
 }
-
 
 @mixin semiBold1924 {
   font-family: "Roboto";
