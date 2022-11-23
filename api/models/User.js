@@ -45,7 +45,7 @@ userSchema.pre("findOneAndUpdate", function (next) {
   const salt = bcrypt.genSaltSync(10);
   const data = this._update;
   data.salt = salt;
-
+  if (data.password === undefined) return next();
   bcrypt.hash(data.password, data.salt, (err, hashedPassword) => {
     if (err) {
       next(err);
@@ -58,12 +58,6 @@ userSchema.pre("findOneAndUpdate", function (next) {
 
 userSchema.methods.hashGen = function (password, salt) {
   return bcrypt.hash(password, salt);
-};
-
-userSchema.methods.validatePassword = function (password, cb) {
-  return this.hashGen(password, this.salt).then((hash) => {
-    hash == this.password;
-  });
 };
 
 const user = mongoose.model("User", userSchema);
