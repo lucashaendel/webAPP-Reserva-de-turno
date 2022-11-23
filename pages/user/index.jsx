@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { Stepper } from "react-form-stepper";
+import Navbar from "../../comps/Navbar";
 
 const index = () => {
   const [value, onChange] = useState(new Date());
   return (
     <div>
-      {/* <Stepper
-        steps={[{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]}
-        activeStep={2}
-        >
-        </Stepper> */}
-      {/* <Step label="Children Step 1" />
-        <Step label="Children Step 2" />
-        <Step label="Children Step 3" /> */}
+      <Navbar />
       <div className="containerCalendar">
         <Calendar onChange={onChange} value={value} />
         {/* {console.log(value)} */}
@@ -59,7 +52,7 @@ const index = () => {
                   class="reserva-border4"
                 />
                 <div class="reserva-number2">
-                  <span class="reserva-text10 Semibold·14·20">3</span>
+                  <span class="reserva-text10 Semibold·14·20">2</span>
                 </div>
                 <img
                   src="/playground_assets/borderi417-3jff-200h.png"

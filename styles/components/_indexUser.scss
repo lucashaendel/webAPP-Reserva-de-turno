@@ -90,6 +90,7 @@
   /* Título */
 
   width: 599px;
+
   height: 24px;
 
   /* Semibold · 18 · 24 */
@@ -218,48 +219,18 @@
   flex-grow: 1;
 }
 .reserva-number {
-  /* Number */
-
   width: 32px;
   height: 32px;
-
-  /* Principal */
-
-  background: #a442f1;
-  border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-.reserva-text04 {
-  /* Num */
-
-  position: absolute;
-  width: 16px;
-  height: 20px;
-  left: 8px;
-  top: 6px;
-
-  /* Semibold · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-
   display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  font-feature-settings: "ordn" on, "liga" off;
+  background: $primaryColor;
+  border-radius: 8px;
+}
 
-  /* White */
-
-  color: #ffffff;
+.reserva-text04 {
+  @include semiBold1420();
+  color: $white;
 }
 .reserva-border1 {
   /* Border */
@@ -290,22 +261,11 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
-
   display: flex;
   align-items: center;
   text-align: center;
-
-  /* Principal */
-
-  color: #a442f1;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  justify-content: center;
+  color: $primaryColor;
 }
 .reserva-step2 {
   /* Txt */
@@ -525,26 +485,13 @@
   width: 32px;
   height: 32px;
 
-  /* Grey 4 */
-
-  background: #c8c8c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $grey4;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 .reserva-text10 {
-  /* Num */
-
-  position: absolute;
-  width: 16px;
-  height: 20px;
-  left: 8px;
-  top: 6px;
-
   /* Semibold · 14 · 20 */
 
   font-family: "Roboto";
@@ -584,30 +531,13 @@
 
   width: 199.67px;
   height: 20px;
-
-  /* Regular · 14 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
+  @include semiBold1420();
 
   display: flex;
   align-items: center;
   text-align: center;
-
-  /* Grey 4 */
-
-  color: #c8c8c8;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  justify-content: center;
+  color: $grey4;
 }
 .reserva-input-desktop2 {
   /* Input Desktop 2 */
@@ -741,70 +671,30 @@
   flex-grow: 1;
 }
 .reserva-user-interface {
-  /* User Interface */
-
   width: 20px;
   height: 20px;
-
-  /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
 }
 .reserva-c-t-a-desktop1 {
-  /* CTA-Desktop-1 */
-
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
   gap: 4px;
-
   width: 178px;
   height: 44px;
-
-  /* Grey 3 */
-
-  background: #e1e1e1;
+  background: $grey3;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 .reserva-text16 {
-  /* Text */
-
   width: 130px;
   height: 20px;
-
-  /* Semibold · 16 · 20 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  /* identical to box height, or 125% */
-
+  @include semiBold1620();
   display: flex;
   align-items: center;
   text-align: center;
-  font-feature-settings: "zero" on;
-
-  /* Grey 6 */
-
   color: #8c8c8c;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
