@@ -1,28 +1,17 @@
-//Falta refactorizar
-
 .divReservas {
   /* Reservas */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
+  @include autoLayoutCol(16px);
 
   position: absolute;
   width: 1176px;
   height: 768px;
-  left: 96px;
+  left: 380px; // antes estaba en 96px
   top: 188px;
 }
 
 .divPedido {
   /* Pedido Mi Cuenta */
-
   box-sizing: border-box;
-
   /* Auto layout */
 
   display: flex;
@@ -36,10 +25,10 @@
 
   /* White */
 
-  background: #ffffff;
+  background: $white;
   /* Grey 2 */
 
-  border: 1px solid #f0f0f0;
+  border: 1px solid $grey2;
   border-radius: 12px;
 
   /* Inside auto layout */
@@ -53,11 +42,7 @@
 
   /* Auto layout */
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCol(4px);
 
   width: 228.25px;
   height: 36px;
@@ -76,16 +61,12 @@
 
   /* Regular · 12 · 16 */
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  @include regular1216;
   /* identical to box height, or 133% */
 
   /* Grey 8 */
 
-  color: #505050;
+  color: $grey8;
 
   /* Inside auto layout */
 
@@ -102,19 +83,10 @@
 
   /* Semibold · 14 · 16 */
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+  @include semiBold1416;
   /* identical to box height, or 114% */
 
   font-feature-settings: "zero" on;
-
-  /* Black */
-
-  color: #000000;
-
   /* Inside auto layout */
 
   flex: none;
@@ -127,11 +99,7 @@
 
   /* Auto layout */
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCol(4px);
 
   width: 228.25px;
   height: 36px;
@@ -150,16 +118,12 @@
 
   /* Regular · 12 · 16 */
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  @include regular1216;
   /* identical to box height, or 133% */
 
   /* Grey 8 */
 
-  color: #505050;
+  color: $grey8;
 
   /* Inside auto layout */
 
@@ -176,19 +140,10 @@
 
   /* Semibold · 14 · 16 */
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+  @include semiBold1416;
   /* identical to box height, or 114% */
 
   font-feature-settings: "zero" on;
-
-  /* Black */
-
-  color: #000000;
-
   /* Inside auto layout */
 
   flex: none;
@@ -201,11 +156,7 @@
 
   /* Auto layout */
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCol(4px);
 
   width: 228.25px;
   height: 36px;
@@ -223,17 +174,10 @@
   height: 16px;
 
   /* Regular · 12 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  /* identical to box height, or 133% */
-
+  @include regular1216;
   /* Grey 8 */
 
-  color: #505050;
+  color: $grey8;
 
   /* Inside auto layout */
 
@@ -249,20 +193,10 @@
   height: 16px;
 
   /* Semibold · 14 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+  @include semiBold1416;
   /* identical to box height, or 114% */
 
   font-feature-settings: "zero" on;
-
-  /* Black */
-
-  color: #000000;
-
   /* Inside auto layout */
 
   flex: none;
@@ -274,12 +208,7 @@
   /* Info */
 
   /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 4px;
+  @include autoLayoutCol(4px);
 
   width: 228.25px;
   height: 36px;
@@ -297,17 +226,12 @@
   height: 16px;
 
   /* Regular · 12 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  @include regular1216;
   /* identical to box height, or 133% */
 
   /* Grey 8 */
 
-  color: #505050;
+  color: $grey8;
 
   /* Inside auto layout */
 
@@ -323,20 +247,10 @@
   height: 16px;
 
   /* Semibold · 14 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+  @include semiBold1416;
   /* identical to box height, or 114% */
 
   font-feature-settings: "zero" on;
-
-  /* Black */
-
-  color: #000000;
-
   /* Inside auto layout */
 
   flex: none;
@@ -361,7 +275,7 @@
 
   /* Grey 1 */
 
-  background: #f5f5f5;
+  background: $grey1;
   border-radius: 8px;
 
   /* Inside auto layout */
@@ -378,11 +292,7 @@
 
   /* Semibold · 15 · 20 */
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
+  @include semiBold1520;
   /* identical to box height, or 133% */
 
   display: flex;
@@ -391,8 +301,7 @@
   font-feature-settings: "zero" on;
 
   /* Principal */
-
-  color: #a442f1;
+  color: $primaryColor;
 
   /* Inside auto layout */
 
@@ -417,22 +326,17 @@
 
   position: absolute;
   height: 24px;
-  left: 96px;
+  left: 380px; //antes estaba en 96px
   right: 96px;
   top: 140px;
 
   /* SemiBold · 20 · 24 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
+  @include semiBold2024;
   /* identical to box height, or 120% */
 
   font-feature-settings: "zero" on;
 
   /* Black */
 
-  color: #000000;
+  color: $black;
 }

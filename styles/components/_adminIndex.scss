@@ -1,0 +1,96 @@
+.box {
+  position: relative;
+  max-width: 1920px;
+  left: 86px;
+  height: 1068px;
+  background: $white;
+}
+
+.title {
+  display: flex;
+  position: absolute;
+  height: 24px;
+  left: 96px;
+  right: 96px;
+  top: 160px;
+  justify-content: flex-start;
+  span {
+    @include semiBold2024();
+    color: $black;
+  }
+}
+
+.bookingContainer {
+  /* Reservas */
+  @include autoLayoutCol(16px);
+  position: absolute;
+  width: 1176px;
+  height: 740px;
+  left: 96px;
+  top: 208px;
+
+  div {
+    /* Pedido Mi Cuenta */
+    box-sizing: border-box;
+    /* Auto layout */
+    @include autoLayoutRow(16px);
+    align-items: center;
+    width: 1176px;
+    height: 92px;
+    /* White */
+    background: $white;
+    /* Grey 2 */
+    border: 1px solid $grey2;
+    border-radius: 12px;
+
+    div {
+      @include autoLayoutCol(4px);
+      border: none;
+      gap: 4px;
+      width: 244px;
+      height: 36px;
+
+      div {
+        border: none;
+        /* Txt */
+        width: 244px;
+        height: 16px;
+        @include regular1216();
+        color: $grey8;
+      }
+    }
+  }
+}
+.content {
+  /* Txt */
+  width: 244px;
+  height: 16px;
+  @include semiBold1416();
+  /* Black */
+  color: $black;
+}
+
+.buttonEdit {
+  /* CTA-Desktop-4 */
+  @include autoLayoutRow(8px);
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 44px;
+  background: $grey1;
+  border-radius: 8px;
+
+  span {
+    /* Txt */
+
+    width: 40px;
+    height: 20px;
+
+    /* Semibold · 15 · 20 */
+    @include semiBold1520();
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $primaryColor;
+  }
+}

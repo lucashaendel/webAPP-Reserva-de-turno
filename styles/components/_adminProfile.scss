@@ -1,0 +1,219 @@
+.perfil-administrador-perfil-administrador {
+  /* Perfil Administrador */
+  position: relative;
+  width: 1368px;
+  height: 768px;
+  background: $grey1;
+}
+.perfil-administrador-formulario {
+  /* Formulario */
+
+  /* Auto layout */
+  @include autoLayoutCol(16px);
+  padding: 40px 40px 32px;
+  position: absolute;
+  width: 878px;
+  height: 512px;
+  left: 245px;
+  top: 160px;
+  background: $white;
+  @include shadowBox();
+  border-radius: 12px;
+}
+.perfil-administrador-text {
+  /* Mis datos */
+  width: 798px;
+  height: 24px;
+  @include semiBold2024();
+  color: $black;
+}
+.perfil-administrador-input-desktop2 {
+  /* Input Desktop 2 */
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.perfil-administrador-txt {
+  /* Txt */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+.perfil-administrador-text02 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.perfil-administrador-input-desktop1 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.perfil-administrador-input-desktop21 {
+  /* Input Desktop 2 */
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.perfil-administrador-txt1 {
+  /* Txt */
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+.perfil-administrador-text04 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  align-items: center;
+  color: $black;
+}
+.perfil-administrador-input-desktop11 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+  /* Auto layout */
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.perfil-administrador-input-desktop22 {
+  /* Input Desktop 2 */
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.perfil-administrador-txt2 {
+  /* Txt */
+  /* Auto layout */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+.perfil-administrador-text06 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.perfil-administrador-input-desktop12 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+  /* Auto layout */
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.perfil-administrador-horario {
+  /* Horario */
+  /* Auto layout */
+  @include autoLayoutCol(8px);
+  width: 798px;
+  height: 90px;
+}
+.perfil-administrador-input-desktop23 {
+  /* Input Desktop 2 */
+  @include autoLayoutCol(2px);
+  width: 798px;
+  height: 66px;
+}
+.perfil-administrador-txt3 {
+  /* Txt */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 20px;
+}
+.perfil-administrador-text08 {
+  /* Título */
+  width: 798px;
+  height: 20px;
+  @include regular1420();
+  display: flex;
+  align-items: center;
+  color: $black;
+}
+.perfil-administrador-input-desktop13 {
+  /* Input Desktop 1 */
+  box-sizing: border-box;
+  /* Auto layout */
+  @include autoLayoutRow(8px);
+  align-items: center;
+  padding: 12px 8px 12px 12px;
+  width: 798px;
+  height: 44px;
+  background: $white;
+  border: 1px solid $grey3;
+  border-radius: 8px;
+}
+.perfil-administrador-input-desktop3 {
+  /* Input Desktop 3 */
+  @include autoLayoutRow(4px);
+  align-items: center;
+  width: 798px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.editpassword {
+  /* Txt */
+  width: 798px;
+  height: 16px;
+  @include semiBold1416();
+  display: flex;
+  align-items: center;
+  color: $primaryColor;
+}
+.perfil-administrador-c-t-a-desktop1 {
+  /* CTA-Desktop-1 */
+  @include autoLayoutRow(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  width: 798px;
+  height: 48px;
+  background: $primaryColor;
+  border-radius: 8px;
+}
+.perfil-administrador-text10 {
+  /* Text */
+  width: 750px;
+  height: 20px;
+  display: flex;
+  span {
+    @include semiBold1620();
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    color: $white;
+  }
+}

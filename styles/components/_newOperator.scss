@@ -1,0 +1,284 @@
+.formularioFormulario {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 40px 40px 32px;
+gap: 16px;
+position: absolute;
+width: 878px;
+height: 488px;
+left: 245px;
+top: 160px;
+background: $white;
+box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+border-radius: 12px;
+margin-left: 140px;
+  }
+  .formularioText {
+width: 798px;
+height: 24px;
+@include semiBold2024();
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+  }
+
+  .formularioInputDesktop2 {
+@include autoLayoutCol(2px);
+width: 798px;
+height: 66px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+ 
+  .formularioText02 {
+width: 798px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+  .formularioInputDesktop1 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 798px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioInputDesktop21 {
+@include autoLayoutCol(2px);
+width: 798px;
+height: 66px;
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioText04 {
+width: 798px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+
+  .formularioInputDesktop11 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 798px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+
+  .formularioFila {
+@include autoLayoutRow(16px);
+width: 798px;
+height: 66px;
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioText06 {
+width: 391px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+  .formularioInputDesktop12 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 391px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioText08 {
+width: 391px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+  .formularioInputDesktop13 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 391px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+
+  .formularioText10 {
+width: 343px;
+height: 20px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+display: flex;
+align-items: center;
+color: $grey5;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+
+  .formularioHorario {
+@include autoLayoutRow(16px);
+width: 798px;
+height: 66px;
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+  }
+
+  .formularioText12 {
+width: 391px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
+  .formularioInputDesktop14 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 391px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+
+  .formularioText14 {
+width: 391px;
+height: 20px;
+@include regular1420();
+display: flex;
+align-items: center;
+color: $black;
+order: 0;
+flex-grow: 1;
+  }
+  .formularioInputDesktop15 {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 8px 12px 12px;
+gap: 8px;
+width: 391px;
+height: 44px;
+background: $white;
+border: 1px solid $grey3;
+border-radius: 8px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioCtaDesktop1 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 24px;
+gap: 4px;
+width: 798px;
+height: 48px;
+background: $primaryColor;
+border-radius: 8px;
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+  }
+  .formularioText16 {
+width: 750px;
+height: 20px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+align-items: center;
+text-align: center;
+font-feature-settings: 'zero' on;
+color: $white;
+flex: none;
+order: 1;
+flex-grow: 1;
+  }
+  
+  .send{text-align: center;}
+
+  .centrar{background-color: red;}
+
+ 
