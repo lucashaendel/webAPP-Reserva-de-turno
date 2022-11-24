@@ -14,14 +14,10 @@
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",
     "react": "18.2.0",
-
-    "react-dom": "18.2.0",
-    "sweetalert2": "^11.6.13"
-
+    "sweetalert2": "^11.6.13",
     "react-calendar": "^4.0.0",
     "react-dom": "18.2.0",
     "react-form-stepper": "^2.0.3"
-
   },
   "devDependencies": {
     "sass": "^1.56.1"
