@@ -1,345 +1,28 @@
 .box {
-  /* Administrador: Listado de sucursales */
-
   position: relative;
-  width: 1368px;
+  max-width: 1920px;
+  left: 86px;
   height: 1068px;
-
-  /* White */
-
-  background: #ffffff;
-}
-
-.Header {
-  height: 76px;
-  width: 1368px;
-  left: 0px;
-  top: 36px;
-  border-radius: 0px;
-  padding: 16px 96px 16px 96px;
-
-  /* Header */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px 96px;
-  gap: 14px;
-  position: absolute;
-  width: 1368px;
-  height: 76px;
-  left: 0px;
-  top: 36px;
-
-  /* White */
-  background: #ffffff;
-
-  /* Shadow */
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-
-  .CTA-desktop-2 {
-    /* CTA-Desktop-2 */
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 24px;
-    gap: 4px;
-    width: 153px;
-    height: 44px;
-    background: rgba(164, 66, 241, 0.1);
-    border: none;
-    border-radius: 8px;
-
-    /* Inside auto layout */
-
-    div {
-      flex: none;
-      order: 0;
-      align-self: stretch;
-      flex-grow: 0;
-      span {
-        width: 115px;
-        height: 20px;
-
-        /* Semibold · 16 · 20 */
-
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height, or 125% */
-
-        display: flex;
-        align-items: center;
-        text-align: center;
-        font-feature-settings: "zero" on;
-
-        /* Principal */
-
-        color: #a442f1;
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-      }
-    }
-  }
-
-  .CTA-desktop-2-b {
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 24px;
-    gap: 4px;
-
-    width: 111px;
-    height: 44px;
-
-    background: rgba(164, 66, 241, 0.1);
-    border-radius: 8px;
-    border: none;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-
-    div {
-      span {
-        width: 63px;
-        height: 20px;
-
-        /* Semibold · 16 · 20 */
-
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height, or 125% */
-
-        display: flex;
-        align-items: center;
-        text-align: center;
-        font-feature-settings: "zero" on;
-
-        /* Principal */
-
-        color: #a442f1;
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-      }
-    }
-  }
-  .listItems {
-    /* Menú */
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px;
-    gap: 50px;
-
-    width: 884px;
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 1;
-
-    .branchItem {
-      /* CTA-Desktop-3 */
-      /* Auto layout */
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0px;
-      gap: 2px;
-      list-style: none;
-      width: 92px;
-      height: 20px;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-
-      /* Txt */
-
-      width: 70px;
-      height: 16px;
-
-      /* Semibold · 14 · 16 */
-
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 16px;
-      /* identical to box height, or 114% */
-
-      display: flex;
-      align-items: center;
-      font-feature-settings: "zero" on;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-
-      /* Principal */
-
-      color: #a442f1;
-    }
-
-    .operatorItem {
-      /* Txt */
-
-      width: 73px;
-      height: 16px;
-
-      /* Semibold · 14 · 16 */
-
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 16px;
-      /* identical to box height, or 114% */
-
-      display: flex;
-      align-items: center;
-      font-feature-settings: "zero" on;
-
-      /* Black */
-
-      color: #000000;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-    }
-    .reportsItem {
-      /* Txt */
-      width: 58px;
-      height: 16px;
-
-      /* Semibold · 14 · 16 */
-
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 16px;
-      /* identical to box height, or 114% */
-
-      display: flex;
-      align-items: center;
-      font-feature-settings: "zero" on;
-
-      /* Black */
-
-      color: #000000;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-    }
-    .myAccountItem {
-      /* Txt */
-
-      width: 94px;
-      height: 16px;
-
-      /* Semibold · 14 · 16 */
-
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 16px;
-      /* identical to box height, or 114% */
-
-      display: flex;
-      align-items: center;
-      font-feature-settings: "zero" on;
-
-      /* Black */
-
-      color: #000000;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-    }
-  }
+  background: $white;
 }
 
 .title {
+  display: flex;
   position: absolute;
   height: 24px;
   left: 96px;
   right: 96px;
   top: 160px;
-
+  justify-content: flex-start;
   span {
-    /* SemiBold · 20 · 24 */
-
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height, or 120% */
-
-    font-feature-settings: "zero" on;
-
-    /* Black */
-
-    color: #000000;
+    @include semiBold2024();
+    color: $black;
   }
 }
 
 .bookingContainer {
   /* Reservas */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
-
+  @include autoLayoutCol(16px);
   position: absolute;
   width: 1176px;
   height: 740px;
@@ -350,126 +33,52 @@
     /* Pedido Mi Cuenta */
     box-sizing: border-box;
     /* Auto layout */
-    display: flex;
-    flex-direction: row;
+    @include autoLayoutRow(16px);
     align-items: center;
-    padding: 24px;
-    gap: 16px;
     width: 1176px;
     height: 92px;
     /* White */
-    background: #ffffff;
+    background: $white;
     /* Grey 2 */
-    border: 1px solid #f0f0f0;
+    border: 1px solid $grey2;
     border-radius: 12px;
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 
     div {
-      /* Info */
-
-      /* Auto layout */
+      @include autoLayoutCol(4px);
       border: none;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
       gap: 4px;
-
       width: 244px;
       height: 36px;
-
-      /* Inside auto layout */
-
-      flex: none;
-      order: 0;
-      flex-grow: 1;
 
       div {
         border: none;
         /* Txt */
         width: 244px;
         height: 16px;
-
-        /* Regular · 12 · 16 */
-
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        /* identical to box height, or 133% */
-
-        /* Grey 8 */
-
-        color: #505050;
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
+        @include regular1216();
+        color: $grey8;
       }
     }
   }
 }
-.hola {
+.content {
   /* Txt */
   width: 244px;
   height: 16px;
-
-  /* Semibold · 14 · 16 */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-
-  font-feature-settings: "zero" on;
-
+  @include semiBold1416();
   /* Black */
-
-  color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  color: $black;
 }
 
-button {
+.buttonEdit {
   /* CTA-Desktop-4 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
+  @include autoLayoutRow(8px);
   justify-content: center;
   align-items: center;
-  padding: 12px 24px;
-  gap: 8px;
-
   width: 88px;
   height: 44px;
-
-  /* Grey 1 */
-
-  background: #f5f5f5;
+  background: $grey1;
   border-radius: 8px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 5;
-  flex-grow: 0;
-  border: none;
 
   span {
     /* Txt */
@@ -478,27 +87,10 @@ button {
     height: 20px;
 
     /* Semibold · 15 · 20 */
-
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-    /* identical to box height, or 133% */
-
+    @include semiBold1520();
     display: flex;
     align-items: center;
     text-align: center;
-    font-feature-settings: "zero" on;
-
-    /* Principal */
-
-    color: #a442f1;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    color: $primaryColor;
   }
 }

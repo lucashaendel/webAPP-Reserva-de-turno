@@ -4,12 +4,6 @@ const operatorList = () => {
   return (
     <>
       <div className="box">
-        <div className="topBanner">
-          <div className="txt">
-            <p>Mensaje Promocional</p>
-          </div>
-        </div>
-
         <div className="Header">
           <div>
             <button className="CTA-desktop-2">
@@ -93,7 +87,7 @@ const operatorList = () => {
         <div className="title">
           <span>Operadores</span>
         </div>
-        <div className="bookingContainer">
+        <div className="operatorsContainer">
           <div>
             <div>
               <div>Nombre</div>
@@ -107,23 +101,23 @@ const operatorList = () => {
                 <span className="inputText">camila@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Balvanera</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>
@@ -140,23 +134,23 @@ const operatorList = () => {
                 <span className="inputText">carlos@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Palermo</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>
@@ -173,23 +167,23 @@ const operatorList = () => {
                 <span className="inputText">rocio@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Villa Crespo</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>
@@ -206,23 +200,23 @@ const operatorList = () => {
                 <span className="inputText">daiana@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Recoleta</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>
@@ -239,23 +233,23 @@ const operatorList = () => {
                 <span className="inputText">franco@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Palermo</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>
@@ -272,23 +266,23 @@ const operatorList = () => {
                 <span className="inputText">matias@e-cruce.com</span>
               </div>
             </div>
-            <div class="administrador-listadodeoperadores-info22">
-              <span class="administrador-listadodeoperadores-text100 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info22">
+              <span className="administrador-listadodeoperadores-text100 Regular·12·16">
                 <span>Sucursal</span>
               </span>
-              <span class="administrador-listadodeoperadores-text102 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text102 Semibold·14·16">
                 <span>Nuñez</span>
               </span>
             </div>
-            <div class="administrador-listadodeoperadores-info23">
-              <span class="administrador-listadodeoperadores-text104 Regular·12·16">
+            <div className="administrador-listadodeoperadores-info23">
+              <span className="administrador-listadodeoperadores-text104 Regular·12·16">
                 <span>Contraseña</span>
               </span>
-              <span class="administrador-listadodeoperadores-text106 Semibold·14·16">
+              <span className="administrador-listadodeoperadores-text106 Semibold·14·16">
                 <span>***************</span>
               </span>
             </div>
-            <button>
+            <button className="editButton">
               <span>Editar</span>
             </button>
           </div>

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import Navbar from "../../comps/Navbar";
 
 const index = () => {
+  const [value, onChange] = useState(new Date());
   return (
     <div>
+      <Navbar />
       <div className="containerCalendar">
-        <h2>calendar desde REACT</h2>
+        <Calendar onChange={onChange} value={value} />
+        {/* {console.log(value)} */}
       </div>
+
       <div class="reserva-reserva">
         <div class="reserva-content">
           <div class="reserva-head">
@@ -45,7 +52,7 @@ const index = () => {
                   class="reserva-border4"
                 />
                 <div class="reserva-number2">
-                  <span class="reserva-text10 Semibold·14·20">3</span>
+                  <span class="reserva-text10 Semibold·14·20">2</span>
                 </div>
                 <img
                   src="/playground_assets/borderi417-3jff-200h.png"

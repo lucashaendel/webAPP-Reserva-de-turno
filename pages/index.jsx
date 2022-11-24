@@ -16,26 +16,25 @@ const login = () => {
         <div className="head-login">
           <h2>Iniciar sesión</h2>
         </div>
-        <div className="inputs-login">
+        <form className="inputs-login">
           <div className="input-login">
             <label>Usuario</label>
-            <input type="text" />
+            <input type="text" required />
           </div>
 
           <div className="input-login">
             <label>Contraseña</label>
-            <input type="password" />
+            <input type="password" required />
           </div>
 
           <Link href="#" className="forgot-pw">
             ¿olvidaste tu contraseña?
           </Link>
-        </div>
-        <button className="btn-login">
-          <span>ingresar</span>
-        </button>
-
-        <button className="btn-register">¿No tenés cuenta? Registrate</button>
+          <button className="btn-login">ingresar</button>
+        </form>
+        <Link href="/register">
+          <button className="btn-register">¿No tenés cuenta? Registrate</button>
+        </Link>
       </div>
     </div>
   );
