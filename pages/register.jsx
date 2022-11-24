@@ -1,8 +1,112 @@
-import React from "react";
+
 import Link from "next/link";
 import TopBanner from "../comps/TopBanner"
+import {useState} from "react";
+import Pwd from "../PWDrequisite";
+import axios from "axios";
+import SvgEyesOne from "../comps/SvgEyesOne";
+import SvgEyesTwo from "../comps/SvgEyesTwo";
+import Swal from 'sweetalert2'
+import { useRouter } from "next/router";
+
+
 
 const register = () => { 
+const [nameLastName, setNameLastName]=useState("")
+const [dni, setDni]=useState(0)
+const [email, setEmail]=useState("")
+const [password, setPassword]=useState("")
+const [repeatPassword, setRepeatPassword]=useState("")
+
+const [pwdEyes,setPwdEyes]=useState(false)
+const [pwdEyesTwo,setPwdEyesTwo]=useState(false)
+
+
+const [pwdRequisite,setPwdRequisite]=useState(false)
+const [checks, setChecks]= useState({
+
+capsLetterCheck: false,
+numberCheck: false,
+pwdLengthCheck: false, 
+letterToLowerCase: false,
+empty:true,
+})
+
+const handleChangeName=(e)=>{
+setNameLastName(e.target.value)
+}
+const handleChangeDni=(e)=>{
+  setDni(e.target.value)
+}
+const handleChangeEmail=(e)=>{
+  setEmail(e.target.value)
+}
+const handleChangePassword=(e)=>{
+  setPassword(e.target.value)
+
+}
+const handleRepeatPassword=(e)=> {
+  setRepeatPassword(e.target.value)
+}
+
+const handleOnFocus=(e)=> {
+  setPwdRequisite(true)
+}
+
+const handleOnBlur=()=>{
+  setPwdRequisite(false)
+}
+
+
+const handleOnKeyUp=(e)=> {
+const {value}= e.target;
+const capsLetterCheck= /[A-Z]/.test(value);
+const numberCheck= /[0-9]/.test(value);
+const pwdLengthCheck=value.length>=8
+ const letterToLowerCase= /[a-z]/.test(value);
+ const empty=!(value)
+
+
+
+ 
+ setChecks({capsLetterCheck,
+numberCheck,
+pwdLengthCheck,
+letterToLowerCase,
+empty,
+})
+}
+
+const router= useRouter()
+
+
+const handleSubmit=(e)=>{ 
+  e.preventDefault()
+if(checks.capsLetterCheck&&checks.numberCheck&&checks.pwdLengthCheck&&checks.letterToLowerCase&&password===repeatPassword) {  
+  axios.post("#", {nameLastName,dni,email,password})
+  .then((res) =>  res.data
+  );
+Swal.fire({
+    title:"Exito",
+    text: "Se registró de manera exitosa" ,
+    icon:"success",
+    allowOutsideClick: false,
+   
+  }).then(res => {
+    if(res.isConfirmed) {        
+       router.push("/")
+    } 
+   }
+  ) 
+} else {Swal.fire({
+  title:"Error",
+  text: "Error de validacion o contraseña",
+  icon:"error",
+  allowOutsideClick: false
+
+})}}
+
+    
   return (
     <> <TopBanner/>
     <div className="divRegistar">
@@ -27,15 +131,17 @@ const register = () => {
         </div> <div className="crearCuenta"> <h2 > Crear cuenta</h2> 
           </div>
       </div>
+    
+    <form onSubmit={handleSubmit}>
       <div className="containerInputs">
         <div className="inputFilaOne">
           <div className="InputDesktop2">
             <div className="loginMailTxt">
-              <span className="loginMailText04 Regular·14·20">
+              <span className="loginMailText04 Regular·14·20">                
                 <span>Nombre y Apellido</span>
               </span>
             </div>
-            <input type="text" placeholder className="login-mail-input-desktop1" />
+            <input type="text" placeholder className="login-mail-input-desktop1" onChange={handleChangeName} value={nameLastName} required/>
           </div>
           <div>
             <div>
@@ -43,7 +149,7 @@ const register = () => {
                 <span>DNI</span>
               </span>
             </div>
-            <input type="text" placeholder className="loginMailInputDesktop11" />
+            <input type="number" placeholder className="loginMailInputDesktop11" onChange={handleChangeDni} value={dni} required/>
           </div>
         </div>
         <div className="loginMailInputDesktop22">
@@ -52,7 +158,7 @@ const register = () => {
               <span>Mail</span>
             </span>
           </div>     
-          <input type="text" placeholder className="loginMailInputDesktop12" />
+          <input type="email" placeholder className="loginMailInputDesktop12" onChange={handleChangeEmail} value={email} required/>
         </div>
         <div className="loginMailFila1">
           <div className="loginMailInputDesktop23"> 
@@ -61,7 +167,20 @@ const register = () => {
                 <span>Contraseña</span> 
               </span>
             </div>
-            <input type="password"  className="login-mail-input-desktop1"/>
+            <input 
+            className="login-mail-input-desktop1" 
+            type={pwdEyes?"text":"password"}
+            onChange={handleChangePassword} 
+            value={password} 
+            required 
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            onKeyUp={handleOnKeyUp}    
+                          
+            />
+              <div className="svgEyes" onClick={()=> setPwdEyes(!pwdEyes)}>   
+              {!pwdEyes?<SvgEyesOne/>
+                :<SvgEyesTwo/>}  </div>  
             <div>  
               <span className="login-mail-text12 Regular·14·20"></span>
               <div className="loginMailUserInterface1">                 
@@ -74,73 +193,41 @@ const register = () => {
                 <span>Repetir Contraseña</span>
               </span>
             </div>
-            <input type="password"  className="pass"/>
-            <div >
+            <input type={pwdEyesTwo?"text":"password"} className="pass" onChange={handleRepeatPassword} value={repeatPassword} required />
+            <div className="svgEyesTwo" onClick={()=> setPwdEyesTwo(!pwdEyesTwo)}>
+            {!pwdEyesTwo? <SvgEyesOne/>
+                        :<SvgEyesTwo/>} 
               <span className="login-mail-text15 Regular·14·20"></span>
               <div className="loginMailUserInterface2">
               </div>
             </div>
           </div>
         </div>
-        <div className="loginMailAdvertencia">
-          <div >
-            <span className="loginMailText16">
-              <span>La contraseña debe contener:</span>
-            </span>
-          </div>
-          <div className="loginMailContent">
-            <div className="loginMailFila2">
-              <div className="loginMailFila3">
-                <span className="loginMailText18 BodyRegular·12·16">
-                  <span>ABC</span>
-                </span>
-                <span className="loginMailText20 BodyRegular·12·16">
-                  <span>Una letra mayúscula</span>
-                </span>
-              </div>
-              <div className="loginMailFila4">
-                <span className="loginMailText22 BodyRegular·12·16">
-                  <span>abc</span>
-                </span>
-                <span className="loginMailText24 BodyRegular·12·16">
-                  <span>Una letra minúscula</span>
-                </span>
-              </div>
-            </div>
-            <div className="loginMailFila5">
-              <div className="loginMailFila6">
-                <span className="loginMailText26 BodyRegular·12·16">
-                  <span>123</span>
-                </span>
-                <span className="loginMailText28 BodyRegular·12·16">
-                  <span>Un número</span>
-                </span>
-              </div>
-              <div className="loginMailFila7">
-                <span className="loginMailText30 BodyRegular·12·16">
-                  <span>***</span>
-                </span>
-                <span className="loginMailText32 BodyRegular·12·16">
-                  <span>Mínimo 8 caracteres</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+       <div  className="loginMailAdvertencia"> 
+        {<Pwd neutral={checks.empty? "gris":""}             
+          capsLetterFlag={checks.capsLetterCheck?"valid":"invalid"}
+          numberFlag={checks.numberCheck?"valid":"invalid"}
+          pwdLengthFlag={checks.pwdLengthCheck?"valid":"invalid"}
+          specialCharFlag={checks.letterToLowerCase?"valid":"invalid"}
+          /> } </div>
       </div>
-      <button className="loginMailCtaDesktop1">
+      <button  className="loginMailCtaDesktop1" type="submit">
         <span className="loginMailText34 Semibold·16·20">
           Registrarme
         </span>
       </button>
+      </form>
       <div className="loginMailCtaDesktop2">
         <span className="loginMailText36 Semibold·16·20">
           <Link href="/"><span>¿Ya tenés cuenta? Iniciá sesión</span> </Link>
         </span>
       </div>
     </div>
+    <div>
+     </div>
     </>
   );
+  
 };
 export default register;
 
