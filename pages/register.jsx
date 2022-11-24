@@ -146,7 +146,6 @@ const register = () => {
                 </div>
                 <input
                   type="text"
-                  placeholder
                   className="login-mail-input-desktop1"
                   onChange={handleChangeName}
                   value={nameLastName}
@@ -161,7 +160,6 @@ const register = () => {
                 </div>
                 <input
                   type="number"
-                  placeholder
                   className="loginMailInputDesktop11"
                   onChange={handleChangeDni}
                   value={dni}
@@ -177,7 +175,6 @@ const register = () => {
               </div>
               <input
                 type="email"
-                placeholder
                 className="loginMailInputDesktop12"
                 onChange={handleChangeEmail}
                 value={email}
