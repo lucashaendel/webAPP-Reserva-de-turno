@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const validateSchema = require("../middlewares/schemaValidation");
+const { loginSchema, signupSchema } = require("../schema");
 
 const {
   allUser,
@@ -12,9 +14,9 @@ const {
 // ruta para el operator obtener los usuarios
 router.get("/", allUser);
 
-router.post("/register", createUser);
+router.post("/register", validateSchema(signupSchema), createUser);
 // Login Usuario
-router.post("/login", loginUser);
+router.post("/login", validateSchema(loginSchema), loginUser);
 
 router.post("/logout", logOutUser);
 
