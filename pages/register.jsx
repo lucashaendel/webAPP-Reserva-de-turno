@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 const register = () => {
   const [fullName, setFullName] = useState("");
-  const [dni, setDni] = useState(Number);
+  const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -83,7 +83,7 @@ const register = () => {
       axios
         .post("http://localhost:5000/api/user/register", { fullName, dni, email, password })
         .then((res) => res.data)
-        .catch((err) => console.log(err,"error"));;
+        .catch((err) => alert("error"));;
       Swal.fire({
         title: "Exito",
         text: "Se registró de manera exitosa",
