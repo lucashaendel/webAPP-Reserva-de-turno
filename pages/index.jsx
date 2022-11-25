@@ -1,7 +1,7 @@
+
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../comps/Navbar";
-
 import Link from "next/link";
 import authContext from "../context/authContext";
 import { useRouter } from "next/router";
@@ -39,6 +39,7 @@ const login = () => {
   //   console.log("Cookie borrada");
   // };
   return (
+    
     <div>
       {/* {user?.name ? <h1>logueado</h1> : <h1>Deslogueado</h1>} */}
       <div className="container-login">
@@ -66,9 +67,9 @@ const login = () => {
             />
           </div>
 
-          {/* <Link href="#" className="forgot-pw">
+           <Link href="#" className="forgot-pw">
             ¿olvidaste tu contraseña?
-          </Link> */}
+          </Link>
           <button className="btn-login">ingresar</button>
         </form>
         <Link href="/register">

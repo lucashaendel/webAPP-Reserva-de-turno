@@ -1,6 +1,6 @@
 ## Pitch Battle
 
-# Plataforma 5 - Coding Bootcamp
+### Plataforma 5 - Coding Bootcamp
 
 Empresa: _CRUCE_
 

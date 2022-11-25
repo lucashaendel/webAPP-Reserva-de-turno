@@ -8,6 +8,7 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+
     dni: {
       type: Number,
       require: true,

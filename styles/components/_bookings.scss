@@ -1,77 +1,37 @@
 .titleBookings {
-  /* Reservas */
-
   position: absolute;
   height: 24px;
-  //   left: 96px;
   left: 160px;
-
   right: 96px;
   top: 160px;
-
-  /* SemiBold · 20 · 24 */
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-
-  /* identical to box height, or 120% */
-  font-feature-settings: "zero" on;
-
-  /* Black */
-  color: #000000;
+  @include semiBold2024();
 }
 
 .bookings {
-  /* Reservas */
-
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-
   position: absolute;
   width: 1176px;
   height: 768px;
-  //   left: 96px;
   left: 160px;
   top: 208px;
 }
 
 .myAccount {
-  /* Pedido Mi Cuenta */
-
-  box-sizing: border-box;
-
-  /* Auto layout */
   display: flex;
   flex-direction: row;
-  //   align-items: center;
   padding: 24px;
   gap: 16px;
-
   width: 1176px;
   height: 96px;
-
-  /* White */
   background: $white;
-
-  /* Grey 2 */
   border: 1px solid $grey2;
   border-radius: 12px;
 
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-
   button {
-    /* CTA-Desktop-4 */
-
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -81,84 +41,30 @@
 
     width: 100px;
     height: 48px;
-
-    /* Grey 1 */
     background: $grey1;
     border-radius: 8px;
-
-    /* Inside auto layout */
     flex: none;
     order: 5;
     flex-grow: 0;
-
     color: $primaryColor;
     border: none;
   }
 }
 
 .info {
-  /* Info */
-
-  /* Auto layout */
-  //   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
   gap: 4px;
-
   width: 241px;
   height: 36px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
   h2 {
-    /* Txt */
-
     width: 241px;
     height: 16px;
-
-    /* Regular · 12 · 16 */
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-
-    /* identical to box height, or 133% */
-
-    /* Grey 8 */
+    @include regular1216();
     color: #505050;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
   }
 
   p {
     width: 241px;
     height: 16px;
-
-    /* Semibold · 14 · 16 */
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 16px;
-
-    /* identical to box height, or 114% */
-    font-feature-settings: "zero" on;
-
-    /* Black */
-    color: #000000;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+    @include semiBold1416();
   }
 }
