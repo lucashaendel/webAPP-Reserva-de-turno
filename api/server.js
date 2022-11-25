@@ -4,7 +4,8 @@ require("dotenv").config();
 const model = require("./models");
 const routers = require("./routers");
 const app = express();
-
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 app.use("/api", routers);
 
