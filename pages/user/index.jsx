@@ -5,6 +5,8 @@ import Navbar from "../../comps/Navbar";
 
 const index = () => {
   const [value, onChange] = useState(new Date());
+  // const user = JSON.parse(localStorage.getItem("user"));
+  // console.log(user);
   return (
     <div>
       <Navbar />
