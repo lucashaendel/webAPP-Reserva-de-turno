@@ -5,10 +5,11 @@ const model = require("./models");
 const routers = require("./routers");
 const app = express();
 const cors = require("cors");
-app.use(cors());
+const cookieParser = require("cookie-parser");
 app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
 app.use("/api", routers);
-
 mongoose
   .connect(process.env.MONGODB_URI)
   .then((result) => {

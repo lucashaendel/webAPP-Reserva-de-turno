@@ -1,13 +1,12 @@
+import { AuthProvider } from "../context/authContext";
 import "../styles/base/global.scss";
 import "../styles/style.scss";
-// import Navbar from "../../comps/Navbar";
-// <Navbar />
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <AuthProvider>
       <Component {...pageProps} />
-    </>
+    </AuthProvider>
   );
 }
 

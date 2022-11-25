@@ -21,7 +21,7 @@ const createUser = (req, res) => {
 const loginUser = (req, res) => {
   const { email, password } = req.body;
   User.findOne({ email }).then((user) => {
-    if (!user) return res.send("no existe");
+    if (!user) return res.status(400).send("no existe");
 
     //se compara la nueva password con la anterior para el login
 
