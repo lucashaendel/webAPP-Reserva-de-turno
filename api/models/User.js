@@ -22,21 +22,19 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+    turns: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Turn",
+      },
+    ],
+
     salt: {
       type: String,
     },
   },
   { timestamps: true }
 );
-
-userSchema.pre("save", function (next) {
-  const salt = bcrypt.genSaltSync(10);
-  this.salt = salt;
-
-  return this.hashGen(this.password, salt).then(
-    (hash) => (this.password = hash)
-  );
-});
 
 userSchema.pre("findOneAndUpdate", function (next) {
   const salt = bcrypt.genSaltSync(10);
