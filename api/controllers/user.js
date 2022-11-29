@@ -4,16 +4,37 @@ const bcrypt = require("bcrypt");
 
 // Ruta para el operator obtener todos los usuarios
 const allUser = async (req, res) => {
-  const users = await User.find();
+  const users = await User.find().populate("turns", {
+    fullName: 1,
+    date: 1,
+    email: 1,
+    phone: 1,
+    attendance: 1,
+  });
   res.status(200).send(users);
 };
 // Ruta para crear 1 usuario
-const createUser = (req, res) => {
-  const newUser = new User(req.body);
-  newUser
-    .save()
-    .then((result) => res.status(201).send("Usuario creado"))
-    .catch((error) => console.log(error));
+const createUser = async (req, res, next) => {
+  try {
+    const { body } = req;
+    const { fullName, dni, email, password } = body;
+    const user = await User.find({ $or: [{ email }, { dni }] });
+    if (user[0]) return res.status(401).send("El usuario ya existe");
+    else {
+      const saltRounds = 10;
+      const passwordHash = await bcrypt.hash(password, saltRounds);
+      const newUser = new User({
+        fullName,
+        dni,
+        email,
+        password: passwordHash,
+      });
+      const savedUser = await newUser.save();
+      res.send(savedUser);
+    }
+  } catch (error) {
+    next(error);
+  }
 };
 
 // Ruta para hacer el login del usuario
@@ -31,7 +52,7 @@ const loginUser = (req, res) => {
       if (data) {
         let payload = {
           id: user._id,
-          name: user.name,
+          fullName: user.fullName,
           email: user.email,
         };
         let token = generateToken(payload);
@@ -56,8 +77,8 @@ const updateUser = (req, res) => {
   const data = req.body;
 
   const newData = {
-    name: data.name,
-    lastname: data.lastname,
+    fullName: data.fullName,
+
     dni: data.dni,
     email: data.email,
     password: data.password,
