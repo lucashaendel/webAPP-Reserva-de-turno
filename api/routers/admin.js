@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const isAdmin = require("../middleware/isAdmin");
-const isUser = require("../middleware/isUser");
+
 const {
   createAdmin,
   createOperator,

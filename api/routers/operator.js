@@ -9,6 +9,6 @@ const {
 } = require("../controllers/operator");
 
 router.put("/myProfile/:id", isOperator, updateOperator);
-router.get("/reservations/:id", getBranchReservation);
-router.put("/reservations/turn/:id", resConfirmed);
+router.get("/reservations/:id", isOperator, getBranchReservation);
+router.put("/reservations/turn/:id", isOperator, resConfirmed);
 module.exports = router;
