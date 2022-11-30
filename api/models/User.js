@@ -12,6 +12,7 @@ const userSchema = new Schema(
     dni: {
       type: Number,
       require: true,
+      unique: true,
     },
     email: {
       type: String,
@@ -22,6 +23,13 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+
+    role: {
+      type: String,
+      enum: ["user", "operator", "admin"],
+      default: "user",
+    },
+
     turns: [
       {
         type: Schema.Types.ObjectId,

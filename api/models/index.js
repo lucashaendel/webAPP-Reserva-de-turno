@@ -1,3 +1,5 @@
 const User = require("./User");
+const Admin = require("./Admin");
+const Operator = require("./Operator");
 
-module.exports = { User };
+module.exports = { User, Admin, Operator };
