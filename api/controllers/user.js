@@ -1,49 +1,69 @@
 const User = require("../models/User");
 const { generateToken } = require("../config/token");
 const bcrypt = require("bcrypt");
+const Operator = require("../models/Operator");
+const Admin = require("../models/Admin");
 
 // Ruta para el operator obtener todos los usuarios
 const allUser = async (req, res) => {
   const users = await User.find();
   res.status(200).send(users);
 };
+
 // Ruta para crear 1 usuario
-const createUser = (req, res) => {
-  const newUser = new User(req.body);
-  newUser
-    .save()
-    .then((result) => res.status(201).send("Usuario creado"))
-    .catch((error) => console.log(error));
+
+const createUser = async (req, res, next) => {
+  try {
+    const { body } = req;
+    const { fullName, dni, email, password } = body;
+    const user = await User.find({ $or: [{ email }, { dni }] });
+    console.log(user);
+    if (user[0]) return res.status(401).send("El usuario ya existe");
+    else {
+      const saltRounds = 10;
+      const passwordHash = await bcrypt.hash(password, saltRounds);
+      const newUser = new User({
+        fullName,
+        dni,
+        email,
+        password: passwordHash,
+      });
+      const savedUser = await newUser.save();
+      res.send(savedUser);
+    }
+  } catch (error) {
+    next(error);
+  }
 };
 
 // Ruta para hacer el login del usuario
-
-const loginUser = (req, res) => {
+const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  User.findOne({ email }).then((user) => {
-    if (!user) return res.status(400).send("no existe");
+  const user = await User.findOne({ email });
+  const operator = await Operator.findOne({ email });
+  const admin = await Admin.findOne({ email });
 
-    //se compara la nueva password con la anterior para el login
+  const result = [user, operator, admin];
+  const resultado = result.filter((e) => e != null);
 
-    bcrypt.compare(password, user.password, (err, data) => {
-      if (err) throw err;
-
-      if (data) {
-        let payload = {
-          id: user._id,
-          name: user.name,
-          email: user.email,
-        };
-        let token = generateToken(payload);
-        res.cookie("token", token);
-
-        return res.status(200).send(payload);
-      } else {
-        return res.status(401).json({ msg: "Invalid credencial" });
-      }
-    });
+  bcrypt.compare(password, resultado[0].password, (err, data) => {
+    if (err) throw err;
+    if (data) {
+      let payload = {
+        id: resultado[0]._id,
+        fullName: resultado[0].fullName,
+        email: resultado[0].email,
+        role: resultado[0].role,
+      };
+      let token = generateToken(payload);
+      res.cookie("token", token);
+      return res.status(200).send(payload); //ACORDARSE DE SACAR EL PAYLOAD
+    } else {
+      return res.status(401).json({ msg: "Invalid credencial" });
+    }
   });
 };
+
 // Ruta para el logout del usuario
 const logOutUser = (req, res) => {
   res.clearCookie("token");
