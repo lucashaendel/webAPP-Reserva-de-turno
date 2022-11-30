@@ -4,7 +4,7 @@ const Turn = require("../models/Turn");
 const bcrypt = require("bcrypt");
 
 /////***Route to change operator Password***/////
-const modifyPassword = async (req, res) => {
+const updateOperator = async (req, res) => {
   try {
     const { id } = req.params;
     const password = req.body.password;
@@ -37,7 +37,7 @@ const getBranchReservation = async (req, res) => {
 };
 
 /////***Route to confirm reservation***/////
-const reservConfirmed = async (req, res) => {
+const resConfirmed = async (req, res) => {
   const turnId = req.params.id;
   const data = req.body;
   const newData = {
@@ -54,4 +54,4 @@ const reservConfirmed = async (req, res) => {
   }
 };
 
-module.exports = { modifyPassword, getBranchReservation, reservConfirmed };
+module.exports = { updateOperator, getBranchReservation, resConfirmed };
