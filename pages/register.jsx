@@ -83,7 +83,7 @@ const register = () => {
       axios
         .post("http://localhost:5000/api/user/register", { fullName, dni, email, password })
         .then((res) => res.data)
-        .catch((err) => alert("error"));;
+        .catch((err) => alert(err,"error"));;
       Swal.fire({
         title: "Exito",
         text: "Se registró de manera exitosa",

@@ -1,221 +1,71 @@
-import Link from "next/link";
 import React from "react";
+import Navbar from "../../comps/Navbar";
 
-const index = () => {
+const index = ({ data }) => {
   return (
     <>
       <div className="box">
+        <Navbar />
         <div className="title">
           <span>Sucursales</span>
         </div>
         <div className="bookingContainer">
-          <div>
+          {data.map((dato, index) => (
             <div>
-              <div>Nombre</div>
               <div>
-                <span className="content">Iván Cruce</span>
+                <div>Nombre</div>
+                <div>
+                  <span className="content" key={index}>
+                    {dato.name}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div>
-              <div>Mail</div>
+
               <div>
-                <span className="content">ivan@e-cruce.com</span>
+                <div>Mail</div>
+                <div>
+                  <span className="content" key={index}>
+                    {dato.email}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
+
               <div>
-                <span className="content">2</span>
+                <div>Capacidad Máxima</div>
+                <div>
+                  <span className="content" key={index}>
+                    {dato.maxCapacity}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
               <div>
-                <span className="content">8:00 - 19:30 hs </span>
+                <div>Horario de Inicio y Cierre</div>
+                <div>
+                  <span className="content" key={index}>
+                    {dato.start} - {dato.end} Hs
+                  </span>
+                </div>
               </div>
+              <button className="edit">
+                <span className="editText">Editar</span>
+              </button>
             </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Camila Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">camila@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Daiana Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">daiana@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Florencia Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">florencia@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Franco Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">franco@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Carlos Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">carlos@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button>
-              <span>Editar</span>
-            </button>
-          </div>
-          <div>
-            <div>
-              <div>Nombre</div>
-              <div>
-                <span className="content">Lucas Cruce</span>
-              </div>
-            </div>
-            <div>
-              <div>Mail</div>
-              <div>
-                <span className="content">lucas@e-cruce.com</span>
-              </div>
-            </div>
-            <div>
-              <div>Capacidad Máxima</div>
-              <div>
-                <span className="content">2</span>
-              </div>
-            </div>
-            <div>
-              <div>Horario de Inicio y Cierre</div>
-              <div>
-                <span className="content">8:00 - 19:30 hs </span>
-              </div>
-            </div>
-            <button className="buttonEdit">
-              <span>Editar</span>
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const res = await fetch("#");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default index;
