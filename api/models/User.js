@@ -12,6 +12,7 @@ const userSchema = new Schema(
     dni: {
       type: Number,
       require: true,
+      unique: true,
     },
     email: {
       type: String,
@@ -22,21 +23,17 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+    role: {
+      type: String,
+      enum: ["user", "operator", "admin"],
+      default: "user",
+    },
     salt: {
       type: String,
     },
   },
   { timestamps: true }
 );
-
-userSchema.pre("save", function (next) {
-  const salt = bcrypt.genSaltSync(10);
-  this.salt = salt;
-
-  return this.hashGen(this.password, salt).then(
-    (hash) => (this.password = hash)
-  );
-});
 
 userSchema.pre("findOneAndUpdate", function (next) {
   const salt = bcrypt.genSaltSync(10);
