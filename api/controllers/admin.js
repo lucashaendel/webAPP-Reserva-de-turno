@@ -1,6 +1,7 @@
 const Admin = require("../models/Admin");
 const bcrypt = require("bcrypt");
 const Operator = require("../models/Operator");
+const Branch = require("../models/Branch");
 
 /////***Route to create Admin***/////
 const createAdmin = async (req, res, next) => {
@@ -20,7 +21,7 @@ const createAdmin = async (req, res, next) => {
         password: passwordHash,
       });
       const savedAdmin = await newAdmin.save();
-      res.send(savedAdmin);
+      res.status(201).send(savedAdmin);
     }
   } catch (error) {
     next(error);
@@ -31,6 +32,7 @@ const createAdmin = async (req, res, next) => {
 const createOperator = async (req, res, next) => {
   try {
     const { body } = req;
+    const branch = await Branch.findById(req.body.branch);
     const { fullName, dni, email, password } = body;
     const operator = await Operator.find({ $or: [{ email }, { dni }] });
     if (operator[0]) return res.status(401).send("El usuario ya existe");
@@ -42,9 +44,10 @@ const createOperator = async (req, res, next) => {
         dni,
         email,
         password: passwordHash,
+        branch: branch._id,
       });
       const savedOperator = await newOperator.save();
-      res.send(savedOperator);
+      res.status(201).send(savedOperator);
     }
   } catch (error) {
     next(error);

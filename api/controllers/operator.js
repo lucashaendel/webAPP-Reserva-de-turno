@@ -1,4 +1,6 @@
 const Operator = require("../models/Operator");
+const Branch = require("../models/Branch");
+const Turn = require("../models/Turn");
 const bcrypt = require("bcrypt");
 
 /////***Route to change operator Password***/////
@@ -21,9 +23,35 @@ const modifyPassword = async (req, res) => {
   }
 };
 
-/////***Route to get all reservations***/////
-const getAllReservations = async (req, res) => {
-  res.send("hello");
+/////***Route to get branch reservation***/////
+const getBranchReservation = async (req, res) => {
+  const branchId = req.params.id;
+  const reservations = await Branch.findById(branchId).populate("turns", {
+    fullName: 1,
+    date: 1,
+    email: 1,
+    phone: 1,
+    attendance: 1,
+  });
+  res.status(200).send(reservations);
 };
 
-module.exports = { modifyPassword };
+/////***Route to confirm reservation***/////
+const reservConfirmed = async (req, res) => {
+  const turnId = req.params.id;
+  const data = req.body;
+  const newData = {
+    attendance: data.attendance,
+  };
+
+  try {
+    const confirmedTurn = await Turn.findByIdAndUpdate(turnId, newData, {
+      new: true,
+    });
+    res.status(200).send(confirmedTurn);
+  } catch (error) {
+    res.status(401).send("No existe ese id en la db");
+  }
+};
+
+module.exports = { modifyPassword, getBranchReservation, reservConfirmed };

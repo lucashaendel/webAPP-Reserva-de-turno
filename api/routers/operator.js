@@ -1,9 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const isOperator = require("../middleware/auth")
+const isOperator = require("../middleware/auth");
 
-const { modifyPassword } = require("../controllers/operator");
+const {
+  updateOperator,
+  getBranchReservation,
+  resConfirmed,
+} = require("../controllers/operator");
 
-router.put("/myProfile/:id/modifyPassword",isOperator, modifyPassword);
-
+router.put("/myProfile/:id", isOperator, updateOperator);
+router.get("/reservations/:id", getBranchReservation);
+router.put("/reservations/turn/:id", resConfirmed);
 module.exports = router;
