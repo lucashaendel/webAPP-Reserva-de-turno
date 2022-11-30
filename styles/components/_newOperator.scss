@@ -173,7 +173,7 @@ font-size: 14px;
 line-height: 20px;
 display: flex;
 align-items: center;
-color: $grey5;
+color: $black;
 flex: none;
 order: 0;
 flex-grow: 1;
@@ -259,6 +259,7 @@ flex: none;
 order: 5;
 align-self: stretch;
 flex-grow: 0;
+border:none;
   }
   .formularioText16 {
 width: 750px;
@@ -280,5 +281,16 @@ flex-grow: 1;
   .send{text-align: center;}
 
   .centrar{background-color: red;}
+
+  .administrador-cre{
+    /* User Interface */
+    width: 20px;
+    height: 20px;
+  border: none;
+  
+  
+  }
+
+ 
 
  
