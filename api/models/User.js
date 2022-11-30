@@ -23,11 +23,20 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+
     role: {
       type: String,
       enum: ["user", "operator", "admin"],
       default: "user",
     },
+
+    turns: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Turn",
+      },
+    ],
+
     salt: {
       type: String,
     },

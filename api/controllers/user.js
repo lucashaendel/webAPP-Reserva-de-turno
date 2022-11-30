@@ -6,7 +6,13 @@ const Admin = require("../models/Admin");
 
 // Ruta para el operator obtener todos los usuarios
 const allUser = async (req, res) => {
-  const users = await User.find();
+  const users = await User.find().populate("turns", {
+    fullName: 1,
+    date: 1,
+    email: 1,
+    phone: 1,
+    attendance: 1,
+  });
   res.status(200).send(users);
 };
 
@@ -17,7 +23,7 @@ const createUser = async (req, res, next) => {
     const { body } = req;
     const { fullName, dni, email, password } = body;
     const user = await User.find({ $or: [{ email }, { dni }] });
-    console.log(user);
+
     if (user[0]) return res.status(401).send("El usuario ya existe");
     else {
       const saltRounds = 10;
@@ -76,8 +82,8 @@ const updateUser = (req, res) => {
   const data = req.body;
 
   const newData = {
-    name: data.name,
-    lastname: data.lastname,
+    fullName: data.fullName,
+
     dni: data.dni,
     email: data.email,
     password: data.password,

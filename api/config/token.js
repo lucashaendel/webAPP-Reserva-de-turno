@@ -7,7 +7,7 @@ const SECRET = "Xruce";
 //Generamos el token, recibiendo el payload q guardamos ahi.
 
 const generateToken = (payload) => {
-  const token = jwt.sign(payload, SECRET, { expiresIn: "1d" });
+  const token = jwt.sign(payload, SECRET, { expiresIn: "2h" });
 
   return token;
 };
