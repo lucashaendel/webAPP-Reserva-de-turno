@@ -4,22 +4,23 @@ import { useState } from "react";
 import axios from "axios";
 
 const profile = () => {
-  const [name, setName] = useState("");
+  const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios
-      .post("#", {
-        name,
-        email,
-        dni,
-        password,
-      })
-      .then((res) => res.data)
+      .put(
+        /*`http://localhost:5000/admin/myProfile/:id/modifyPassword ACA VA EL ID`,*/ {
+          fullname,
+          email,
+          dni,
+          password,
+        }
+      )
+      .then((res) => console.log(fullname, email, dni, password))
       .catch((err) => alert(err, "error"));
   };
 
@@ -41,7 +42,7 @@ const profile = () => {
               type="text"
               placeholder
               className="perfil-administrador-input-desktop1"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setFullName(e.target.value)}
             />
           </div>
           <div className="perfil-administrador-input-desktop21">

@@ -46,7 +46,7 @@ const operatorList = ({ data }) => {
                   className="administrador-listadodeoperadores-text102 Semibold·14·16"
                   key={index}
                 >
-                  <span>{dato.sucursal}</span>
+                  <span>{dato.branch}</span>
                 </span>
               </div>
               <div className="administrador-listadodeoperadores-info23">
@@ -57,7 +57,7 @@ const operatorList = ({ data }) => {
                   className="administrador-listadodeoperadores-text106 Semibold·14·16"
                   key={index}
                 >
-                  <span>{dato.password}</span>
+                  <span>*****</span>
                 </span>
               </div>
               <button className="editButton">
@@ -72,7 +72,7 @@ const operatorList = ({ data }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("#");
+  const res = await fetch("http://localhost:5000/api/admin/operatorsList");
   const data = await res.json();
 
   return {
