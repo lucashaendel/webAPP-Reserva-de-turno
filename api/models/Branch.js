@@ -25,6 +25,12 @@ const branchSchema = new Schema({
       ref: "Turn",
     },
   ],
+  operators: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Operator",
+    },
+  ],
   start: {
     type: String,
   },
