@@ -4,17 +4,15 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
   {
-    name: {
+    fullName: {
       type: String,
       require: true,
     },
-    lastname: {
-      type: String,
-      require: true,
-    },
+
     dni: {
       type: Number,
       require: true,
+      unique: true,
     },
     email: {
       type: String,
@@ -25,21 +23,26 @@ const userSchema = new Schema(
       type: String,
       require: true,
     },
+
+    role: {
+      type: String,
+      enum: ["user", "operator", "admin"],
+      default: "user",
+    },
+
+    turns: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Turn",
+      },
+    ],
+
     salt: {
       type: String,
     },
   },
   { timestamps: true }
 );
-
-userSchema.pre("save", function (next) {
-  const salt = bcrypt.genSaltSync(10);
-  this.salt = salt;
-
-  return this.hashGen(this.password, salt).then(
-    (hash) => (this.password = hash)
-  );
-});
 
 userSchema.pre("findOneAndUpdate", function (next) {
   const salt = bcrypt.genSaltSync(10);

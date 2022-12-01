@@ -114,6 +114,7 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
+
   }
   .loginMailInputDesktop22 {
 @include autoLayoutCol(2px);
@@ -214,6 +215,7 @@ flex-grow: 1;
 .pass{  box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  margin-top: 22px;
   align-items: center;
   padding: 12px 8px 12px 12px;
   gap: 8px;
@@ -240,8 +242,8 @@ flex-direction: column;
 align-items: flex-start;
 padding: 16px 20px;
 gap: 20px;
-width: 516px;
-height: 104px;
+width: 518px;
+height: 120px;
 background: $grey1;
 border-radius: 8px;
 flex: none;
@@ -280,6 +282,7 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
+margin-top: 10px;
   }
   .loginMailFila2 {
 @include autoLayoutRow(16px);
@@ -426,7 +429,7 @@ order: 2;
 flex-grow: 1;
   }
   .loginMailCtaDesktop1 {
-display: flex;
+
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -440,6 +443,8 @@ flex: none;
 order: 2;
 align-self: stretch;
 flex-grow: 0;
+margin-top: 40px;
+border:none;
   }
   .loginMailText34 {
     
@@ -482,7 +487,7 @@ flex: none;
 order: 1;
 flex-grow: 1;
   }
-
+.inSesion{ color:$primaryColor}
 
 
   .loginMailUserInterface1{
@@ -495,3 +500,17 @@ order: 1;
 flex-grow: 0;
   }
 
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+    appearance: none;
+
+}
+ 

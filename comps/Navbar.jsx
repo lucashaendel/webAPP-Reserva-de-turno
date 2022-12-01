@@ -1,7 +1,42 @@
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin, userLogOut } from "../sate/user";
 
 const navbar = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  const handleLogOut = async (e) => {
+    await axios
+      .post("http://localhost:5000/api/user/logout")
+      // .then((res) => res.clearCookie("token"))
+      .then(() => dispatch(userLogOut()))
+      .then(() => {
+        Swal.fire({
+          title: "Exito",
+          text: "Cerraste la sesión!",
+          icon: "success",
+          allowOutsideClick: false,
+        });
+        router.push("/");
+      })
+      // .then(() => dispatch(userLogin({})))
+      .catch(() => alert("No se pudo cerrar sesion."));
+  };
+
+  // const handlerLogOut = () => {
+  //   axios
+  //     .post("/api/user/logout")
+  //     .then((res) => res.data)
+  //     .then(() => dispatch(userLogOut()))
+  //     .catch(() => alert("No se pudo cerrar sesion."));
+  // };
+
   return (
     <div class="container-navbar">
       <div class="div-button1-admin">
@@ -69,7 +104,7 @@ const navbar = () => {
             />
           </svg>
         </div>
-        <div class="header-men-admin-cuenta">
+        <div class="header-men-admin-cuenta my-account">
           <span class="span-admin-cuenta">
             <span>Mi Cuenta</span>
           </span>
@@ -86,6 +121,11 @@ const navbar = () => {
               fill="#A442F1"
             />
           </svg>
+          <div className="navbar_menu">
+            <div>
+              <button onClick={handleLogOut}>Cerrar sesión</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

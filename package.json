@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
+    "axios": "^1.2.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",
     "react": "18.2.0",
     "react-calendar": "^4.0.0",
     "react-dom": "18.2.0",
-    "react-form-stepper": "^2.0.3"
+    "react-form-stepper": "^2.0.3",
+    "react-redux": "^8.0.5",
+    "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
     "sass": "^1.56.1"

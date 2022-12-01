@@ -1,13 +1,14 @@
+import React from "react";
+import { Provider } from "react-redux";
 import "../styles/base/global.scss";
 import "../styles/style.scss";
-// import Navbar from "../../comps/Navbar";
-// <Navbar />
+import store from "../sate/store";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 

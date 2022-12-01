@@ -51,8 +51,6 @@ $success: #00a541;
   gap: $gap;
 }
 
-
-
 @mixin autoLayoutCenterRow($gap) {
   display: flex;
   flex-direction: row;
@@ -67,21 +65,7 @@ $success: #00a541;
   align-items: center;
   padding: 0px;
   gap: $gap;
-
-
 }
-
-@mixin autoLayoutCenterRow($gap){
-  display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: $gap;
-}
-
-}
-
-
 
 
 /*------------------------
@@ -96,16 +80,14 @@ gap: $gap;
   color: #000000;
 }
 
-
-
 /* Regular · 13 · 16 */
+
 @mixin regular1316 {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
 }
+
 @mixin regular1416 {
   font-family: "Roboto";
   font-style: normal;
@@ -113,6 +95,7 @@ gap: $gap;
   font-size: 14px;
   line-height: 16px;
 }
+
 
 /* Semibold · 14 · 16 */
 @mixin semiBold1416 {
@@ -137,32 +120,9 @@ gap: $gap;
   font-size: 14px;
   line-height: 20px;
 
+  color: #000000;
+}
 
-  color: #000000;
-}
-/* Semibold · 14 · 16 */
-@mixin semiBold1416 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-  font-feature-settings: "zero" on;
-  color: #000000;
-}
-/* Semibold · 14 · 16 */
-@mixin semiBold1416 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-  font-feature-settings: "zero" on;
-
-  color: #000000;
-}
 
 /* Semibold · 14 · 20 */
 @mixin semiBold1420 {
@@ -199,7 +159,6 @@ gap: $gap;
   font-feature-settings: "zero" on;
   color: #000000;
 }
-
 
 @mixin semiBold1924 {
   font-family: "Roboto";
