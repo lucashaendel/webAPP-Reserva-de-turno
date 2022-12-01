@@ -15,10 +15,7 @@ const newBranch = () => {
   const [end, setEnd] = useState(Number);
 
   const router = useRouter();
-
   const handleChangeCapacity = (e) => {
-    // logica para colocar la capacidad de la sucursal
-    console.log(e.target.value);
     setMaxCapacity(e.target.value);
   };
 
@@ -29,24 +26,17 @@ const newBranch = () => {
     }
     return arr;
   };
-
   const handleChangeStart = (e) => {
-    //logica para el horario de apertura
-
     setStart(e.target.value);
   };
   const handleChangeEnd = (e) => {
-    //logica para el horario de cierre
-
     setEnd(e.target.value);
   };
-
   const hours = () => {
     let timeArray = [];
     let d = new Date("2022-11-26T00:00:00");
     let h = d.getHours();
     let m = d.getMinutes();
-
     for (let i = 0; i < 24; i++) {
       for (m = (m + 0 - (m % 0)) % 60; m < 60; m = m + 0) {
         timeArray.push(h + ":" + m);
@@ -54,15 +44,13 @@ const newBranch = () => {
       h = (h + 1) % 24;
       timeArray.push(h + ":" + "00");
     }
-
     return timeArray;
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (start < end) {
       axios
-        .post("#", {
+        .post("http://localhost:5000/api/branch", {
           name,
           email,
           telephone,
@@ -70,9 +58,7 @@ const newBranch = () => {
           start,
           end,
         })
-
-        .then((res) => res.data)
-
+        .then((res) => console.log(name))
         .catch((err) => alert(err, "error"));
       Swal.fire({
         title: "Exito",
@@ -81,7 +67,7 @@ const newBranch = () => {
         allowOutsideClick: false,
       }).then((res) => {
         if (res.isConfirmed) {
-          router.push("/admin/newOperator");
+          router.push("/admin");
         }
       });
     } else {
@@ -108,7 +94,6 @@ const newBranch = () => {
                 <span>Nombre</span>
               </span>
             </div>
-
             <input
               type="text"
               placeholder
@@ -159,19 +144,13 @@ const newBranch = () => {
                 className="administrador-creacindesucursales-input-desktop13"
                 onChange={handleChangeCapacity}
               >
-                {" "}
                 <option>Seleccionar capacidad maxima</option>
                 {nums().map((num) => (
                   <option value={num}>{num}</option>
-                ))}{" "}
+                ))}
               </select>
-              <span className="administrador-creacindesucursales-text10 Regular·14·20">
-                {" "}
-              </span>
-
-              <div className="administrador-creacindesucursales-user-interface">
-                {" "}
-              </div>
+              <span className="administrador-creacindesucursales-text10 Regular·14·20"></span>
+              <div className="administrador-creacindesucursales-user-interface"></div>
             </div>
           </div>
           <div className="administrador-creacindesucursales-horario">
@@ -181,7 +160,6 @@ const newBranch = () => {
                   <span>Horario de Inicio</span>
                 </span>
               </div>
-
               <select
                 className="administrador-creacindesucursales-input-desktop14"
                 onChange={handleChangeStart}
@@ -192,9 +170,7 @@ const newBranch = () => {
                 ))}{" "}
               </select>
               <span className="administrador-creacindesucursales-text10 Regular·14·20"></span>
-              <div className="administrador-creacindesucursales-user-interface">
-                {" "}
-              </div>
+              <div className="administrador-creacindesucursales-user-interface"></div>
             </div>
             <div className="administrador-creacindesucursales-input-desktop31">
               <div className="administrador-creacindesucursales-txt5">
@@ -206,17 +182,13 @@ const newBranch = () => {
                 className="administrador-creacindesucursales-input-desktop15"
                 onChange={handleChangeEnd}
               >
-                {" "}
                 <option>Seleccionar horario</option>
                 {hours().map((num) => (
                   <option value={num}>{num}</option>
                 ))}
               </select>
               <span className="administrador-creacindesucursales-text10 Regular·14·20"></span>
-
-              <div className="administrador-creacindesucursales-user-interface">
-                {" "}
-              </div>
+              <div className="administrador-creacindesucursales-user-interface"></div>
             </div>
           </div>
           <button type="submit" className="buttonSend">

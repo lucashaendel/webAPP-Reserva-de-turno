@@ -3,11 +3,12 @@ import React from "react";
 const index = ({ data }) => {
   return (
     <div className="divReservas1">
-      <span className="tituloReserva">
+      <div className="tituloReserva">
         <span>Reservas</span>
-      </span>
-      {data.map((dato, index) => (
-        <div className="divReservas">
+      </div>
+
+      <div className="divReservas">
+        {data.map((dato, index) => (
           <div className="divPedido">
             <div className="divNombre">
               <span className="spanNombre">
@@ -22,7 +23,7 @@ const index = ({ data }) => {
                 <span>Reserva</span>
               </span>
               <span className="fecha" key={index}>
-                <span>{dato.fullName}</span>
+                <span>{dato.date}</span>
               </span>
             </div>
             <div className="divDia">
@@ -30,7 +31,7 @@ const index = ({ data }) => {
                 <span>Día de la reserva</span>
               </span>
               <span className="spanDia" key={index}>
-                <span>{dato.fullName}</span>
+                <span>{dato.date}</span>
               </span>
             </div>
             <div className="divNumeroReservas">
@@ -38,7 +39,7 @@ const index = ({ data }) => {
                 <span>N° de la reserva</span>
               </span>
               <span className="numReserva" key={index}>
-                <span>{dato.fullName}</span>
+                <span>{dato._id}</span>
               </span>
             </div>
             <div className="divConfirmacion">
@@ -47,14 +48,16 @@ const index = ({ data }) => {
               </span>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:5000/api/user");
+  const res = await fetch(
+    "http://localhost:5000/api/operator/reservations/:id"
+  );
   const data = await res.json();
 
   return {

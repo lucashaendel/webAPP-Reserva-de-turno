@@ -1,9 +1,9 @@
+import axios from "axios";
 import React from "react";
 import TopBanner from "../../comps/TopBanner";
 ("../../comps/TopBanner");
 import Navbar from "../../comps/Navbar";
 import { useState } from "react";
-import axios from "axios";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
@@ -11,17 +11,17 @@ const newOperator = () => {
   const [fullName, setFullName] = useState("");
   const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
-  const [sucursal, setSucursal] = useState("");
+  const [branch, setBranch] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const router = useRouter();
 
-  const handleChangeSucursal = (e) => {
-    setSucursal(e.target.value);
+  const handleChangeBranch = (e) => {
+    setBranch(e.target.value);
   };
 
-  let arrSucursales = [
+  let arrBranch = [
     "Villa crespo",
     "Devoto",
     "Floresta",
@@ -30,22 +30,21 @@ const newOperator = () => {
     "Recoleta",
     "Belgrano",
   ];
-  let arrSuc = [];
-  const sucs = () => {
-    for (let i = 0; i < arrSucursales.length; i++) {
-      arrSuc.push(arrSucursales[i]);
-    }
-    return arrSuc;
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (password == repeatPassword) {
       axios
-        .post("#", { fullName, dni, email, sucursal, password })
+        .post("http://localhost:5000/admin/newOperator", {
+          fullName,
+          dni,
+          email,
+          branch,
+          password,
+        })
 
-        .then((res) => console.log(dni))
+        .then((res) => res.data)
         .catch((err) => alert(err, "error"));
       Swal.fire({
         title: "Exito",
@@ -129,14 +128,14 @@ const newOperator = () => {
                   </span>
                 </div>
                 <select
-                  value={sucursal}
+                  value={branch}
                   className="formularioInputDesktop13"
-                  onChange={handleChangeSucursal}
+                  onChange={handleChangeBranch}
                   required
                 >
                   {" "}
                   <option className="optionText">Seleccionar sucursal</option>
-                  {sucs().map((suc) => (
+                  {arrBranch.map((suc) => (
                     <option value={suc}>{suc}</option>
                   ))}
                 </select>

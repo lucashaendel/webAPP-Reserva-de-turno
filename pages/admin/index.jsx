@@ -58,7 +58,7 @@ const index = ({ data }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("#");
+  const res = await fetch("http://localhost:5000/api/branch");
   const data = await res.json();
   console.log(data);
   return {
