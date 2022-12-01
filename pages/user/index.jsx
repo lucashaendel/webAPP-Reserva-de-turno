@@ -1,10 +1,104 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Navbar from "../../comps/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../../sate/user";
+import Router, { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import Image from "next/image";
 
 const index = () => {
-  const [value, onChange] = useState(new Date());
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const [value, onChange] = useState(null);
+  // const [value, onChange] = useState(new Date());
+  const [sucursal, setSucursal] = useState(null);
+  const [hours, setHours] = useState(null);
+  const [fullName, setFullName] = useState(null);
+  const [phone, setPhone] = useState(null);
+  const [email, setEmail] = useState(null);
+
+  // const contextoGlobal = authContext;
+  function fn() {
+    console.log(user);
+    // console.log(sucursal);
+    // console.log(value);
+  }
+
+  const handleLocalitation = (values) => {
+    if (values !== "select") {
+      setSucursal(values);
+    } else {
+      setSucursal(null);
+    }
+  };
+
+  const handleHours = (hour) => {
+    if (hour !== "select") {
+      setHours(hour);
+    } else {
+      setHours(null);
+    }
+  };
+
+  const handleFullName = (fullName) => {
+    setFullName(fullName);
+  };
+
+  const handlePhone = (phone) => {
+    setPhone(phone);
+  };
+
+  const handleEmail = (email) => {
+    setEmail(email);
+  };
+
+  const handleSubmit = () => {
+    console.log("Sucursal: ", sucursal);
+    console.log("Fecha: ", value);
+    console.log("Horario: ", hours);
+    console.log("Full Name: ", fullName);
+    console.log("Telefono: ", phone);
+    console.log("Email: ", email);
+    Swal.fire({
+      title: "Exito",
+      text: "Reservaste tu turno satisfactoriamente!",
+      icon: "success",
+      allowOutsideClick: false,
+    });
+    Router.push("/user/bookingPanel");
+  };
+
+  // const hours = () => {
+  //   let timeArray = [];
+  //   let d = new Date();
+  //   let h = d.getHours();
+  //   let m = d.getMinutes();
+  //   for (var i = 0; i < 24; i++) {
+  //     for (m = (m + 15 - (m % 15)) % 60; m < 60; m = m + 15) {
+  //       timeArray.push(h + ":" + m);
+  //     }
+  //     h = (h + 1) % 24;
+  //     timeArray.push(h + ":" + "00");
+  //   }
+  // };
+
+  const borderOk = sucursal === null ? "" : "border-ok";
+  const letterOk = sucursal === null ? "" : "letter-ok";
+  const borderProcess = sucursal === null ? "" : "border-process";
+  const letterProcess = sucursal === null ? "" : "letter-process";
+  const confirm =
+    sucursal !== null &&
+    hours !== null &&
+    fullName !== null &&
+    phone !== null &&
+    email !== null
+      ? "confirm"
+      : "";
+
+  const totalBorder = confirm === "confirm" ? "border-ok" : "";
+  const totalLetter = confirm !== "confirm" ? "" : "letter-ok";
   return (
     <div>
       <Navbar />
@@ -12,109 +106,229 @@ const index = () => {
         <Calendar onChange={onChange} value={value} />
         {/* {console.log(value)} */}
       </div>
-
-      <div class="reserva-reserva">
-        <div class="reserva-content">
-          <div class="reserva-head">
-            <span class="reserva-text Semibold·18·24">
-              <span>Reserva</span>
-            </span>
-            <span class="reserva-text02 Regular·14·20">
-              <span>Seleccioná tu sucursal</span>
-            </span>
-          </div>
-          <div class="reserva-stepper">
-            <div class="reserva-step">
-              <div class="reserva-step1">
-                <img
-                  src="/playground_assets/borderi417-2j8-200h.png"
-                  alt=" "
-                  class="reserva-border"
-                />
-                <div class="reserva-number">
-                  <span class="reserva-text04 Semibold·14·20">1</span>
+      <button onClick={fn}>USER</button>
+      {value === null ? (
+        <div className="reserva-reserva">
+          <div className="reserva-content">
+            <div className="reserva-head">
+              <span className="reserva-text Semibold·18·24">
+                <span>Reserva</span>
+              </span>
+              <span className="reserva-text02 Regular·14·20">
+                <span>Seleccioná tu sucursal</span>
+              </span>
+            </div>
+            <div className="reserva-stepper">
+              <div className="reserva-step">
+                <div className="reserva-step1">
+                  <div className={`reserva-border ${borderOk}`}></div>
+                  <div className={`reserva-number ${borderOk}`}>
+                    <span className="reserva-text04 Semibold·14·20">1</span>
+                  </div>
+                  <div className={`reserva-border1 ${borderOk}`} />
                 </div>
-                <img
-                  src="/playground_assets/borderi417-o5q-200h.png"
-                  alt=" "
-                  class="reserva-border1"
-                />
+                <span className="reserva-text05 Regular·14·20">
+                  <span className={`${letterOk}`}>Elegí tu sucursal</span>
+                </span>
               </div>
-              <span class="reserva-text05 Regular·14·20">
-                <span>Elegí tu sucursal</span>
-              </span>
-            </div>
-            <div class="reserva-step4">
-              <div class="reserva-step5">
-                <img
-                  src="/playground_assets/borderi417-sv0s-200h.png"
-                  alt=" "
-                  class="reserva-border4"
-                />
-                <div class="reserva-number2">
-                  <span class="reserva-text10 Semibold·14·20">2</span>
+              <div className="reserva-step4">
+                <div className="reserva-step5">
+                  <div className={`reserva-border4 ${borderProcess}`} />
+                  <div className={`reserva-number2 ${borderProcess}`}>
+                    <span className="reserva-text10 Semibold·14·20">2</span>
+                  </div>
+                  <div className={`reserva-border5 ${borderProcess}`} />
                 </div>
-                <img
-                  src="/playground_assets/borderi417-3jff-200h.png"
-                  alt=" "
-                  class="reserva-border5"
-                />
+                <span className={`reserva-text11 ${letterProcess}`}>
+                  <span>Seleccioná el día</span>
+                </span>
               </div>
-              <span class="reserva-text11 Regular·14·20">
-                <span>Seleccioná el día</span>
-              </span>
-            </div>
-            <div class="reserva-step4">
-              <div class="reserva-step5">
-                <img
-                  src="/playground_assets/borderi417-sv0s-200h.png"
-                  alt=" "
-                  class="reserva-border4"
-                />
-                <div class="reserva-number2">
-                  <span class="reserva-text10 Semibold·14·20">3</span>
+              <div className="reserva-step4">
+                <div className="reserva-step5">
+                  <div className="reserva-border4" />
+                  <div className="reserva-number2">
+                    <span className="reserva-text10 Semibold·14·20">3</span>
+                  </div>
+                  <div className="reserva-border5" />
                 </div>
-                <img
-                  src="/playground_assets/borderi417-3jff-200h.png"
-                  alt=" "
-                  class="reserva-border5"
-                />
+                <span className="reserva-text11 Regular·14·20">
+                  <span>Completá el formulario</span>
+                </span>
               </div>
-              <span class="reserva-text11 Regular·14·20">
-                <span>Completá el formulario</span>
-              </span>
             </div>
-          </div>
-          <div class="reserva-input-desktop2">
-            <div class="reserva-txt">
-              <span class="reserva-text13 Regular·14·20">
-                <span>Sucursal</span>
-              </span>
-            </div>
-            <div class="reserva-input-desktop1">
-              <span class="reserva-text15 Regular·14·20"></span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="reserva-user-interface"
+            <div className="reserva-input-desktop2">
+              <div className="reserva-txt">
+                <span className="reserva-text13 Regular·14·20">
+                  <span>Sucursal</span>
+                </span>
+              </div>
+              <select
+                className="reserva-input-desktop1"
+                onChange={(e) => handleLocalitation(e.target.value)}
               >
-                <path
-                  d="M4.7542 6.49583C4.42973 6.17136 3.90367 6.17136 3.5792 6.49582C3.25473 6.82029 3.25473 7.34636 3.5792 7.67083L9.29293 13.3846C9.68345 13.7751 10.3166 13.7751 10.7071 13.3846L16.4209 7.67082C16.7453 7.34636 16.7453 6.82029 16.4209 6.49582C16.0964 6.17136 15.5703 6.17136 15.2459 6.49583L10 11.7417L4.7542 6.49583Z"
-                  fill="#AFAFAF"
-                />
-              </svg>
+                <option value="select">Selecciona la sucursal</option>
+                <option value="Villa-crespo">Villa Crespo</option>
+                <option value="Devoto">Devoto</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Recoleta">Recoleta</option>
+                <option value="Belgrano">Belgrano</option>
+                <option value="Floresta">Floresta</option>
+                <option value="Centro">Micro Centro</option>
+              </select>
             </div>
           </div>
+          <div className="reserva-c-t-a-desktop1">Confirmar reserva</div>
         </div>
-        <div class="reserva-c-t-a-desktop1">
-          <span class="reserva-text16 Semibold·16·20">
-            <span>Confirmar reserva</span>
-          </span>
+      ) : (
+        <div className="reserva-reserva reserva-ok">
+          <div className="reserva-content">
+            <div className="reserva-head">
+              <span className="reserva-text Semibold·18·24">
+                <span>Reserva</span>
+              </span>
+              <span className="reserva-text02 Regular·14·20">
+                <span>Seleccioná tu sucursal</span>
+              </span>
+            </div>
+            <div className="reserva-stepper">
+              <div className="reserva-step">
+                <div className="reserva-step1">
+                  <div className={`reserva-border ${borderOk}`} />
+                  <div className={`reserva-number ${borderOk}`}>
+                    <span className="reserva-text04 Semibold·14·20">1</span>
+                  </div>
+                  <div className={`reserva-border1 ${borderOk}`} />
+                </div>
+                <span className="reserva-text05 Regular·14·20">
+                  <span className={`${letterOk}`}>Elegí tu sucursal</span>
+                </span>
+              </div>
+              <div className="reserva-step4">
+                <div className="reserva-step5">
+                  <div className={`reserva-border4 ${borderOk}`} />
+                  <div className={`reserva-number2 ${borderOk}`}>
+                    <span className="reserva-text10 Semibold·14·20">2</span>
+                  </div>
+                  <div className={`reserva-border5 ${borderOk}`} />
+                </div>
+                <span className={`reserva-text11 ${letterOk}`}>
+                  <span>Seleccioná el día</span>
+                </span>
+              </div>
+              <div className="reserva-step4">
+                <div className="reserva-step5">
+                  <div className={`reserva-border4 ${borderProcess}`} />
+                  <div className={`reserva-number2 ${borderProcess}`}>
+                    <span className="reserva-text10 Semibold·14·20">3</span>
+                  </div>
+                  <div
+                    className={`reserva-border5 ${borderProcess} ${totalBorder}`}
+                  />
+                </div>
+                <span
+                  className={`reserva-text11  ${letterProcess} ${totalLetter}`}
+                >
+                  <span>Completá el formulario</span>
+                </span>
+              </div>
+            </div>
+            <div className="reserva-input-desktop2">
+              <div className="reserva-txt">
+                <span className="reserva-text13 Regular·14·20">
+                  <span>Sucursal</span>
+                </span>
+              </div>
+              <select
+                className="reserva-input-desktop1"
+                onChange={(e) => handleLocalitation(e.target.value)}
+              >
+                <option value="select">Selecciona la sucursal</option>
+                <option value="Villa-crespo">Villa Crespo</option>
+                <option value="Devoto">Devoto</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Recoleta">Recoleta</option>
+                <option value="Belgrano">Belgrano</option>
+                <option value="Floresta">Floresta</option>
+                <option value="Centro">Micro Centro</option>
+              </select>
+            </div>
+            <div className="reserva-input-desktop2 horario">
+              <div className="reserva-txt">
+                <span className="reserva-text13 Regular·14·20">
+                  <span>Horario</span>
+                </span>
+              </div>
+              <select
+                className="reserva-input-desktop1"
+                onChange={(e) => handleHours(e.target.value)}
+              >
+                <option value="select">Selecciona un horario</option>
+                <option value="ocho">08:00 hs</option>
+                <option value="nueve">09:00 hs</option>
+                <option value="diez">10:00 hs</option>
+                <option value="once">11:00 hs</option>
+                <option value="doce">12:00 hs</option>
+                <option value="trece">13:00 hs</option>
+                <option value="catorce">14:00 hs</option>
+              </select>
+            </div>
+            <div className="information">
+              <div className="reserva-input-desktop2 data">
+                <div className="reserva-txt">
+                  <span className="reserva-text13 Regular·14·20">
+                    <span>Nombre y apellido</span>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  required
+                  className="reserva-input-desktop1 datos"
+                  onChange={(e) => handleFullName(e.target.value)}
+                ></input>
+              </div>
+              <div className="reserva-input-desktop2 data ">
+                <div className="reserva-txt">
+                  <span className="reserva-text13 Regular·14·20">
+                    <span>telefono</span>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  required
+                  className="reserva-input-desktop1 datos"
+                  onChange={(e) => handlePhone(e.target.value)}
+                ></input>
+              </div>
+
+              <div className="reserva-input-desktop2 horario">
+                <div className="reserva-txt">
+                  <span className="reserva-text13 Regular·14·20">
+                    <span>Email</span>
+                  </span>
+                </div>
+                <input
+                  type="email"
+                  required
+                  className="reserva-input-desktop1"
+                  onChange={(e) => handleEmail(e.target.value)}
+                ></input>
+              </div>
+            </div>
+          </div>
+          {/* <button
+            classNameName={`clientefinal-paneldereservas-c-t-a-desktop1 ${confirm}`}
+          >
+            Confirmar reserva
+          </button> */}
+
+          <button
+            className={`clientefinal-paneldereservas-c-t-a-desktop1 ${confirm}`}
+            onClick={handleSubmit}
+          >
+            Confirmar reserva
+          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 };
