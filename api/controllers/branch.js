@@ -1,13 +1,31 @@
 const Branch = require("../models/Branch");
 
 const allBranchs = async (req, res) => {
-  const branchs = await Branch.find().populate("turns", {
-    fullName: 1,
-    date: 1,
-    email: 1,
-    phone: 1,
-    attendance: 1,
-  });
+  const branchs = await Branch.find()
+    .populate("turns", {
+      fullName: 1,
+      date: 1,
+      email: 1,
+      phone: 1,
+      attendance: 1,
+    })
+    .populate("operators", { fullName: 1, email: 1, dni: 1, branch: 1 });
+
+  res.status(200).send(branchs);
+};
+
+const selectBranch = async (req, res) => {
+  const id = req.params.id;
+  const branchs = await Branch.findById(id)
+    .populate("turns", {
+      fullName: 1,
+      date: 1,
+      email: 1,
+      phone: 1,
+      attendance: 1,
+    })
+    .populate("operators", { fullName: 1, email: 1, dni: 1, branch: 1 });
+
   res.status(200).send(branchs);
 };
 
@@ -31,4 +49,4 @@ const createdBranch = async (req, res) => {
   }
 };
 
-module.exports = { allBranchs, createdBranch };
+module.exports = { allBranchs, createdBranch, selectBranch };

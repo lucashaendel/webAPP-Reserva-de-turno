@@ -47,6 +47,8 @@ const createOperator = async (req, res, next) => {
         branch: branch._id,
       });
       const savedOperator = await newOperator.save();
+      branch.operators = branch.operators.concat(savedOperator._id);
+      await branch.save();
       res.status(201).send(savedOperator);
     }
   } catch (error) {
