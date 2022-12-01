@@ -82,3 +82,13 @@
   @include semiBold1620();
   color: $primaryColor;
 }
+
+.svglogin {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-left: 480px;
+  margin-top: -32px;
+}

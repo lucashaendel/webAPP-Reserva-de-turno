@@ -1,24 +1,24 @@
-import { createContext, useState } from "react";
+// import { createContext, useState } from "react";
 
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
-const initialAuth = null;
+// const initialAuth = null;
 
-const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState(initialAuth);
+// const AuthProvider = ({ children }) => {
+//   const [auth, setAuth] = useState(initialAuth);
 
-  const handleAuth = (e) => {
-    if (auth) {
-      setAuth(null);
-    } else {
-      setAuth(true);
-    }
-  };
+//   const handleAuth = (e) => {
+//     if (auth) {
+//       setAuth(null);
+//     } else {
+//       setAuth(true);
+//     }
+//   };
 
-  const data = { auth, handleAuth };
+//   const data = { auth, handleAuth };
 
-  return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
-};
+//   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
+// };
 
-export { AuthProvider };
-export default AuthContext;
+// export { AuthProvider };
+// export default AuthContext;
