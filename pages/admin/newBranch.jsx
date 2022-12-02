@@ -48,7 +48,7 @@ const newBranch = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (start < end) {
+    if (start && end) {
       axios
         .post("http://localhost:5000/api/branch", {
           name,
@@ -58,7 +58,7 @@ const newBranch = () => {
           start,
           end,
         })
-        .then((res) => console.log(name))
+        .then((res) => res.data)
         .catch((err) => alert(err, "error"));
       Swal.fire({
         title: "Exito",

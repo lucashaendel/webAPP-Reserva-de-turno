@@ -20,7 +20,7 @@ const profile = () => {
           password,
         }
       )
-      .then((res) => console.log(fullname, email, dni, password))
+      .then((res) => res.data)
       .catch((err) => alert(err, "error"));
   };
 

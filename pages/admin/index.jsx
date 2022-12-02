@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../comps/Navbar";
 
 const index = ({ data }) => {
+  console.log(data);
   return (
     <>
       <div className="box">
