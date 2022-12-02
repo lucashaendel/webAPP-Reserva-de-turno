@@ -4,15 +4,13 @@ const { validateToken } = require("../config/token");
 
 const validateUser = async (req, res, next) => {
   const token = req.cookies.token;
-  if (!token) res.status(401).send("No token provided");
-
-  const payload = validateToken(token);
-  console.log(payload);
-
-  req.userId = payload.id;
-  if (payload) return next();
-  else {
+  if (!token) {
     res.status(401).send("No token provided");
+  } else {
+    const payload = validateToken(token);
+
+    req.userId = payload.id;
+    if (payload) return next();
   }
 };
 
