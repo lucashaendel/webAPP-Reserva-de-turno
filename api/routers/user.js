@@ -6,7 +6,6 @@ const validateUser = require("../middleware/auth");
 const isAdmin = require("../middleware/isAdmin");
 const isUser = require("../middleware/isUser");
 
-
 const {
   allUser,
   createUser,
@@ -16,7 +15,7 @@ const {
 } = require("../controllers/user");
 
 // ruta para el operator obtener los usuarios
-router.get("/", [validateUser, isAdmin], allUser);
+router.get("/", allUser);
 
 router.post("/register", validateSchema(signupSchema), createUser);
 // Login Usuario

@@ -13,19 +13,19 @@ const operatorList = ({ data }) => {
         </div>
         <div className="operatorsContainer">
           {data.map((dato, index) => {
-            if (dato.turns.length > 0) {
+            if (dato.operators.length > 0) {
               // dato.operator.length
-              console.log(data[index]);
-              return dato.turns.map(
+
+              return dato.operators.map(
                 (
-                  prueba // dato.operator.map
+                  operador // dato.operator.map
                 ) => (
                   <div>
                     <div>
                       <div>Nombre</div>
                       <div>
                         <span className="inputText" key={index}>
-                          {prueba.fullName}
+                          {operador.fullName}
                         </span>
                       </div>
                     </div>
@@ -33,7 +33,7 @@ const operatorList = ({ data }) => {
                       <div>Email</div>
                       <div>
                         <span className="inputText" key={index}>
-                          {prueba.email}
+                          {operador.email}
                         </span>
                       </div>
                     </div>

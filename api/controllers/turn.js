@@ -16,8 +16,6 @@ const createdTurn = async (req, res, next) => {
   const user = await User.findById(payload.id);
   const branch = await Branch.findById(req.body.branch);
 
-  console.log(branch);
-
   const newTurn = new Turn({
     fullName,
     email,

@@ -45,7 +45,7 @@ const index = ({ data }) => {
               </span>
             </div>
             <div className="divConfirmacion">
-              <LikeButton id={dato._id} />
+              <LikeButton obj={dato} />
             </div>
           </div>
         ))}
@@ -54,28 +54,29 @@ const index = ({ data }) => {
   );
 };
 
-export function LikeButton(data) {
-  const [attendance, setAttendance] = useState(false);
+export function LikeButton({ obj }) {
+  const [estado, setEstado] = useState(obj.attendance);
 
   const handleClick = () => {
-    if (attendance) {
-      setAttendance(false);
+    if (estado) {
+      setEstado(false);
     } else {
-      setAttendance(true);
+      setEstado(true);
     }
+    console.log(estado);
 
     axios
-      .put(`http://localhost:5000/api/operator/reservations/turn/${data.id}`, {
-        attendance,
+      .put(`http://localhost:5000/api/operator/reservations/turn/${obj._id}`, {
+        attendance: estado,
       })
-      .then((res) => res.data.attendance)
+
       .catch((err) => alert(err));
   };
-  const result = !attendance ? "Confirmado el turno" : "Confirmacion pendiente";
+  const result = estado ? "Confirmado el turno" : "Confirmacion pendiente";
   return (
     <div>
       <button onClick={handleClick} className="BtnStyle" type="submit">
-        <span className="txtConfirmacion"> {result}</span>
+        <span className="txtConfirmacion">{result}</span>
       </button>
     </div>
   );

@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 module.exports = {
   signupSchema: Joi.object({
-    fullname: Joi.string().required(),
+    fullName: Joi.string().required(),
     dni: Joi.number().required(),
     email: Joi.string().email().required(),
     password: Joi.string()
