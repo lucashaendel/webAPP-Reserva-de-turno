@@ -1,13 +1,12 @@
 import axios from "axios";
 import React from "react";
 import TopBanner from "../../comps/TopBanner";
-("../../comps/TopBanner");
 import Navbar from "../../comps/Navbar";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
-const newOperator = () => {
+const newOperator = ({ data }) => {
   const [fullName, setFullName] = useState("");
   const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
@@ -21,22 +20,12 @@ const newOperator = () => {
     setBranch(e.target.value);
   };
 
-  let arrBranch = [
-    "Villa crespo",
-    "Devoto",
-    "Floresta",
-    "Palermo",
-    "Microcentro",
-    "Recoleta",
-    "Belgrano",
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password == repeatPassword) {
+    if (password === repeatPassword) {
       axios
-        .post("http://localhost:5000/admin/newOperator", {
+        .post("http://localhost:5000/api/admin/newOperator", {
           fullName,
           dni,
           email,
@@ -46,6 +35,7 @@ const newOperator = () => {
 
         .then((res) => res.data)
         .catch((err) => alert(err, "error"));
+
       Swal.fire({
         title: "Exito",
         text: "Se creo operador con exito",
@@ -53,7 +43,7 @@ const newOperator = () => {
         allowOutsideClick: false,
       }).then((res) => {
         if (res.isConfirmed) {
-          router.push("/admin");
+          router.push("/admin/operatorList");
         }
       });
     } else {
@@ -135,8 +125,8 @@ const newOperator = () => {
                 >
                   {" "}
                   <option className="optionText">Seleccionar sucursal</option>
-                  {arrBranch.map((suc) => (
-                    <option value={suc}>{suc}</option>
+                  {data.map((suc) => (
+                    <option value={suc._id}>{suc.name}</option>
                   ))}
                 </select>
                 <span className="formularioText10 Regular·14·20"></span>
@@ -185,5 +175,16 @@ const newOperator = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const res = await fetch("http://localhost:5000/api/branch");
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default newOperator;
