@@ -16,8 +16,11 @@ app.use(
 );
 app.use(cookieParser());
 app.use("/api", routers);
+console.log(process.env.MONGO_URI);
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    "mongodb+srv://admin:admin1234@webappturnos.cvscsqu.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then((result) => {
     app.listen(5000, () => {
       console.log("servidor escuchando en el puerto 5000");

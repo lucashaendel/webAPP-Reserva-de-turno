@@ -5,28 +5,30 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin, userLogOut } from "../sate/user";
-
-const navbar = () => {
+import { useAuth } from "../context/authContext";
+const Navbar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-
+  const { logOut } = useAuth();
   const handleLogOut = async (e) => {
-    await axios
-      .post("http://localhost:5000/api/user/logout")
-      // .then((res) => res.clearCookie("token"))
-      .then(() => dispatch(userLogOut()))
-      .then(() => {
-        Swal.fire({
-          title: "Exito",
-          text: "Cerraste la sesión!",
-          icon: "success",
-          allowOutsideClick: false,
-        });
-        router.push("/");
-      })
-      // .then(() => dispatch(userLogin({})))
-      .catch(() => alert("No se pudo cerrar sesion."));
+    logOut();
+    router.push("/");
+    // await axios
+    //   .post("http://localhost:5000/api/user/logout")
+    //   // .then((res) => res.clearCookie("token"))
+    //   .then(() => dispatch(userLogOut()))
+    //   .then(() => {
+    //     Swal.fire({
+    //       title: "Exito",
+    //       text: "Cerraste la sesión!",
+    //       icon: "success",
+    //       allowOutsideClick: false,
+    //     });
+    //     router.push("/");
+    //   })
+    //   // .then(() => dispatch(userLogin({})))
+    //   .catch(() => alert("No se pudo cerrar sesion."));
   };
 
   // const handlerLogOut = () => {
@@ -132,7 +134,7 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
 
 /* navbar Admin */
 

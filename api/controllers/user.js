@@ -45,6 +45,7 @@ const createUser = async (req, res, next) => {
 // Ruta para hacer el login del usuario
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
+
   const user = await User.findOne({ email });
   const operator = await Operator.findOne({ email });
   const admin = await Admin.findOne({ email });
@@ -63,7 +64,7 @@ const loginUser = async (req, res) => {
       };
       let token = generateToken(payload);
       res.cookie("token", token);
-      return res.status(200).send(payload); //ACORDARSE DE SACAR EL PAYLOAD
+      return res.json({ token, user: payload }); //ACORDARSE DE SACAR EL PAYLOAD
     } else {
       return res.status(401).json({ msg: "Invalid credencial" });
     }

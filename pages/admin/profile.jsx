@@ -1,29 +1,37 @@
-import React from "react";
 import Navbar from "../../comps/Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+
 import TopBanner from "../../comps/TopBanner";
 
-const profile = () => {
+import { useAuth } from "../../context/authContext";
+
+
+const Profile = () => {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
   const [password, setPassword] = useState("");
-
+  const auth = useAuth();
+  const [id, setId] = useState(null);
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(
-        /*`http://localhost:5000/admin/myProfile/:id/modifyPassword ACA VA EL ID`,*/ {
-          fullname,
-          email,
-          dni,
-          password,
-        }
-      )
+      .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
+        // fullname,
+        // email,
+        // dni,
+        password,
+      })
       .then((res) => res.data)
       .catch((err) => alert(err, "error"));
   };
+  useEffect(() => {
+    const ID = auth?.auth?.id;
+    if (ID) {
+      setId(ID);
+    }
+  }, [auth]);
 
   return (
     <>
@@ -109,4 +117,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
