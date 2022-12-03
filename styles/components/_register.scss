@@ -114,6 +114,7 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
+
   }
   .loginMailInputDesktop22 {
 @include autoLayoutCol(2px);
@@ -428,7 +429,7 @@ order: 2;
 flex-grow: 1;
   }
   .loginMailCtaDesktop1 {
-// display: flex;
+
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -443,6 +444,7 @@ order: 2;
 align-self: stretch;
 flex-grow: 0;
 margin-top: 40px;
+border:none;
   }
   .loginMailText34 {
     
@@ -485,7 +487,7 @@ flex: none;
 order: 1;
 flex-grow: 1;
   }
-
+.inSesion{ color:$primaryColor}
 
 
   .loginMailUserInterface1{
@@ -498,4 +500,17 @@ order: 1;
 flex-grow: 0;
   }
 
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+    appearance: none;
+
+}
  

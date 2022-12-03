@@ -170,11 +170,13 @@
 .administrador-creacindesucursales-text10 {
   width: 343px;
   height: 20px;
+  left: 100px;
 }
 .administrador-creacindesucursales-user-interface {
   /* User Interface */
   width: 20px;
   height: 20px;
+border: none;
 }
 .dropdown-vector {
   position: absolute;
@@ -468,3 +470,18 @@
   width: 20px;
   height: 20px;
 }
+.buttonSendText{width: 750px;
+  height: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: 'zero' on;
+  color: $white;
+  flex: none;
+  order: 1;
+  flex-grow: 1;}
+

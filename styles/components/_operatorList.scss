@@ -1,9 +1,11 @@
 .box {
   /* Administrador: Listado de operadores */
   position: relative;
-  width: 1368px;
+  max-width: 1920px;
+  left: 86px;
   height: 1068px;
   background: $white;
+  
 }
 
 .Header {
@@ -207,27 +209,6 @@
   color: $black;
 }
 
-button {
-  /* CTA-Desktop-4 */
-  @include autoLayoutRow(8px);
-  justify-content: center;
-  align-items: center;
-  padding: 12px 24px;
-  width: 88px;
-  height: 44px;
-  background: $grey1;
-  border-radius: 8px;
-  span {
-    /* Txt */
-    width: 40px;
-    height: 20px;
-    @include semiBold1520();
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: $primaryColor;
-  }
-}
 .administrador-listadodeoperadores-info22 {
   /* Info */
   @include autoLayoutCol(4px);
@@ -272,5 +253,29 @@ button {
 }
 
 .editButton {
+
   border: none;
+  
+    /* CTA-Desktop-4 */
+    @include autoLayoutRow(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    width: 88px;
+    height: 44px;
+    background: $grey1;
+    border-radius: 8px;
+   
+    span {
+      /* Txt */
+      width: 40px;
+      height: 20px;
+      @include semiBold1520();
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: $primaryColor;
+    }
+   
+ 
 }

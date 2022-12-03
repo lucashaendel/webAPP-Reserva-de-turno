@@ -9,8 +9,8 @@ import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
 const register = () => {
-  const [nameLastName, setNameLastName] = useState("");
-  const [dni, setDni] = useState(0);
+  const [fullName, setFullName] = useState("");
+  const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -27,8 +27,11 @@ const register = () => {
     empty: true,
   });
 
+
+  const router = useRouter();
+
   const handleChangeName = (e) => {
-    setNameLastName(e.target.value);
+    setFullName(e.target.value);
   };
   const handleChangeDni = (e) => {
     setDni(e.target.value);
@@ -68,8 +71,6 @@ const register = () => {
     });
   };
 
-  const router = useRouter();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -80,8 +81,9 @@ const register = () => {
       password === repeatPassword
     ) {
       axios
-        .post("#", { nameLastName, dni, email, password })
-        .then((res) => res.data);
+        .post("http://localhost:5000/api/user/register", { fullName, dni, email, password })
+        .then((res) => res.data)
+        .catch((err) => alert(err,"error"));;
       Swal.fire({
         title: "Exito",
         text: "Se registró de manera exitosa",
@@ -91,7 +93,7 @@ const register = () => {
         if (res.isConfirmed) {
           router.push("/");
         }
-      });
+      })
     } else {
       Swal.fire({
         title: "Error",
@@ -148,7 +150,7 @@ const register = () => {
                   type="text"
                   className="login-mail-input-desktop1"
                   onChange={handleChangeName}
-                  value={nameLastName}
+                  value={fullName}
                   required
                 />
               </div>
@@ -250,7 +252,7 @@ const register = () => {
         <div className="loginMailCtaDesktop2">
           <span className="loginMailText36 Semibold·16·20">
             <Link href="/">
-              <span>¿Ya tenés cuenta? Iniciá sesión</span>{" "}
+              <span className="inSesion">¿Ya tenés cuenta? Iniciá sesión</span>{" "}
             </Link>
           </span>
         </div>
