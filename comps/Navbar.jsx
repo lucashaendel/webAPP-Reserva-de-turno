@@ -38,20 +38,20 @@ const navbar = () => {
   // };
 
   return (
-    <div class="container-navbar">
-      <div class="div-button1-admin">
-        <span class="span-admin-crearSucursal">
+    <div className="container-navbar">
+      <div className="div-button1-admin">
+        <span className="span-admin-crearSucursal">
           <span>Crear sucursal</span>
         </span>
       </div>
-      <div class="div-button2-admin">
-        <span class="span-admin-sucursal">
+      <div className="div-button2-admin">
+        <span className="span-admin-sucursal">
           <span>Sucursal</span>
         </span>
       </div>
-      <div class="header-men-admin">
-        <div class="header-men-admin-sucursales">
-          <span class="span-admin-sucursales">
+      <div className="header-men-admin">
+        <div className="header-men-admin-sucursales">
+          <span className="span-admin-sucursales">
             <span>Sucursales</span>
           </span>
           <svg
@@ -68,8 +68,8 @@ const navbar = () => {
             />
           </svg>
         </div>
-        <div class="header-men-admin-operadores">
-          <span class="span-admin-operadores">
+        <div className="header-men-admin-operadores">
+          <span className="span-admin-operadores">
             <span>Operadores</span>
           </span>
           <svg
@@ -86,8 +86,8 @@ const navbar = () => {
             />
           </svg>
         </div>
-        <div class="header-men-admin-reportes">
-          <span class="span-admin-reportes">
+        <div className="header-men-admin-reportes">
+          <span className="span-admin-reportes">
             <span>Reportes</span>
           </span>
           <svg
@@ -104,8 +104,8 @@ const navbar = () => {
             />
           </svg>
         </div>
-        <div class="header-men-admin-cuenta my-account">
-          <span class="span-admin-cuenta">
+        <div className="header-men-admin-cuenta my-account">
+          <span className="span-admin-cuenta">
             <span>Mi Cuenta</span>
           </span>
           <svg
