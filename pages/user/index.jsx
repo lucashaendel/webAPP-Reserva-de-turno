@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext, useDebugValue } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Navbar from "../../comps/Navbar";
@@ -7,9 +7,10 @@ import { userLogin } from "../../sate/user";
 import Router, { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import Image from "next/image";
-
-const index = () => {
+import { AuthContext } from "../../context/authContext";
+const Index = () => {
   const dispatch = useDispatch();
+  const authContext = useContext(AuthContext);
   const user = useSelector((state) => state.user);
   const [value, onChange] = useState(null);
   // const [value, onChange] = useState(new Date());
@@ -18,6 +19,16 @@ const index = () => {
   const [fullName, setFullName] = useState(null);
   const [phone, setPhone] = useState(null);
   const [email, setEmail] = useState(null);
+
+
+  useEffect(
+    () => {
+      console.log(authContext)
+    },
+    [authContext]
+
+  )
+
 
   // const contextoGlobal = authContext;
   function fn() {
@@ -333,4 +344,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
