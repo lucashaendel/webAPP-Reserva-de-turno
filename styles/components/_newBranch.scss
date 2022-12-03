@@ -4,6 +4,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
+  left: 8px;
   background: $grey1;
 }
 
@@ -14,7 +15,7 @@
   position: absolute;
   width: 878px;
   height: 488px;
-  left: 305px;
+  left: 340px;
   top: 160px;
   background: $white;
   @include shadowBox();
@@ -484,4 +485,15 @@ border: none;
   flex: none;
   order: 1;
   flex-grow: 1;}
+
+  .topBanner{
+    margin-top: 20px;
+   
+  }
+
+  .topNavbar{
+
+margin-bottom: 110px;
+
+  }
 

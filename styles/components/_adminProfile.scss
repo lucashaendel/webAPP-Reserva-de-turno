@@ -3,7 +3,7 @@
   position: relative;
   width: 1368px;
   height: 768px;
-  background: $grey1;
+  
 }
 .perfil-administrador-formulario {
   /* Formulario */
@@ -14,7 +14,7 @@
   position: absolute;
   width: 878px;
   height: 512px;
-  left: 245px;
+  left: 360px;
   top: 160px;
   background: $white;
   @include shadowBox();
@@ -218,3 +218,7 @@
     color: $white;
   }
 }
+
+.top-banner{ margin-top: 5px;}
+
+.top-navbar{margin-top: 112px;}
