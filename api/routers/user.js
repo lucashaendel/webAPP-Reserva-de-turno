@@ -19,7 +19,7 @@ router.get("/", allUser);
 
 router.post("/register", validateSchema(signupSchema), createUser);
 // Login Usuario
-router.post("/login",  loginUser);
+router.post("/login", loginUser);
 
 router.post("/logout", validateUser, logOutUser);
 

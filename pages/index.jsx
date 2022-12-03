@@ -21,61 +21,65 @@ const Login = () => {
   const dispatch = useDispatch();
   const usuario = useSelector((state) => state.user);
 
-
-useEffect(() => {
-  console.log(authContext);
- if(authContext.auth){
-  const {auth} = authContext;
-  const role = auth?.user?.role;
-  if(role) router.push(`/${role}`); 
- }
-}, [authContext]);
-
+  useEffect(() => {
+    console.log(authContext);
+    if (authContext.auth) {
+      const { auth } = authContext;
+      const role = auth?.user?.role;
+      if (role) router.push(`/${role}`);
+    }
+  }, [authContext]);
 
   return (
-    !!!authContext?.isFetching &&
-    <div>
-      <TopBanner />
-      {/* <Navbar /> */}
+    !!!authContext?.isFetching && (
+      <div>
+        <TopBanner />
+        {/* <Navbar /> */}
 
-      <div className="container-login">
-        <div className="head-login">
-          <h2>Iniciar sesión</h2>
-        </div>
-        <form className="inputs-login" onSubmit={()=>authContext.logIn({email, password})}>
-          <div className="input-login">
-            <label>Correo</label>
-            <input
-              type="email"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
+        <div className="container-login">
+          <div className="head-login">
+            <h2>Iniciar sesión</h2>
           </div>
-
-          <div className="input-login">
-            <label>Contraseña</label>
-            <input
-              type={pwdEyes ? "text" : "password"}
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="svglogin" onClick={() => setPwdEyes(!pwdEyes)}>
-              {!pwdEyes ? <SvgEyesOne /> : <SvgEyesTwo />}
+          <form
+            className="inputs-login"
+            onSubmit={() => authContext.logIn({ email, password })}
+          >
+            <div className="input-login">
+              <label>Correo</label>
+              <input
+                type="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-          </div>
 
-          <Link href="#" className="forgot-pw">
-            ¿olvidaste tu contraseña?
+            <div className="input-login">
+              <label>Contraseña</label>
+              <input
+                type={pwdEyes ? "text" : "password"}
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className="svglogin" onClick={() => setPwdEyes(!pwdEyes)}>
+                {!pwdEyes ? <SvgEyesOne /> : <SvgEyesTwo />}
+              </div>
+            </div>
+
+            <Link href="#" className="forgot-pw">
+              ¿olvidaste tu contraseña?
+            </Link>
+            <button type="submit" className="btn-login">
+              ingresar
+            </button>
+          </form>
+          <Link href="/register">
+            <button className="btn-register">
+              ¿No tenés cuenta? Registrate
+            </button>
           </Link>
-          <button type="submit" className="btn-login">
-            ingresar
-          </button>
-        </form>
-        <Link href="/register">
-          <button className="btn-register">¿No tenés cuenta? Registrate</button>
-        </Link>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 

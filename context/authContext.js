@@ -4,18 +4,18 @@ export const AuthContext = createContext();
 
 const initialAuth = null;
 
-const getAuth = ()=> localStorage.getItem("auth");
-const getToken = ()=> localStorage.getItem("token");
+const getAuth = () => localStorage.getItem("auth");
+const getToken = () => localStorage.getItem("token");
 const saveLocalStorageUser = (auth) => {
-    localStorage.setItem("auth", JSON.stringify(auth));
-    };
+  localStorage.setItem("auth", JSON.stringify(auth));
+};
 const saveLocalStorageToken = (token) => {
-    localStorage.setItem("token", token);
-    };
+  localStorage.setItem("token", token);
+};
 const clearLocalStorage = () => {
-    localStorage.removeItem("auth");
-    localStorage.removeItem("token");
-    };
+  localStorage.removeItem("auth");
+  localStorage.removeItem("token");
+};
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(initialAuth);
@@ -26,8 +26,7 @@ export const AuthProvider = ({ children }) => {
     clearLocalStorage();
   };
 
-
-  const logIn = async ({email, password}) => {
+  const logIn = async ({ email, password }) => {
     setIsFetching(true);
     try {
       const res = await fetch("http://localhost:5000/api/user/login", {
@@ -35,7 +34,7 @@ export const AuthProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({email, password}),
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
       console.log(data);
@@ -47,43 +46,38 @@ export const AuthProvider = ({ children }) => {
     } finally {
       setIsFetching(false);
     }
-  }
-  useEffect(
-    () => {
-         const token = getToken();
-         if(token){
-            setIsFetching(true);
-           fetch("http://localhost:5000/api/user/me", {
-             method: "GET",
-             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-                },
-                })
-                .then((res) => res.json())
-                .then((data) => {
-                    setIsFetching(false);
-                    if(data){
-                      if(data.msg){
-                        setError(data.msg);
-                        setAuth(null);
-                        clearLocalStorage();
-                        } else{
-                        setAuth(data);
-                        saveLocalStorageUser(data);
-                        saveLocalStorageToken(token);
-                        }                        
-                        }
-                        else{
-                          setAuth(null);
-                          clearLocalStorage();
-                            }                        
-                    })
-
-         }
+  };
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      setIsFetching(true);
+      fetch("http://localhost:5000/api/user/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setIsFetching(false);
+          if (data) {
+            if (data.msg) {
+              setError(data.msg);
+              setAuth(null);
+              clearLocalStorage();
+            } else {
+              setAuth(data);
+              saveLocalStorageUser(data);
+              saveLocalStorageToken(token);
+            }
+          } else {
+            setAuth(null);
+            clearLocalStorage();
+          }
+        });
     }
-    , []
-  )
+  }, []);
   // const handleAuth = (e) => {
   //   if (auth) {
   //     setAuth(null);
@@ -94,7 +88,7 @@ export const AuthProvider = ({ children }) => {
   //   }
   // };
 
-  const data = { auth, isFetching, logOut, logIn, error};
+  const data = { auth, isFetching, logOut, logIn, error };
 
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

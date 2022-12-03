@@ -20,15 +20,9 @@ const Index = () => {
   const [phone, setPhone] = useState(null);
   const [email, setEmail] = useState(null);
 
-
-  useEffect(
-    () => {
-      console.log(authContext)
-    },
-    [authContext]
-
-  )
-
+  useEffect(() => {
+    console.log(authContext);
+  }, [authContext]);
 
   // const contextoGlobal = authContext;
   function fn() {

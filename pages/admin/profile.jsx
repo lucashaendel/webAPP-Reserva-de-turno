@@ -13,23 +13,21 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(
-        `http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
-          // fullname,
-          // email,
-          // dni,
-          password,
-        }
-      )
+      .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
+        // fullname,
+        // email,
+        // dni,
+        password,
+      })
       .then((res) => res.data)
       .catch((err) => alert(err, "error"));
   };
-useEffect(() => {
-const ID =auth?.auth?.id;
-if (ID) {
-setId(ID);
-}
-}, [auth]);
+  useEffect(() => {
+    const ID = auth?.auth?.id;
+    if (ID) {
+      setId(ID);
+    }
+  }, [auth]);
 
   return (
     <div className="perfil-administrador-perfil-administrador">

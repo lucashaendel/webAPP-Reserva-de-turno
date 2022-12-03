@@ -4,7 +4,7 @@ const { validateToken } = require("../config/token");
 
 const validateUser = async (req, res, next) => {
   const token = req.headers.authorization;
-  if(token?.startsWith("Bearer ")) {
+  if (token?.startsWith("Bearer ")) {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = await validateToken(token);
     if (decoded) {
