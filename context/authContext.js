@@ -16,7 +16,7 @@ const clearLocalStorage = () => {
   localStorage.removeItem("auth");
   localStorage.removeItem("token");
 };
-
+console.log(initialAuth);
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(initialAuth);
   const [isFetching, setIsFetching] = useState(false);
