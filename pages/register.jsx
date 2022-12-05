@@ -27,7 +27,6 @@ const register = () => {
     empty: true,
   });
 
-
   const router = useRouter();
 
   const handleChangeName = (e) => {
@@ -81,9 +80,14 @@ const register = () => {
       password === repeatPassword
     ) {
       axios
-        .post("http://localhost:5000/api/user/register", { fullName, dni, email, password })
+        .post("http://localhost:5000/api/user/register", {
+          fullName,
+          dni,
+          email,
+          password,
+        })
         .then((res) => res.data)
-        .catch((err) => alert(err,"error"));;
+        .catch((err) => alert(err, "error"));
       Swal.fire({
         title: "Exito",
         text: "Se registró de manera exitosa",
@@ -93,7 +97,7 @@ const register = () => {
         if (res.isConfirmed) {
           router.push("/");
         }
-      })
+      });
     } else {
       Swal.fire({
         title: "Error",

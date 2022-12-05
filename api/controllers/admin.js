@@ -68,7 +68,6 @@ const getData = async (req, res) => {
 
 /////***Route to change admin Password***/////
 const changePassword = async (req, res) => {
-  console.log("entro al cambio de contraseña");
   try {
     const { id } = req.params;
     const password = req.body.password;
