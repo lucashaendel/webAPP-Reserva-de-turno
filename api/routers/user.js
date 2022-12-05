@@ -31,6 +31,6 @@ router.get("/secret", validateUser, (req, res) => {
   res.send(req.user);
 });
 
-router.put("/:id", [validateUser, isUser], updateUser);
+router.put("/:id", updateUser);
 
 module.exports = router;
