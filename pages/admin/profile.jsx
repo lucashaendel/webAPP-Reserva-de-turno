@@ -18,9 +18,6 @@ const Profile = () => {
     e.preventDefault();
     axios
       .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
-        // fullname,
-        // email,
-        // dni,
         password,
       })
       .then((res) => res.data)
