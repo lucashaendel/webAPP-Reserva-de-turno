@@ -1,19 +1,17 @@
-import React, { useEffect, useState, useContext, useDebugValue } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Navbar from "../../comps/Navbar";
-import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../sate/user";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 import Swal from "sweetalert2";
-import Image from "next/image";
 import { AuthContext } from "../../context/authContext";
-const Index = () => {
-  const dispatch = useDispatch();
+import { useAuth } from "../../context/authContext";
+import axios from "axios";
+
+const Index = ({ data }) => {
+  const user = useAuth();
   const authContext = useContext(AuthContext);
-  const user = useSelector((state) => state.user);
-  const [value, onChange] = useState(null);
-  // const [value, onChange] = useState(new Date());
+  const [date, setDate] = useState(null);
   const [sucursal, setSucursal] = useState(null);
   const [hours, setHours] = useState(null);
   const [fullName, setFullName] = useState(null);
@@ -22,14 +20,11 @@ const Index = () => {
 
   useEffect(() => {
     console.log(authContext);
+    if (user.auth) {
+      setFullName(user.auth.fullName);
+      setEmail(user.auth.email);
+    }
   }, [authContext]);
-
-  // const contextoGlobal = authContext;
-  function fn() {
-    console.log(user);
-    // console.log(sucursal);
-    // console.log(value);
-  }
 
   const handleLocalitation = (values) => {
     if (values !== "select") {
@@ -39,33 +34,42 @@ const Index = () => {
     }
   };
 
-  const handleHours = (hour) => {
-    if (hour !== "select") {
-      setHours(hour);
+  const handleHours = (num) => {
+    if (num !== "select") {
+      setHours(num);
     } else {
       setHours(null);
     }
   };
 
-  const handleFullName = (fullName) => {
-    setFullName(fullName);
-  };
-
-  const handlePhone = (phone) => {
-    setPhone(phone);
-  };
-
-  const handleEmail = (email) => {
-    setEmail(email);
-  };
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("Sucursal: ", sucursal);
-    console.log("Fecha: ", value);
-    console.log("Horario: ", hours);
+    console.log(
+      "Fecha: ",
+      date.toLocaleDateString("es-ar", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      })
+    );
+    try {
+      const turn = {
+        fullName,
+        email,
+        phone,
+        date,
+        user: user.auth.id,
+        branch: sucursal,
+      };
+      /*     console.log("Horario: ", hours);
     console.log("Full Name: ", fullName);
     console.log("Telefono: ", phone);
-    console.log("Email: ", email);
+    console.log("Email: ", email); */
+      const result = await axios.post("http://localhost:5000/api/turn/", turn);
+    } catch (error) {
+      console.log(error);
+    }
+
     Swal.fire({
       title: "Exito",
       text: "Reservaste tu turno satisfactoriamente!",
@@ -75,19 +79,21 @@ const Index = () => {
     Router.push("/user/bookingPanel");
   };
 
-  // const hours = () => {
-  //   let timeArray = [];
-  //   let d = new Date();
-  //   let h = d.getHours();
-  //   let m = d.getMinutes();
-  //   for (var i = 0; i < 24; i++) {
-  //     for (m = (m + 15 - (m % 15)) % 60; m < 60; m = m + 15) {
-  //       timeArray.push(h + ":" + m);
-  //     }
-  //     h = (h + 1) % 24;
-  //     timeArray.push(h + ":" + "00");
-  //   }
-  // };
+  const times = () => {
+    let timeArray = [];
+    let d = new Date("2022-11-26T07:45:00");
+    let h = d.getHours();
+    let m = d.getMinutes();
+    for (let i = 0; i < 12; i++) {
+      for (m = (m + 15 - (m % 15)) % 60; m < 60; m = m + 15) {
+        timeArray.push(h + ":" + m);
+      }
+      h = (h + 1) % 24;
+      timeArray.push(h + ":" + "00");
+    }
+    return timeArray;
+  };
+  console.log(data);
 
   const borderOk = sucursal === null ? "" : "border-ok";
   const letterOk = sucursal === null ? "" : "letter-ok";
@@ -96,6 +102,7 @@ const Index = () => {
   const confirm =
     sucursal !== null &&
     hours !== null &&
+    date !== null &&
     fullName !== null &&
     phone !== null &&
     email !== null
@@ -104,15 +111,14 @@ const Index = () => {
 
   const totalBorder = confirm === "confirm" ? "border-ok" : "";
   const totalLetter = confirm !== "confirm" ? "" : "letter-ok";
+
   return (
     <div>
       <Navbar />
       <div className="containerCalendar">
-        <Calendar onChange={onChange} value={value} />
-        {/* {console.log(value)} */}
+        <Calendar onChange={setDate} value={date} />
       </div>
-      <button onClick={fn}>USER</button>
-      {value === null ? (
+      {date === null ? (
         <div className="reserva-reserva">
           <div className="reserva-content">
             <div className="reserva-head">
@@ -172,13 +178,11 @@ const Index = () => {
                 onChange={(e) => handleLocalitation(e.target.value)}
               >
                 <option value="select">Selecciona la sucursal</option>
-                <option value="Villa-crespo">Villa Crespo</option>
-                <option value="Devoto">Devoto</option>
-                <option value="Palermo">Palermo</option>
-                <option value="Recoleta">Recoleta</option>
-                <option value="Belgrano">Belgrano</option>
-                <option value="Floresta">Floresta</option>
-                <option value="Centro">Micro Centro</option>
+                {data?.map((dato, index) => (
+                  <option key={index} value={dato._id}>
+                    {dato.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -248,13 +252,9 @@ const Index = () => {
                 onChange={(e) => handleLocalitation(e.target.value)}
               >
                 <option value="select">Selecciona la sucursal</option>
-                <option value="Villa-crespo">Villa Crespo</option>
-                <option value="Devoto">Devoto</option>
-                <option value="Palermo">Palermo</option>
-                <option value="Recoleta">Recoleta</option>
-                <option value="Belgrano">Belgrano</option>
-                <option value="Floresta">Floresta</option>
-                <option value="Centro">Micro Centro</option>
+                {data?.map((dato, index) => (
+                  <option key={index}>{dato.name}</option>
+                ))}
               </select>
             </div>
             <div className="reserva-input-desktop2 horario">
@@ -267,14 +267,12 @@ const Index = () => {
                 className="reserva-input-desktop1"
                 onChange={(e) => handleHours(e.target.value)}
               >
-                <option value="select">Selecciona un horario</option>
-                <option value="ocho">08:00 hs</option>
-                <option value="nueve">09:00 hs</option>
-                <option value="diez">10:00 hs</option>
-                <option value="once">11:00 hs</option>
-                <option value="doce">12:00 hs</option>
-                <option value="trece">13:00 hs</option>
-                <option value="catorce">14:00 hs</option>
+                <option value="select">Seleccionar horario</option>
+                {times().map((num, index) => (
+                  <option key={index} value={num}>
+                    {num}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="information">
@@ -288,7 +286,8 @@ const Index = () => {
                   type="text"
                   required
                   className="reserva-input-desktop1 datos"
-                  onChange={(e) => handleFullName(e.target.value)}
+                  value={user.auth ? user.auth.fullName : ""}
+                  disabled
                 ></input>
               </div>
               <div className="reserva-input-desktop2 data ">
@@ -301,7 +300,7 @@ const Index = () => {
                   type="text"
                   required
                   className="reserva-input-desktop1 datos"
-                  onChange={(e) => handlePhone(e.target.value)}
+                  onChange={(e) => setPhone(e.target.value)}
                 ></input>
               </div>
 
@@ -315,17 +314,12 @@ const Index = () => {
                   type="email"
                   required
                   className="reserva-input-desktop1"
-                  onChange={(e) => handleEmail(e.target.value)}
+                  value={user.auth ? user.auth.email : ""}
+                  disabled
                 ></input>
               </div>
             </div>
           </div>
-          {/* <button
-            classNameName={`clientefinal-paneldereservas-c-t-a-desktop1 ${confirm}`}
-          >
-            Confirmar reserva
-          </button> */}
-
           <button
             className={`clientefinal-paneldereservas-c-t-a-desktop1 ${confirm}`}
             onClick={handleSubmit}
@@ -337,5 +331,16 @@ const Index = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const res = await fetch("http://localhost:5000/api/branch");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default Index;
