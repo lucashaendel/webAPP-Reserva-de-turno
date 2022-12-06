@@ -30,7 +30,6 @@ const selectBranch = async (req, res) => {
 };
 
 const createdBranch = async (req, res) => {
-  console.log(req.body);
   const { name, email, telephone, maxCapacity, start, end } = req.body;
 
   const newBranch = new Branch({

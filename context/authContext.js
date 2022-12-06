@@ -25,8 +25,6 @@ export const AuthProvider = ({ children }) => {
     setAuth(null);
     clearLocalStorage();
   };
-  // console.log(token, initialAuth);
-
   const logIn = async ({ email, password }) => {
     setIsFetching(true);
     try {
@@ -38,7 +36,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      console.log(data);
+
       setAuth(data);
       saveLocalStorageUser(data.user);
       saveLocalStorageToken(data.token);
@@ -48,6 +46,7 @@ export const AuthProvider = ({ children }) => {
       setIsFetching(false);
     }
   };
+
   useEffect(() => {
     const token = getToken();
     if (token) {
@@ -79,15 +78,6 @@ export const AuthProvider = ({ children }) => {
         });
     }
   }, []);
-  // const handleAuth = (e) => {
-  //   if (auth) {
-  //     setAuth(null);
-  //   } else {
-  //     setAuth({
-  //       id: e
-  //     });
-  //   }
-  // };
 
   const data = { auth, isFetching, logOut, logIn, error };
 

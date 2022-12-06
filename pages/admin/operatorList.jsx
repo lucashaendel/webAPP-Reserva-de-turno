@@ -1,13 +1,20 @@
 import React from "react";
 import Navbar from "../../comps/Navbar";
+import TopBanner from "../../comps/TopBanner";
 
 const operatorList = ({ data }) => {
   return (
     <>
+      <div className="top-bann">
+        {" "}
+        <TopBanner />{" "}
+      </div>
+      <div className="navb">
+        {" "}
+        <Navbar />
+      </div>
       <div className="box">
-        <div className="Header">
-          <Navbar />
-        </div>
+        <div className="Header"></div>
         <div className="title">
           <span>Operadores</span>
         </div>

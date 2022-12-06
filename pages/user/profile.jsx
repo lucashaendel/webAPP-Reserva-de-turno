@@ -1,46 +1,115 @@
-import Link from "next/link";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import Navbar from "../../comps/Navbar";
+import { useAuth } from "../../context/authContext";
+import Swal from "sweetalert2";
+import axios from "axios";
+import { useRouter } from "next/router";
 
-const profile = () => {
+const Profile = () => {
+  const [fullname, setFullName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState(0);
+  const [dni, setDni] = useState(0);
+  const auth = useAuth();
+  const [id, setId] = useState(null);
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password) {
+      axios
+        .put(`http://localhost:5000/api/user/${id}`, {
+          password: password,
+          telephone: phone,
+        })
+        .then((res) => res.data)
+        .catch((err) => alert(err, "error"));
+      Swal.fire({
+        title: "Exito",
+        text: "Se registró de manera exitosa",
+        icon: "success",
+        allowOutsideClick: false,
+      }).then((res) => {
+        if (res.isConfirmed) {
+          router.push("/user");
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Error, rellene todos los datos",
+        icon: "error",
+        allowOutsideClick: false,
+      });
+    }
+  };
+
+  useEffect(() => {
+    const ID = auth?.auth?.id;
+    const name = auth?.auth?.fullName;
+    const mail = auth?.auth?.email;
+    const documento = auth?.auth?.dni;
+    if (ID) {
+      setId(ID);
+    }
+    if (name) {
+      setFullName(name);
+    }
+    if (mail) {
+      setEmail(mail);
+    }
+    if (documento) {
+      setDni(documento);
+    }
+  }, [auth]);
+
   return (
     <>
       <Navbar />
 
       {/*Formulario*/}
-      <div className="form">
-        <div className="newSucursal">Mis Datos</div>
-        <div className="input2">
-          <label>Nombre</label>
-          <input type="text"></input>
-        </div>
-        <div className="input2">
-          <label>Mail</label>
-          <input type="text"></input>
-        </div>
-        <div className="fila">
-          <div className="inputDesktop2">
-            <label>DNI</label>
-            <input type="number"></input>
+      <form onSubmit={handleSubmit}>
+        <div className="form">
+          <div className="newSucursal">Mis Datos</div>
+          <div className="input2">
+            <label>Nombre</label>
+            <input type="text" value={fullname} disabled></input>
           </div>
-          <div className="inputDesktop3">
-            <label>Teléfono</label>
-            <input type="number"></input>
+          <div className="input2">
+            <label>Mail</label>
+            <input type="text" value={email} disabled></input>
           </div>
-        </div>
-        <div className="Horario">
-          <div>
-            <label>Contraseña</label>
-            <input type="password"></input>
+          <div className="fila">
+            <div className="inputDesktop2">
+              <label>DNI</label>
+              <input type="number" value={dni} disabled></input>
+            </div>
+            <div className="inputDesktop3">
+              <label>Teléfono</label>
+              <input
+                type="number"
+                onChange={(e) => setPhone(e.target.value)}
+              ></input>
+            </div>
           </div>
-          <Link href="#" className="inputEditarContraseña">
-            Editar Contraseña
-          </Link>
+          <div className="Horario">
+            <div>
+              <label>Contraseña</label>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+            </div>
+            <span className="inputEditarContraseña">Editar Contraseña</span>
+          </div>
+          <button className="buttonProfileUser">Aceptar</button>
         </div>
-        <button className="buttonProfileUser">Aceptar</button>
-      </div>
+      </form>
     </>
   );
 };
 
-export default profile;
+export default Profile;

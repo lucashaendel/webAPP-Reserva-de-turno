@@ -61,6 +61,7 @@ const loginUser = async (req, res) => {
         fullName: resultado[0].fullName,
         email: resultado[0].email,
         role: resultado[0].role,
+        dni: resultado[0].dni,
       };
       let token = generateToken(payload);
       res.cookie("token", token);
@@ -83,11 +84,8 @@ const updateUser = (req, res) => {
   const data = req.body;
 
   const newData = {
-    fullName: data.fullName,
-
-    dni: data.dni,
-    email: data.email,
     password: data.password,
+    telephone: data.telephone,
   };
 
   User.findByIdAndUpdate(id, newData, { new: true })
