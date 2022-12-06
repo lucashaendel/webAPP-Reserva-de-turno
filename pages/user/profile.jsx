@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Navbar from "../../comps/Navbar";
 import { useAuth } from "../../context/authContext";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Navbar from "../../comps/Navbar";
+import TopBanner from "../../comps/TopBanner";
 
 const Profile = () => {
   const [fullname, setFullName] = useState("");
@@ -68,6 +69,7 @@ const Profile = () => {
 
   return (
     <>
+      <TopBanner />
       <Navbar />
 
       {/*Formulario*/}

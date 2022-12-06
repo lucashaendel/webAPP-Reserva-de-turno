@@ -17,7 +17,8 @@
     "express-acl": "^2.0.8",
     "joi": "^17.7.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.2"
+    "mongoose": "^6.7.2",
+    "mongoose-paginate-v2": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

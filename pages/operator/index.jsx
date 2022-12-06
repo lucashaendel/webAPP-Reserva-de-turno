@@ -1,15 +1,46 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
+import { useEffect } from "react";
+import Link from "next/link";
+import Navbar from "../../comps/Navbar";
 
-const index = ({ data }) => {
+const Index = ({ data }) => {
+  const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
+
+  const docs = data.docs;
+
+  useEffect(() => {
+    const paginas = data?.totalPages;
+    if (paginas) {
+      setPageCount(paginas);
+    }
+  }, [data]);
+
+  const handlePrevious = (e) => {
+    e.preventDefault();
+    setPage((p) => {
+      if (p === 1) return p;
+      return p - 1;
+    });
+  };
+
+  const handleNext = () => {
+    setPage((p) => {
+      if (p === pageCount) return p;
+      return p + 1;
+    });
+  };
+
+
   return (
     <>
-      {" "}
       <div className="topb">
         <TopBanner />
       </div>
+      <Navbar />
       <div className="divReservas1">
         <div className="tituloReserva">
           <span>Reservas</span>
@@ -18,6 +49,8 @@ const index = ({ data }) => {
         <div className="divReservas">
           {data.map((dato, index) => (
             <div className="divPedido" key={index}>
+          {docs.map((dato, index) => (
+            <div className="divPedido">
               <div className="divNombre">
                 <span className="spanNombre">
                   <span>Nombre</span>
@@ -55,6 +88,34 @@ const index = ({ data }) => {
               </div>
             </div>
           ))}
+          <footer>
+            {/* <button disabled={page === 1} onClick={handlePrevious}>
+              <Link href={`/operator?page=${page}`}>Previous</Link>
+            </button>
+            <button disabled={page === pageCount} onClick={handleNext}>
+              <Link href={`/operator?page=${page}`}> Next</Link>
+            </button> */}
+            <div>
+              <span className="formularioText08 Regular·14·20">
+                <span>Seleccionar Pagina</span>
+              </span>
+            </div>
+            <Link href={`/operator?page=${page}`}>
+              <select
+                className="formularioInputDesktop13"
+                value={page}
+                onChange={(e) => {
+                  setPage(e.target.value);
+                }}
+              >
+                {Array(pageCount)
+                  .fill(null)
+                  .map((_, index) => {
+                    return <option key={index}> {index + 1}</option>;
+                  })}
+              </select>
+            </Link>
+          </footer>
         </div>
       </div>
     </>
@@ -70,7 +131,6 @@ export function LikeButton({ obj }) {
     } else {
       setEstado(true);
     }
-    console.log(estado);
 
     await axios
       .put(`http://localhost:5000/api/operator/reservations/turn/${obj._id}`, {
@@ -90,15 +150,28 @@ export function LikeButton({ obj }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:5000/api/turn");
-  const data = await res.json();
+export async function getServerSideProps({ query }) {
+  if (!{ query }) {
+    const page = 1;
+    const res = await fetch(`http://localhost:5000/api/turn?page=${page}`);
+    const data = await res.json();
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } else {
+    const { page } = query;
+    const res = await fetch(`http://localhost:5000/api/turn?page=${page}`);
+    const data = await res.json();
+
+    return {
+      props: {
+        data,
+      },
+    };
+  }
 }
 
-export default index;
+export default Index;

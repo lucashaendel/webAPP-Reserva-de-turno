@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/authContext";
@@ -18,10 +19,10 @@ const BookingPanel = () => {
     }
   }, [user]);
 
-  console.log(data);
-
   return (
     <div>
+      <TopBanner />
+      <Navbar />
       <h1 className="titleBookings">Reservas</h1>
       <div className="bookings">
         {data.map((dato, index) => (

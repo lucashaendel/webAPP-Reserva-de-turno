@@ -1,60 +1,48 @@
-import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
-import Swal from "sweetalert2";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { userLogin, userLogOut } from "../sate/user";
 import { useAuth } from "../context/authContext";
+import { useEffect } from "react";
+import { useState } from "react";
+import Link from "next/link";
+
 const Navbar = () => {
+  const auth = useAuth();
+  const [role, setRole] = useState("");
+
   const router = useRouter();
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const { logOut } = useAuth();
   const handleLogOut = async (e) => {
     logOut();
     router.push("/");
-    // await axios
-    //   .post("http://localhost:5000/api/user/logout")
-    //   // .then((res) => res.clearCookie("token"))
-    //   .then(() => dispatch(userLogOut()))
-    //   .then(() => {
-    //     Swal.fire({
-    //       title: "Exito",
-    //       text: "Cerraste la sesión!",
-    //       icon: "success",
-    //       allowOutsideClick: false,
-    //     });
-    //     router.push("/");
-    //   })
-    //   // .then(() => dispatch(userLogin({})))
-    //   .catch(() => alert("No se pudo cerrar sesion."));
   };
 
-  // const handlerLogOut = () => {
-  //   axios
-  //     .post("/api/user/logout")
-  //     .then((res) => res.data)
-  //     .then(() => dispatch(userLogOut()))
-  //     .catch(() => alert("No se pudo cerrar sesion."));
-  // };
+  useEffect(() => {
+    const rol = auth?.auth?.role;
+    if (rol) {
+      setRole(rol);
+    }
+  }, [auth]);
 
-  return (
+  return role === "admin" ? (
     <div className="container-navbar">
       <div className="div-button1-admin">
         <span className="span-admin-crearSucursal">
-          <span>Crear sucursal</span>
+          <Link href={"/admin/newBranch"}>
+            <span>Crear sucursal</span>
+          </Link>
         </span>
       </div>
-      <div className="div-button2-admin">
+      {/*  <div className="div-button2-admin">
         <span className="span-admin-sucursal">
-          <span>Sucursal</span>
+         <Link><span>Sucursal</span></Link> 
         </span>
-      </div>
+      </div> */}
       <div className="header-men-admin">
         <div className="header-men-admin-sucursales">
           <span className="span-admin-sucursales">
-            <span>Sucursales</span>
+            <Link href={"/admin"}>
+              <span>Sucursales</span>
+            </Link>
           </span>
           <svg
             className="header-location"
@@ -72,7 +60,9 @@ const Navbar = () => {
         </div>
         <div className="header-men-admin-operadores">
           <span className="span-admin-operadores">
-            <span>Operadores</span>
+            <Link href={"/admin/operatorList"}>
+              <span>Operadores</span>
+            </Link>
           </span>
           <svg
             className="header-communication"
@@ -108,7 +98,9 @@ const Navbar = () => {
         </div>
         <div className="header-men-admin-cuenta my-account">
           <span className="span-admin-cuenta">
-            <span>Mi Cuenta</span>
+            <Link href={"/admin/profile"}>
+              <span>Mi Cuenta</span>
+            </Link>
           </span>
           <svg
             className="header-communication"
@@ -131,6 +123,115 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+  ) : role === "operator" ? (
+    <div class="container-navbar">
+      <div class="header-men">
+        <div class="header-men-operator-reservas">
+          <span class="header-text-operator">
+            <Link href={"/operator"}>
+              <span>Reservas</span>
+            </Link>
+          </span>
+          <svg
+            className="header-operator-interface"
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.625 0.5C4.27982 0.5 4 0.779822 4 1.125H1.5C1.15482 1.125 0.875 1.40482 0.875 1.75V4.25V4.875V14.25C0.875 14.5952 1.15482 14.875 1.5 14.875H16.5C16.8452 14.875 17.125 14.5952 17.125 14.25V4.25V3.625V1.75C17.125 1.40482 16.8452 1.125 16.5 1.125H14C14 0.779822 13.7202 0.5 13.375 0.5C13.0298 0.5 12.75 0.779822 12.75 1.125H5.25C5.25 0.779822 4.97018 0.5 4.625 0.5ZM2.125 2.375H4C4 2.72018 4.27982 3 4.625 3C4.97018 3 5.25 2.72018 5.25 2.375H12.75C12.75 2.72018 13.0298 3 13.375 3C13.7202 3 14 2.72018 14 2.375H15.875V3.625H2.125V2.375ZM2.125 4.875H15.875V13.625H2.125V4.875ZM10.25 6.75C9.90482 6.75 9.625 7.02982 9.625 7.375V11.125C9.625 11.4702 9.90482 11.75 10.25 11.75H14C14.3452 11.75 14.625 11.4702 14.625 11.125V7.375C14.625 7.02982 14.3452 6.75 14 6.75H10.25ZM4.3 7.375C4.13431 7.375 4 7.50931 4 7.675V8.325C4 8.49069 4.13431 8.625 4.3 8.625H4.95C5.11569 8.625 5.25 8.49069 5.25 8.325V7.675C5.25 7.50931 5.11569 7.375 4.95 7.375H4.3ZM6.8 7.375C6.63431 7.375 6.5 7.50931 6.5 7.675V8.325C6.5 8.49069 6.63431 8.625 6.8 8.625H7.45C7.61569 8.625 7.75 8.49069 7.75 8.325V7.675C7.75 7.50931 7.61569 7.375 7.45 7.375H6.8ZM10.875 8H13.375V10.5H10.875V8ZM4.3 9.875C4.13431 9.875 4 10.0093 4 10.175V10.825C4 10.9907 4.13431 11.125 4.3 11.125H4.95C5.11569 11.125 5.25 10.9907 5.25 10.825V10.175C5.25 10.0093 5.11569 9.875 4.95 9.875H4.3ZM6.8 9.875C6.63431 9.875 6.5 10.0093 6.5 10.175V10.825C6.5 10.9907 6.63431 11.125 6.8 11.125H7.45C7.61569 11.125 7.75 10.9907 7.75 10.825V10.175C7.75 10.0093 7.61569 9.875 7.45 9.875H6.8Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div class="header-operator-cuenta my-account">
+          <span class="span-operator-cuenta">
+            <Link href={"/operator/profile"}>
+              <span>Mi Cuenta</span>
+            </Link>
+          </span>
+          <svg
+            className="header-operator-interface "
+            width="14"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.00016 0.5C4.43073 0.5 2.3335 2.6449 2.3335 5.27273C2.3335 6.90436 3.14708 8.35305 4.37516 9.21449C2.18033 10.1694 0.601885 12.2999 0.36452 14.834C0.330183 15.2006 0.631973 15.5 1.00016 15.5C1.36835 15.5 1.66269 15.2001 1.70491 14.8344C2.01924 12.1108 4.24298 10.0455 7.00016 10.0455C9.75735 10.0455 11.9811 12.1108 12.2954 14.8344C12.3376 15.2001 12.632 15.5 13.0002 15.5C13.3684 15.5 13.6701 15.2006 13.6358 14.834C13.3984 12.2999 11.82 10.1694 9.62516 9.21449C10.8532 8.35305 11.6668 6.90436 11.6668 5.27273C11.6668 2.6449 9.56959 0.5 7.00016 0.5ZM7.00016 1.86364C8.84901 1.86364 10.3335 3.38186 10.3335 5.27273C10.3335 7.16359 8.84901 8.68182 7.00016 8.68182C5.15132 8.68182 3.66683 7.16359 3.66683 5.27273C3.66683 3.38186 5.15132 1.86364 7.00016 1.86364Z"
+              fill="#A442F1"
+            />
+          </svg>
+          <div className="navbar_menu">
+            <div>
+              <button onClick={handleLogOut}>Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : role === "user" ? (
+    <div className="container-navbar">
+      <div className="div-reservar">
+        <span className="span-navbar">
+          <Link href={"/user"}>
+            <span>Reservar</span>
+          </Link>
+        </span>
+      </div>
+      <div className="header-men">
+        <div className="header-men-reservas">
+          <span className="header-text-reservas">
+            <Link href={"/user/bookingPanel"}>
+              <span>Mis reservas</span>
+            </Link>
+          </span>
+          <svg
+            className="header-div"
+            width="18"
+            height="15"
+            viewBox="0 0 18 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.625 0.5C4.27982 0.5 4 0.779822 4 1.125H1.5C1.15482 1.125 0.875 1.40482 0.875 1.75V4.25V4.875V14.25C0.875 14.5952 1.15482 14.875 1.5 14.875H16.5C16.8452 14.875 17.125 14.5952 17.125 14.25V4.25V3.625V1.75C17.125 1.40482 16.8452 1.125 16.5 1.125H14C14 0.779822 13.7202 0.5 13.375 0.5C13.0298 0.5 12.75 0.779822 12.75 1.125H5.25C5.25 0.779822 4.97018 0.5 4.625 0.5ZM2.125 2.375H4C4 2.72018 4.27982 3 4.625 3C4.97018 3 5.25 2.72018 5.25 2.375H12.75C12.75 2.72018 13.0298 3 13.375 3C13.7202 3 14 2.72018 14 2.375H15.875V3.625H2.125V2.375ZM2.125 4.875H15.875V13.625H2.125V4.875ZM10.25 6.75C9.90482 6.75 9.625 7.02982 9.625 7.375V11.125C9.625 11.4702 9.90482 11.75 10.25 11.75H14C14.3452 11.75 14.625 11.4702 14.625 11.125V7.375C14.625 7.02982 14.3452 6.75 14 6.75H10.25ZM4.3 7.375C4.13431 7.375 4 7.50931 4 7.675V8.325C4 8.49069 4.13431 8.625 4.3 8.625H4.95C5.11569 8.625 5.25 8.49069 5.25 8.325V7.675C5.25 7.50931 5.11569 7.375 4.95 7.375H4.3ZM6.8 7.375C6.63431 7.375 6.5 7.50931 6.5 7.675V8.325C6.5 8.49069 6.63431 8.625 6.8 8.625H7.45C7.61569 8.625 7.75 8.49069 7.75 8.325V7.675C7.75 7.50931 7.61569 7.375 7.45 7.375H6.8ZM10.875 8H13.375V10.5H10.875V8ZM4.3 9.875C4.13431 9.875 4 10.0093 4 10.175V10.825C4 10.9907 4.13431 11.125 4.3 11.125H4.95C5.11569 11.125 5.25 10.9907 5.25 10.825V10.175C5.25 10.0093 5.11569 9.875 4.95 9.875H4.3ZM6.8 9.875C6.63431 9.875 6.5 10.0093 6.5 10.175V10.825C6.5 10.9907 6.63431 11.125 6.8 11.125H7.45C7.61569 11.125 7.75 10.9907 7.75 10.825V10.175C7.75 10.0093 7.61569 9.875 7.45 9.875H6.8Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div className="div-cuenta my-account">
+          <span className="cuenta-text">
+            <Link href={"/user/profile"}>
+              <span>Mi Cuenta</span>
+            </Link>
+          </span>
+          <svg
+            className="cuenta-user-interface1"
+            width="14"
+            height="16"
+            viewBox="0 0 14 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.00004 0.5C4.43061 0.5 2.33337 2.6449 2.33337 5.27273C2.33337 6.90436 3.14696 8.35305 4.37504 9.21449C2.18021 10.1694 0.601763 12.2999 0.364398 14.834C0.330061 15.2006 0.631851 15.5 1.00004 15.5C1.36823 15.5 1.66257 15.2001 1.70478 14.8344C2.01912 12.1108 4.24285 10.0455 7.00004 10.0455C9.75723 10.0455 11.981 12.1108 12.2953 14.8344C12.3375 15.2001 12.6319 15.5 13 15.5C13.3682 15.5 13.67 15.2006 13.6357 14.834C13.3983 12.2999 11.8199 10.1694 9.62504 9.21449C10.8531 8.35305 11.6667 6.90436 11.6667 5.27273C11.6667 2.6449 9.56947 0.5 7.00004 0.5ZM7.00004 1.86364C8.84889 1.86364 10.3334 3.38186 10.3334 5.27273C10.3334 7.16359 8.84889 8.68182 7.00004 8.68182C5.1512 8.68182 3.66671 7.16359 3.66671 5.27273C3.66671 3.38186 5.1512 1.86364 7.00004 1.86364Z"
+              fill="black"
+            />
+          </svg>
+          <div className="navbar_menu">
+            <div>
+              <button onClick={handleLogOut}>Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    ""
   );
 };
 

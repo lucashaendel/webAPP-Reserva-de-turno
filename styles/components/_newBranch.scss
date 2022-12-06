@@ -177,7 +177,7 @@
   /* User Interface */
   width: 20px;
   height: 20px;
-border: none;
+  border: none;
 }
 .dropdown-vector {
   position: absolute;
@@ -471,29 +471,19 @@ border: none;
   width: 20px;
   height: 20px;
 }
-.buttonSendText{width: 750px;
+.buttonSendText {
+  width: 750px;
   height: 20px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   align-items: center;
   text-align: center;
-  font-feature-settings: 'zero' on;
+  font-feature-settings: "zero" on;
   color: $white;
   flex: none;
   order: 1;
-  flex-grow: 1;}
-
-  .topBanner{
-    margin-top: 20px;
-   
-  }
-
-  .topNavbar{
-
-margin-bottom: 110px;
-
-  }
-
+  flex-grow: 1;
+}
