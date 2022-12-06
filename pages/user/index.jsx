@@ -19,6 +19,7 @@ const Index = ({ data }) => {
   const [email, setEmail] = useState("-");
   const [id, setId] = useState(null);
   const [reservation, setReservation] = useState("-");
+  const [branchName, setBranchName] = useState("");
 
   useEffect(() => {
     console.log(authContext);
@@ -83,6 +84,7 @@ const Index = ({ data }) => {
         user: id,
         branch: sucursal,
         reservationDate: reservation,
+        branchName,
       })
       .then((res) => console.log(res));
 
@@ -190,11 +192,14 @@ const Index = ({ data }) => {
               </div>
               <select
                 className="reserva-input-desktop1"
-                onChange={(e) => handleLocalitation(e.target.value)}
+                onChange={(e) => {
+                  setBranchName(e.target.value.split(",")[0]);
+                  handleLocalitation(e.target.value.split(",")[1]);
+                }}
               >
                 <option value="select">Selecciona la sucursal</option>
                 {data?.map((dato, index) => (
-                  <option key={index} value={dato._id}>
+                  <option key={index} value={[[dato.name, dato._id]]}>
                     {dato.name}
                   </option>
                 ))}
@@ -264,11 +269,16 @@ const Index = ({ data }) => {
               </div>
               <select
                 className="reserva-input-desktop1"
-                onChange={(e) => handleLocalitation(e.target.value)}
+                onChange={(e) => {
+                  setBranchName(e.target.value.split(",")[0]);
+                  handleLocalitation(e.target.value.split(",")[1]);
+                }}
               >
                 <option value="select">Selecciona la sucursal</option>
                 {data?.map((dato, index) => (
-                  <option key={index}>{dato.name}</option>
+                  <option key={index} value={[[dato.name, dato._id]]}>
+                    {dato.name}
+                  </option>
                 ))}
               </select>
             </div>

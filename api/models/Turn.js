@@ -26,6 +26,10 @@ const turnSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Branch",
   },
+  branchName: {
+    type: String,
+    require: true,
+  },
   attendance: {
     type: Boolean,
     default: false,
