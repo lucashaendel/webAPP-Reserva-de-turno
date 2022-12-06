@@ -14,15 +14,18 @@ const Index = ({ data }) => {
   const [date, setDate] = useState(null);
   const [sucursal, setSucursal] = useState(null);
   const [hours, setHours] = useState(null);
-  const [fullName, setFullName] = useState(null);
+  const [fullName, setFullName] = useState("-");
   const [phone, setPhone] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState("-");
+  const [id, setId] = useState(null);
+  const [reservation, setReservation] = useState("-");
 
   useEffect(() => {
     console.log(authContext);
     if (user.auth) {
       setFullName(user.auth.fullName);
       setEmail(user.auth.email);
+      setId(user.auth.id);
     }
   }, [authContext]);
 
@@ -42,33 +45,46 @@ const Index = ({ data }) => {
     }
   };
 
+  const handlePhone = (phone) => {
+    setPhone(phone);
+    const fecha = date.toLocaleDateString("es-ar", {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+    });
+    const finishDate = `${fecha} ${hours}`;
+    setReservation(finishDate);
+  };
   const handleSubmit = async () => {
-    console.log("Sucursal: ", sucursal);
-    console.log(
-      "Fecha: ",
-      date.toLocaleDateString("es-ar", {
-        day: "numeric",
-        month: "numeric",
-        year: "numeric",
-      })
-    );
-    try {
-      const turn = {
+    // console.log("Sucursal: ", sucursal);
+    // try {
+    //   const turn = {
+    //     fullName,
+    //     email,
+    //     phone,
+    //     date,
+    //     user: user.auth.id,
+    //     branch: sucursal,
+    //   };
+    //   /*     console.log("Horario: ", hours);
+    // console.log("Full Name: ", fullName);
+    // console.log("Telefono: ", phone);
+    // console.log("Email: ", email); */
+    //   const result = await axios.post("http://localhost:5000/api/turn/", turn);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    console.log(fullName, email, phone, user, sucursal, reservation);
+    axios
+      .post("http://localhost:5000/api/turn/", {
         fullName,
         email,
         phone,
-        date,
-        user: user.auth.id,
+        user: id,
         branch: sucursal,
-      };
-      /*     console.log("Horario: ", hours);
-    console.log("Full Name: ", fullName);
-    console.log("Telefono: ", phone);
-    console.log("Email: ", email); */
-      const result = await axios.post("http://localhost:5000/api/turn/", turn);
-    } catch (error) {
-      console.log(error);
-    }
+        reservationDate: reservation,
+      })
+      .then((res) => console.log(res));
 
     Swal.fire({
       title: "Exito",
@@ -93,7 +109,6 @@ const Index = ({ data }) => {
     }
     return timeArray;
   };
-  console.log(data);
 
   const borderOk = sucursal === null ? "" : "border-ok";
   const letterOk = sucursal === null ? "" : "letter-ok";
@@ -103,14 +118,14 @@ const Index = ({ data }) => {
     sucursal !== null &&
     hours !== null &&
     date !== null &&
-    fullName !== null &&
+    fullName !== "-" &&
     phone !== null &&
-    email !== null
+    email !== "-"
       ? "confirm"
       : "";
 
-  const totalBorder = confirm === "confirm" ? "border-ok" : "";
-  const totalLetter = confirm !== "confirm" ? "" : "letter-ok";
+  const totalBorder = confirm === "confirm" ? "border-ok" : "border-ok";
+  const totalLetter = confirm !== "confirm" ? "letter-ok" : "letter-ok";
 
   return (
     <div>
@@ -297,10 +312,10 @@ const Index = ({ data }) => {
                   </span>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   required
                   className="reserva-input-desktop1 datos"
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => handlePhone(e.target.value)}
                 ></input>
               </div>
 
