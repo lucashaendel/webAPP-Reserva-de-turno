@@ -30,6 +30,10 @@ const turnSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  reservationDate: {
+    type: String,
+    require: true,
+  },
 });
 
 turnSchema.plugin(mongoosePaginate);
