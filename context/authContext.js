@@ -25,7 +25,6 @@ export const AuthProvider = ({ children }) => {
     setAuth(null);
     clearLocalStorage();
   };
-
   const logIn = async ({ email, password }) => {
     setIsFetching(true);
     try {

@@ -10,10 +10,10 @@ const getAllTurns = (req, res) => {
 
 // creo un turno y le asigno un usuario q es el que lo crea
 const createdTurn = async (req, res, next) => {
-  const payload = validateToken(req.cookies.token);
+  // const payload = validateToken(req.cookies.token);
 
-  const { fullName, email, phone } = req.body;
-  const user = await User.findById(payload.id);
+  const { fullName, email, phone, user, reservationDate } = req.body;
+  const usuario = await User.findById(user);
   const branch = await Branch.findById(req.body.branch);
 
   const newTurn = new Turn({
@@ -21,15 +21,16 @@ const createdTurn = async (req, res, next) => {
     email,
     date: new Date(),
     phone,
-    user: user._id,
+    user: usuario._id,
     branch: branch._id,
+    reservationDate,
   });
 
   try {
     const savedTurn = await newTurn.save();
-    user.turns = user.turns.concat(savedTurn._id);
+    usuario.turns = usuario.turns.concat(savedTurn._id);
     branch.turns = branch.turns.concat(savedTurn._id);
-    await user.save();
+    await usuario.save();
     await branch.save();
     res.send(savedTurn);
   } catch (error) {
