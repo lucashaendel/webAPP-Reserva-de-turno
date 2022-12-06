@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
-import NavbarOperator from "../../comps/Navbar";
 
 const index = ({ data }) => {
   return (
@@ -18,12 +17,12 @@ const index = ({ data }) => {
 
         <div className="divReservas">
           {data.map((dato, index) => (
-            <div className="divPedido">
+            <div className="divPedido" key={index}>
               <div className="divNombre">
                 <span className="spanNombre">
                   <span>Nombre</span>
                 </span>
-                <span className="spanNombre2" key={dato._id}>
+                <span className="spanNombre2">
                   <span>{dato.fullName}</span>
                 </span>
               </div>
@@ -31,7 +30,7 @@ const index = ({ data }) => {
                 <span className="tituloFecha">
                   <span>Reserva</span>
                 </span>
-                <span className="fecha" key={dato._id}>
+                <span className="fecha">
                   <span>Dia reservado</span>
                 </span>
               </div>
@@ -39,7 +38,7 @@ const index = ({ data }) => {
                 <span className="tituloDia">
                   <span>Día de la reserva</span>
                 </span>
-                <span className="spanDia" key={dato._id}>
+                <span className="spanDia">
                   <span>{dato.date}</span>
                 </span>
               </div>
@@ -47,7 +46,7 @@ const index = ({ data }) => {
                 <span className="tituloNumReserva">
                   <span>N° de la reserva</span>
                 </span>
-                <span className="numReserva" key={dato._id}>
+                <span className="numReserva">
                   <span>{index}</span>
                 </span>
               </div>
@@ -77,7 +76,6 @@ export function LikeButton({ obj }) {
       .put(`http://localhost:5000/api/operator/reservations/turn/${obj._id}`, {
         attendance: estado,
       })
-
       .catch((err) => alert(err));
   };
 
