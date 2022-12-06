@@ -29,6 +29,10 @@ const turnSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  reservationDate: {
+    type: String,
+    require: true,
+  },
 });
 
 const turn = mongoose.model("Turn", turnSchema);
