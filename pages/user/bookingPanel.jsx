@@ -1,8 +1,12 @@
 import React from "react";
+import Navbar from "../../comps/Navbar";
+import TopBanner from "../../comps/TopBanner";
 
-const bookingPanel = () => {
+const BookingPanel = () => {
   return (
     <div>
+      <TopBanner />
+      <Navbar />
       <h1 className="titleBookings">Reservas</h1>
       <div className="bookings">
         <div className="myAccount">
@@ -23,7 +27,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -57,7 +61,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -91,7 +95,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -124,7 +128,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -157,7 +161,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -190,7 +194,7 @@ const bookingPanel = () => {
             <p>1131372791015</p>
           </div>
           <button>
-            Editar{" "}
+            Editar
             <svg
               width="16"
               height="10"
@@ -210,4 +214,4 @@ const bookingPanel = () => {
   );
 };
 
-export default bookingPanel;
+export default BookingPanel;

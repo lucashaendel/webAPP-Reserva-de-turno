@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Link from "next/link";
+import Navbar from "../../comps/Navbar";
 
 const Index = ({ data }) => {
   const [page, setPage] = useState(1);
@@ -39,6 +39,7 @@ const Index = ({ data }) => {
       <div className="topb">
         <TopBanner />
       </div>
+      <Navbar />
       <div className="divReservas1">
         <div className="tituloReserva">
           <span>Reservas</span>

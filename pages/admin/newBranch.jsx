@@ -8,7 +8,7 @@ import TopBanner from "../../comps/TopBanner";
 
 //creacion de nueva sucursal
 
-const newBranch = () => {
+const NewBranch = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState(null);
@@ -84,12 +84,8 @@ const newBranch = () => {
 
   return (
     <>
-      <div className="topBanner">
-        <TopBanner />
-      </div>
-      <div className="topNavbar">
-        <Navbar />
-      </div>
+      <TopBanner />
+      <Navbar />
       <div className="branchContainer">
         <form onSubmit={handleSubmit}>
           <div className="form">
@@ -210,4 +206,4 @@ const newBranch = () => {
   );
 };
 
-export default newBranch;
+export default NewBranch;

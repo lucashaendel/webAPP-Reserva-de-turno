@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
+import Navbar from "../../comps/Navbar";
 
-const profile = () => {
+const Profile = () => {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
@@ -26,11 +27,8 @@ const profile = () => {
 
   return (
     <>
-      {" "}
-      <div>
-        {" "}
-        <TopBanner />
-      </div>
+      <TopBanner />
+      <Navbar />
       <div>
         <form onSubmit={handleSubmit}>
           <div class="divFormulario">
@@ -135,4 +133,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;

@@ -8,6 +8,7 @@ import Router, { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import Image from "next/image";
 import { AuthContext } from "../../context/authContext";
+
 const Index = () => {
   const dispatch = useDispatch();
   const authContext = useContext(AuthContext);
