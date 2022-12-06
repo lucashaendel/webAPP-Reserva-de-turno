@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 const { Schema } = mongoose;
 
 const turnSchema = new Schema({
@@ -34,6 +35,8 @@ const turnSchema = new Schema({
     require: true,
   },
 });
+
+turnSchema.plugin(mongoosePaginate);
 
 const turn = mongoose.model("Turn", turnSchema);
 

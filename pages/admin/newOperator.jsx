@@ -6,7 +6,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
-const newOperator = ({ data }) => {
+const NewOperator = ({ data }) => {
   const [fullName, setFullName] = useState("");
   const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
@@ -59,8 +59,8 @@ const newOperator = ({ data }) => {
   return (
     <div>
       <TopBanner />
+      <Navbar />
       <div>
-        <Navbar />
         <form onSubmit={handleSubmit}>
           <div className="formularioFormulario">
             <span className="formularioText SemiBold·20·24">
@@ -187,4 +187,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default newOperator;
+export default NewOperator;

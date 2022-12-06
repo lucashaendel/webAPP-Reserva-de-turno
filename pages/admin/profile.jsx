@@ -6,7 +6,6 @@ import TopBanner from "../../comps/TopBanner";
 
 import { useAuth } from "../../context/authContext";
 
-
 const Profile = () => {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,13 +31,8 @@ const Profile = () => {
 
   return (
     <>
-      <div className="top-banner">
-        <TopBanner />
-      </div>
-      <div className="top-navbar">
-        {" "}
-        <Navbar />{" "}
-      </div>
+      <TopBanner />
+      <Navbar />
       <div className="perfil-administrador-perfil-administrador">
         <form onSubmit={handleSubmit}>
           <div className="perfil-administrador-formulario">

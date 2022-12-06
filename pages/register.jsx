@@ -8,7 +8,7 @@ import SvgEyesTwo from "../comps/SvgEyesTwo";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
-const register = () => {
+const Register = () => {
   const [fullName, setFullName] = useState("");
   const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
@@ -265,4 +265,4 @@ const register = () => {
     </>
   );
 };
-export default register;
+export default Register;

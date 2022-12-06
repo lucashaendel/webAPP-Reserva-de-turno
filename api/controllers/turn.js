@@ -4,8 +4,13 @@ const User = require("../models/User");
 const Branch = require("../models/Branch");
 
 // Traigo todos los turnos
-const getAllTurns = (req, res) => {
-  Turn.find().then((resp) => res.status(200).send(resp));
+const getAllTurns = async (req, res) => {
+  const limit = parseInt(req.query.limit) || 10;
+  const page = parseInt(req.query.page) || 1;
+
+  const turns = await Turn.paginate({}, { limit, page });
+  //Turn.find().then((resp) => res.status(200).send(resp));
+  res.json(turns);
 };
 
 // creo un turno y le asigno un usuario q es el que lo crea
