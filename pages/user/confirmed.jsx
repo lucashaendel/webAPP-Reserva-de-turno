@@ -1,21 +1,47 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext, useEffect } from "react";
+import { useState } from "react";
 import Navbar from "../../comps/Navbar";
 import TopBanner from "../../comps/TopBanner";
+import { useAuth } from "../../context/authContext";
+import Link from "next/link";
 
 const Confirmed = () => {
+  const user = useAuth();
+  const [turn, setTurn] = useState([]);
+  const [lastTurn, setLastTurn] = useState({});
+  const [branchName, setBranchName] = useState("");
+  const [reservation, setReservation] = useState([]);
+  useEffect(() => {
+    if (user.auth) {
+      console.log("entrado al axios");
+      axios
+        .get(`http://localhost:5000/api/turn/user/${user.auth.id}`)
+        .then((res) => res.data)
+        .then((turn) => {
+          setTurn(turn);
+          setLastTurn(turn[turn.length - 1]);
+          setReservation(turn[turn.length - 1].reservationDate.split(" "));
+        })
+        .catch((error) => console.error(error));
+    }
+    if (lastTurn.branch) {
+      axios
+        .get(`http://localhost:5000/api/branch/${lastTurn.branch}`)
+        .then((res) => res.data)
+        .then((branchName) => setBranchName(branchName.name));
+    }
+  }, [user]);
+
+  console.log(lastTurn.branch, "the last one");
+  console.log(branchName);
   return (
     <>
       <TopBanner />
       <Navbar />
       <div className="container-confirmed">
         <div className="clientefinal-paneldereservas-mensaje">
-          <div className="clientefinal-paneldereservas-user-interface">
-            <img
-              src="/playground_assets/unioni125-icxo.svg"
-              alt="UnionI125"
-              className="clientefinal-paneldereservas-union"
-            />
-          </div>
+          <div className="clientefinal-paneldereservas-user-interface"></div>
           <span className="clientefinal-paneldereservas-text HeadlineSemiBold·26·32">
             <span>¡Gracias por tu reserva!</span>
           </span>
@@ -23,7 +49,8 @@ const Confirmed = () => {
             <span>
               <span>
                 En hasta 5 minutos, recibirás un correo electrónico en
-                ivan@e-cruce.com con todos los detalles de tu reservación.
+                {` ${lastTurn.email} `}
+                con todos los detalles de tu reservación.
               </span>
               <br />
               <span>
@@ -31,7 +58,7 @@ const Confirmed = () => {
               </span>
             </span>
           </span>
-          <div className="clientefinal-paneldereservas-c-t-a-desktop1">
+          <div className="clientefinal-paneldereservas-c-t-a-desktop115">
             <span className="clientefinal-paneldereservas-text07 Semibold·16·20">
               <span>¿Quéres imprimir tu comprobante?</span>
             </span>
@@ -49,13 +76,12 @@ const Confirmed = () => {
                 <span className="clientefinal-paneldereservas-text10">
                   Reserva
                 </span>
-                <span className="num-reserva">#1043812955480-01</span>
+                <span className="num-reserva">{` #${lastTurn._id}`}</span>
               </span>
               <div className="clientefinal-paneldereservas-info">
                 <span className="clientefinal-paneldereservas-text12 BodySemiBold·14·20">
                   <span>
-                    Hecho el 10/10/2022 a las 11:35 hs para el 12/10/2022 a las
-                    13:00 hs
+                    {`Hecho el 10/10/2022 a las 11:35 hs para el ${reservation[0]} a las ${reservation[1]} hs`}
                   </span>
                 </span>
               </div>
@@ -94,17 +120,18 @@ const Confirmed = () => {
                     fill="#E53939"
                   />
                 </svg>
-
-                <span className="clientefinal-paneldereservas-text16 Semibold·15·20">
-                  <span>Cancelar reserva</span>
-                </span>
+                <Link href="/user/cancelled">
+                  <span className="clientefinal-paneldereservas-text16 Semibold·15·20">
+                    <span>Cancelar reserva</span>
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
           <div className="clientefinal-paneldereservas-info1">
             <div className="clientefinal-paneldereservas-informacin">
               <span className="clientefinal-paneldereservas-text18 SemiBold·16·20">
-                <span>Ivan Cruce</span>
+                <span>{`${lastTurn.fullName}`}</span>
               </span>
               <div className="clientefinal-paneldereservas-data">
                 <div className="clientefinal-paneldereservas-txt">
@@ -112,7 +139,7 @@ const Confirmed = () => {
                     <span>Mail:</span>
                   </span>
                   <span className="clientefinal-paneldereservas-text22 BodyRegular·14·20">
-                    <span>ivan@e-cruce.com</span>
+                    <span>{`${lastTurn.email}`}</span>
                   </span>
                 </div>
                 <div className="clientefinal-paneldereservas-txt1">
@@ -120,7 +147,7 @@ const Confirmed = () => {
                     <span>Teléfono:</span>
                   </span>
                   <span className="clientefinal-paneldereservas-text26 BodyRegular·14·20">
-                    <span>1123456789</span>
+                    <span>{`${lastTurn.phone}`}</span>
                   </span>
                 </div>
               </div>
@@ -135,7 +162,7 @@ const Confirmed = () => {
                     <span>Sucursal:</span>
                   </span>
                   <span className="clientefinal-paneldereservas-text32 BodyRegular·14·20">
-                    <span>Villa Crespo</span>
+                    <span>{`${branchName}`}</span>
                   </span>
                 </div>
                 <div className="clientefinal-paneldereservas-txt3">
@@ -143,7 +170,7 @@ const Confirmed = () => {
                     <span>Horario:</span>
                   </span>
                   <span className="clientefinal-paneldereservas-text36 BodyRegular·14·20">
-                    <span>13:00 hs</span>
+                    <span>{`${reservation[1]} hs`}</span>
                   </span>
                 </div>
               </div>

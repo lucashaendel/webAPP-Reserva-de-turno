@@ -23,4 +23,6 @@ router.put("/:id", updatedTurn);
 
 router.delete("/:id", deletedTurn);
 
+router.get("/user/:id", getTurnById);
+
 module.exports = router;

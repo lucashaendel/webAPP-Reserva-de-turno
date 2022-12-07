@@ -7,8 +7,11 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Navbar from "../../comps/Navbar";
 import TopBanner from "../../comps/TopBanner";
+import { useRef } from "react";
+import Link from "next/link";
 
 const Profile = () => {
+  const inputPassword = useRef();
   const [fullname, setFullName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -102,10 +105,18 @@ const Profile = () => {
               <label>Contraseña</label>
               <input
                 type="password"
+                ref={inputPassword}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
-            <span className="inputEditarContraseña">Editar Contraseña</span>
+            <Link href="">
+              <span
+                className="inputEditarContraseña"
+                onClick={() => inputPassword.current.focus()}
+              >
+                Editar Contraseña
+              </span>
+            </Link>
           </div>
           <button className="buttonProfileUser">Aceptar</button>
         </div>

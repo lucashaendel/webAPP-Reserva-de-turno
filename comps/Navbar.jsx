@@ -26,11 +26,11 @@ const Navbar = () => {
   return role === "admin" ? (
     <div className="container-navbar">
       <div className="div-button1-admin">
-        <span className="span-admin-crearSucursal">
-          <Link href={"/admin/newBranch"}>
+        <Link href={"/admin/newBranch"}>
+          <span className="span-admin-crearSucursal">
             <span>Crear sucursal</span>
-          </Link>
-        </span>
+          </span>
+        </Link>
       </div>
       {/*  <div className="div-button2-admin">
         <span className="span-admin-sucursal">
@@ -39,11 +39,11 @@ const Navbar = () => {
       </div> */}
       <div className="header-men-admin">
         <div className="header-men-admin-sucursales">
-          <span className="span-admin-sucursales">
-            <Link href={"/admin"}>
+          <Link href={"/admin"}>
+            <span className="span-admin-sucursales">
               <span>Sucursales</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-location"
             width="20"
@@ -59,11 +59,11 @@ const Navbar = () => {
           </svg>
         </div>
         <div className="header-men-admin-operadores">
-          <span className="span-admin-operadores">
-            <Link href={"/admin/operatorList"}>
+          <Link href={"/admin/operatorList"}>
+            <span className="span-admin-operadores">
               <span>Operadores</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-communication"
             width="17"
@@ -97,11 +97,11 @@ const Navbar = () => {
           </svg>
         </div>
         <div className="header-men-admin-cuenta my-account">
-          <span className="span-admin-cuenta">
-            <Link href={"/admin/profile"}>
+          <Link href={"/admin/profile"}>
+            <span className="span-admin-cuenta">
               <span>Mi Cuenta</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-communication"
             width="14"
@@ -127,11 +127,11 @@ const Navbar = () => {
     <div class="container-navbar">
       <div class="header-men">
         <div class="header-men-operator-reservas">
-          <span class="header-text-operator">
-            <Link href={"/operator"}>
+          <Link href={"/operator"}>
+            <span class="header-text-operator">
               <span>Reservas</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-operator-interface"
             width="18"
@@ -147,11 +147,11 @@ const Navbar = () => {
           </svg>
         </div>
         <div class="header-operator-cuenta my-account">
-          <span class="span-operator-cuenta">
-            <Link href={"/operator/profile"}>
+          <Link href={"/operator/profile"}>
+            <span class="span-operator-cuenta">
               <span>Mi Cuenta</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-operator-interface "
             width="14"
@@ -176,19 +176,19 @@ const Navbar = () => {
   ) : role === "user" ? (
     <div className="container-navbar">
       <div className="div-reservar">
-        <span className="span-navbar">
-          <Link href={"/user"}>
+        <Link href={"/user"}>
+          <span className="span-navbar">
             <span>Reservar</span>
-          </Link>
-        </span>
+          </span>
+        </Link>
       </div>
       <div className="header-men">
         <div className="header-men-reservas">
-          <span className="header-text-reservas">
-            <Link href={"/user/bookingPanel"}>
+          <Link href={"/user/bookingPanel"}>
+            <span className="header-text-reservas">
               <span>Mis reservas</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="header-div"
             width="18"
@@ -204,11 +204,11 @@ const Navbar = () => {
           </svg>
         </div>
         <div className="div-cuenta my-account">
-          <span className="cuenta-text">
-            <Link href={"/user/profile"}>
+          <Link href={"/user/profile"}>
+            <span className="cuenta-text">
               <span>Mi Cuenta</span>
-            </Link>
-          </span>
+            </span>
+          </Link>
           <svg
             className="cuenta-user-interface1"
             width="14"

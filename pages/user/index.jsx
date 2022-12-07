@@ -22,7 +22,6 @@ const Index = ({ data }) => {
   const [branchName, setBranchName] = useState("");
 
   useEffect(() => {
-    console.log(authContext);
     if (user.auth) {
       setFullName(user.auth.fullName);
       setEmail(user.auth.email);
@@ -57,26 +56,9 @@ const Index = ({ data }) => {
     setReservation(finishDate);
   };
   const handleSubmit = async () => {
-    // console.log("Sucursal: ", sucursal);
-    // try {
-    //   const turn = {
-    //     fullName,
-    //     email,
-    //     phone,
-    //     date,
-    //     user: user.auth.id,
-    //     branch: sucursal,
-    //   };
-    //   /*     console.log("Horario: ", hours);
-    // console.log("Full Name: ", fullName);
-    // console.log("Telefono: ", phone);
-    // console.log("Email: ", email); */
-    //   const result = await axios.post("http://localhost:5000/api/turn/", turn);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    console.log(fullName, email, phone, user, sucursal, reservation);
-    axios
+
+    if (confirm === "confirm") {
+     
       .post("http://localhost:5000/api/turn/", {
         fullName,
         email,
@@ -88,13 +70,21 @@ const Index = ({ data }) => {
       })
       .then((res) => console.log(res));
 
-    Swal.fire({
-      title: "Exito",
-      text: "Reservaste tu turno satisfactoriamente!",
-      icon: "success",
-      allowOutsideClick: false,
-    });
-    Router.push("/user/bookingPanel");
+      Swal.fire({
+        title: "Exito",
+        text: "Reservaste tu turno satisfactoriamente!",
+        icon: "success",
+        allowOutsideClick: false,
+      });
+      Router.push("/user/confirmed");
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Faltan datos para completar",
+        icon: "error",
+        allowOutsideClick: false,
+      });
+    }
   };
 
   const times = () => {
@@ -360,7 +350,6 @@ const Index = ({ data }) => {
 export async function getServerSideProps(context) {
   const res = await fetch("http://localhost:5000/api/branch");
   const data = await res.json();
-  console.log(data);
   return {
     props: {
       data,
