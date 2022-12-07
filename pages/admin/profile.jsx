@@ -1,35 +1,70 @@
 import Navbar from "../../comps/Navbar";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Swal from "sweetalert2";
 import TopBanner from "../../comps/TopBanner";
-
 import { useAuth } from "../../context/authContext";
-
+import { useRouter } from "next/router";
+import { useRef } from "react";
+import Link from "next/link";
 
 const Profile = () => {
-  const [fullname, setFullName] = useState("");
+  const inputPassword = useRef();
+
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [dni, setDni] = useState(null);
+  const [dni, setDni] = useState(0);
   const [password, setPassword] = useState("");
   const auth = useAuth();
   const [id, setId] = useState(null);
+
+  const router = useRouter();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
-        // fullname,
-        // email,
-        // dni,
-        password,
-      })
-      .then((res) => res.data)
-      .catch((err) => alert(err, "error"));
+    if (password) {
+      axios
+        .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
+          password: password,
+        })
+        .then((res) => res.data)
+        .catch((err) => alert(err, "error"));
+      Swal.fire({
+        title: "Exito",
+        text: "Se modifico su contraseña exitosamente",
+        icon: "success",
+        allowOutsideClick: false,
+      }).then((res) => {
+        if (res.isConfirmed) {
+          router.push("/admin");
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Error, rellene todos los datos",
+        icon: "error",
+        allowOutsideClick: false,
+      });
+    }
   };
+
   useEffect(() => {
     const ID = auth?.auth?.id;
+    const name = auth?.auth?.fullName;
+    const mail = auth?.auth?.email;
+    const documento = auth?.auth?.dni;
     if (ID) {
       setId(ID);
+    }
+    if (name) {
+      setFullName(name);
+    }
+    if (mail) {
+      setEmail(mail);
+    }
+    if (documento) {
+      setDni(documento);
     }
   }, [auth]);
 
@@ -39,8 +74,7 @@ const Profile = () => {
         <TopBanner />
       </div>
       <div className="top-navbar">
-        {" "}
-        <Navbar />{" "}
+        <Navbar />
       </div>
       <div className="perfil-administrador-perfil-administrador">
         <form onSubmit={handleSubmit}>
@@ -58,7 +92,8 @@ const Profile = () => {
                 type="text"
                 placeholder
                 className="perfil-administrador-input-desktop1"
-                onChange={(e) => setFullName(e.target.value)}
+                value={fullName}
+                disabled
               />
             </div>
             <div className="perfil-administrador-input-desktop21">
@@ -71,7 +106,8 @@ const Profile = () => {
                 type="email"
                 placeholder
                 className="perfil-administrador-input-desktop11"
-                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                disabled
               />
             </div>
             <div className="perfil-administrador-input-desktop21">
@@ -84,7 +120,8 @@ const Profile = () => {
                 type="number"
                 placeholder
                 className="perfil-administrador-input-desktop11"
-                onChange={(e) => setDni(e.target.value)}
+                value={dni}
+                disabled
               />
             </div>
             <div className="perfil-administrador-horario">
@@ -99,11 +136,18 @@ const Profile = () => {
                   placeholder
                   className="perfil-administrador-input-desktop13"
                   onChange={(e) => setPassword(e.target.value)}
+                  ref={inputPassword}
                 />
               </div>
-              <span className="perfil-administrador-input-desktop3 editpassword">
-                Editar contraseña
-              </span>
+
+              <Link href="">
+                <span
+                  className="perfil-administrador-input-desktop3 editpassword"
+                  onClick={() => inputPassword.current.focus()}
+                >
+                  Editar contraseña
+                </span>{" "}
+              </Link>
             </div>
             <button className="perfil-administrador-c-t-a-desktop1">
               <span className="perfil-administrador-text10 Semibold·16·20">

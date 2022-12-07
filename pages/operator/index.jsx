@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
-import NavbarOperator from "../../comps/Navbar";
 
 const index = ({ data }) => {
   return (

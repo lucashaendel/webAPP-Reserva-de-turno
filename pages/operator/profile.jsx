@@ -1,28 +1,72 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import TopBanner from "../../comps/TopBanner";
+import { useAuth } from "../../context/authContext";
+import Swal from "sweetalert2";
+import Link from "next/link";
 
 const profile = () => {
-  const [fullname, setFullName] = useState("");
+  const inputPassword = useRef();
+
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
+  const [branch, setBranch] = useState("");
   const [password, setPassword] = useState("");
+
+  const auth = useAuth();
+  const [id, setId] = useState(null);
+
+  console.log(id);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .put(
-        /*`http://localhost:5000/admin/myProfile/:id/modifyPassword ACA VA EL ID`,*/ {
-          fullname,
-          email,
-          dni,
-          password,
+    if (password) {
+      axios
+        .put(`http://localhost:5000/api/operator/myProfile/${id} `, {
+          password: password,
+        })
+        .then((res) => res.data)
+        .catch((err) => alert(err, "error"));
+      Swal.fire({
+        title: "Exito",
+        text: "Se modifico su contraseña exitosamente",
+        icon: "success",
+        allowOutsideClick: false,
+      }).then((res) => {
+        if (res.isConfirmed) {
+          router.push("/admin");
         }
-      )
-      .then((res) => console.log(fullname, email, dni, password))
-      .catch((err) => alert(err, "error"));
+      });
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Error, rellene todos los datos",
+        icon: "error",
+        allowOutsideClick: false,
+      });
+    }
   };
+
+  useEffect(() => {
+    const ID = auth?.auth?.id;
+    const name = auth?.auth?.fullName;
+    const mail = auth?.auth?.email;
+    const documento = auth?.auth?.dni;
+    if (ID) {
+      setId(ID);
+    }
+    if (name) {
+      setFullName(name);
+    }
+    if (mail) {
+      setEmail(mail);
+    }
+    if (documento) {
+      setDni(documento);
+    }
+  }, [auth]);
 
   return (
     <>
@@ -47,7 +91,8 @@ const profile = () => {
                 type="text"
                 placeholder
                 class="divInput-Desktop1"
-                onChange={(e) => setFullName(e.target.value)}
+                value={fullName}
+                disabled
               />
             </div>
             <div class="divInputDesktop3">
@@ -60,7 +105,8 @@ const profile = () => {
                 type="email"
                 placeholder
                 class="divInput-Desktop2"
-                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                disabled
               />
             </div>
             <div class="divFila">
@@ -74,7 +120,8 @@ const profile = () => {
                   type="number"
                   placeholder
                   class="filaInput-Desktop1"
-                  onChange={(e) => setDni(e.target.value)}
+                  value={dni}
+                  disabled
                 />
               </div>
               <div class="divFilaInput">
@@ -83,23 +130,10 @@ const profile = () => {
                     <span>Sucursal</span>
                   </span>
                 </div>
-                <div class="filaInput-Desktop2">
-                  <span class="txtSucursal">
-                    <span>Villa Crespo</span>
-                  </span>
-                  <svg
-                    className="formulario-user-interface"
-                    width="14"
-                    height="8"
-                    viewBox="0 0 14 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.7542 0.495703C1.42973 0.171236 0.903667 0.171236 0.579199 0.495703C0.254732 0.82017 0.254732 1.34624 0.579199 1.6707L6.29293 7.38443C6.68345 7.77495 7.31661 7.77495 7.70714 7.38443L13.4209 1.6707C13.7453 1.34624 13.7453 0.82017 13.4209 0.495703C13.0964 0.171236 12.5703 0.171236 12.2459 0.495703L7.00003 5.74154L1.7542 0.495703Z"
-                      fill="#AFAFAF"
-                    />
-                  </svg>
+                <div>
+                  <select class=" filaInput-Desktop2" disabled>
+                    <option>--</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -115,12 +149,18 @@ const profile = () => {
                   placeholder
                   class="horarioInputinput-desktop1"
                   onChange={(e) => setPassword(e.target.value)}
+                  ref={inputPassword}
+                  required
                 />
               </div>
               <div class="horarioInput-desktop2">
-                <span className="txtHorario2">
-                  <span>Editar contraseña</span>
-                </span>
+                <Link href="">
+                  <span className="txtHorario2">
+                    <span onClick={() => inputPassword.current.focus()}>
+                      Editar contraseña
+                    </span>{" "}
+                  </span>
+                </Link>
               </div>
             </div>
             <button class="HorarioButton-desktop1">
