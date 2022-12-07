@@ -23,7 +23,7 @@ const NewOperator = ({ data }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password === repeatPassword) {
+    if (password === repeatPassword && branch !== "select") {
       axios
         .post("http://localhost:5000/api/admin/newOperator", {
           fullName,
@@ -118,15 +118,16 @@ const NewOperator = ({ data }) => {
                   </span>
                 </div>
                 <select
-                  value={branch}
                   className="formularioInputDesktop13"
                   onChange={handleChangeBranch}
                   required
                 >
-                  {" "}
-                  <option className="optionText">Seleccionar sucursal</option>
+                  <option className="optionText" value="select">
+                    {" "}
+                    Seleccione Sucursal
+                  </option>
                   {data.map((suc) => (
-                    <option value={suc._id}>{suc.name}</option>
+                    <option value={suc.name}>{suc.name}</option>
                   ))}
                 </select>
                 <span className="formularioText10 Regular·14·20"></span>

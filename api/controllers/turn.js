@@ -89,10 +89,25 @@ const deletedTurn = async (req, res) => {
   }
 };
 
+
+const getOneTurns = async (req, res) => {
+  const idTurn = req.params.id;
+
+  try {
+    const oneTurns = await Turn.findById(idTurn);
+    res.status(200).send(oneTurns);
+  } catch (error) {
+    res.status(400).send("No existe ese turno");
+  }
+};
+
+
 module.exports = {
   getAllTurns,
   createdTurn,
   updatedTurn,
   deletedTurn,
+  getOneTurns,
   getTurnById,
+
 };

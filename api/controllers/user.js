@@ -74,6 +74,7 @@ const loginUser = async (req, res) => {
   } catch (error) {
     res.send(error);
   }
+
 };
 
 // Ruta para el logout del usuario

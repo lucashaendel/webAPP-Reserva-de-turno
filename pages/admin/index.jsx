@@ -8,6 +8,12 @@ const Index = ({ data }) => {
       <TopBanner />
       <Navbar />
       <div className="box">
+
+        <div>
+          <TopBanner />
+        </div>
+        <Navbar />
+
         <div className="title">
           <span>Sucursales</span>
         </div>

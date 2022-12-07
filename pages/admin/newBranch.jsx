@@ -12,7 +12,7 @@ const NewBranch = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState(null);
-  const [maxCapacity, setMaxCapacity] = useState(true);
+  const [maxCapacity, setMaxCapacity] = useState(Number);
   const [start, setStart] = useState(Number);
   const [end, setEnd] = useState(Number);
 
@@ -23,17 +23,19 @@ const NewBranch = () => {
 
   let arr = [];
   const nums = () => {
-    for (let i = 0; i <= 20; i++) {
-      arr.push(i * 10);
+    for (let i = 1; i <= 20; i++) {
+      arr.push(i * 5);
     }
     return arr;
   };
   const handleChangeStart = (e) => {
     setStart(e.target.value);
   };
+
   const handleChangeEnd = (e) => {
     setEnd(e.target.value);
   };
+
   const hours = () => {
     let timeArray = [];
     let d = new Date("2022-11-26T00:00:00");
@@ -48,9 +50,10 @@ const NewBranch = () => {
     }
     return timeArray;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (start && end) {
+    if (maxCapacity > 0) {
       axios
         .post("http://localhost:5000/api/branch", {
           name,
@@ -149,7 +152,7 @@ const NewBranch = () => {
                   className="administrador-creacindesucursales-input-desktop13"
                   onChange={handleChangeCapacity}
                 >
-                  <option>Seleccionar capacidad maxima</option>
+                  <option value={0}>Seleccionar capacidad maxima</option>{" "}
                   {nums().map((num) => (
                     <option value={num}>{num}</option>
                   ))}
@@ -169,7 +172,7 @@ const NewBranch = () => {
                   className="administrador-creacindesucursales-input-desktop14"
                   onChange={handleChangeStart}
                 >
-                  <option>Seleccionar horario</option>
+                  <option value="select">Seleccionar horario</option>
                   {hours().map((num) => (
                     <option value={num}>{num}</option>
                   ))}{" "}
@@ -187,7 +190,7 @@ const NewBranch = () => {
                   className="administrador-creacindesucursales-input-desktop15"
                   onChange={handleChangeEnd}
                 >
-                  <option>Seleccionar horario</option>
+                  <option value="select">Seleccionar horario</option>
                   {hours().map((num) => (
                     <option value={num}>{num}</option>
                   ))}
