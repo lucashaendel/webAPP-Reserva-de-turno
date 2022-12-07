@@ -45,7 +45,7 @@
   @include semiBold1420();
   color: $grey8;
 }
-.clientefinal-paneldereservas-c-t-a-desktop1 {
+.clientefinal-paneldereservas-c-t-a-desktop115 {
   text-align: center;
   padding: 12px 24px;
   gap: 4px;
@@ -53,6 +53,7 @@
   height: 44px;
   background: $primaryColor;
   border-radius: 8px;
+  margin: 0;
 }
 .clientefinal-paneldereservas-text07 {
   width: 334px;
@@ -328,6 +329,8 @@
   gap: 4px;
   width: 69px;
   height: 20px;
+  @include semiBold1420();
+  color: #505050;
 }
 .clientefinal-paneldereservas-text36 {
   width: 84px;

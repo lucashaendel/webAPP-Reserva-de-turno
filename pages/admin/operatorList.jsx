@@ -2,17 +2,11 @@ import React from "react";
 import Navbar from "../../comps/Navbar";
 import TopBanner from "../../comps/TopBanner";
 
-const operatorList = ({ data }) => {
+const OperatorList = ({ data }) => {
   return (
     <>
-      <div className="top-bann">
-        {" "}
-        <TopBanner />{" "}
-      </div>
-      <div className="navb">
-        {" "}
-        <Navbar />
-      </div>
+      <TopBanner />
+      <Navbar />
       <div className="box">
         <div className="Header"></div>
         <div className="title">
@@ -92,4 +86,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default operatorList;
+export default OperatorList;

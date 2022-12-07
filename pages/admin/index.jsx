@@ -2,14 +2,18 @@ import React from "react";
 import Navbar from "../../comps/Navbar";
 import TopBanner from "../../comps/TopBanner";
 
-const index = ({ data }) => {
+const Index = ({ data }) => {
   return (
     <>
+      <TopBanner />
+      <Navbar />
       <div className="box">
+
         <div>
           <TopBanner />
         </div>
         <Navbar />
+
         <div className="title">
           <span>Sucursales</span>
         </div>
@@ -72,4 +76,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default index;
+export default Index;

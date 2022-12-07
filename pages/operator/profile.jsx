@@ -5,11 +5,12 @@ import TopBanner from "../../comps/TopBanner";
 import { useAuth } from "../../context/authContext";
 import Swal from "sweetalert2";
 import Link from "next/link";
+import Navbar from "../../comps/Navbar";
 
-const profile = () => {
-  const inputPassword = useRef();
+const Profile = () => {
+const inputPassword = useRef();
+  const [fullname, setFullName] = useState("");
 
-  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
   const [branch, setBranch] = useState("");
@@ -70,11 +71,8 @@ const profile = () => {
 
   return (
     <>
-      {" "}
-      <div>
-        {" "}
-        <TopBanner />
-      </div>
+      <TopBanner />
+      <Navbar />
       <div>
         <form onSubmit={handleSubmit}>
           <div class="divFormulario">
@@ -175,4 +173,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;

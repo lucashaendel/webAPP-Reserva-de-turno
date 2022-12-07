@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 import Link from "next/link";
 
+
+
 const Profile = () => {
   const inputPassword = useRef();
 
@@ -22,6 +24,7 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (password) {
       axios
         .put(`http://localhost:5000/api/admin/myProfile/${id}/modifyPassword`, {
@@ -47,6 +50,7 @@ const Profile = () => {
         allowOutsideClick: false,
       });
     }
+
   };
 
   useEffect(() => {
@@ -70,12 +74,9 @@ const Profile = () => {
 
   return (
     <>
-      <div className="top-banner">
-        <TopBanner />
-      </div>
-      <div className="top-navbar">
-        <Navbar />
-      </div>
+      <TopBanner />
+      <Navbar />
+
       <div className="perfil-administrador-perfil-administrador">
         <form onSubmit={handleSubmit}>
           <div className="perfil-administrador-formulario">

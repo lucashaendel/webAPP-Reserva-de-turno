@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 const { Schema } = mongoose;
 
 const turnSchema = new Schema({
@@ -25,11 +26,21 @@ const turnSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Branch",
   },
+  branchName: {
+    type: String,
+    require: true,
+  },
   attendance: {
     type: Boolean,
     default: false,
   },
+  reservationDate: {
+    type: String,
+    require: true,
+  },
 });
+
+turnSchema.plugin(mongoosePaginate);
 
 const turn = mongoose.model("Turn", turnSchema);
 

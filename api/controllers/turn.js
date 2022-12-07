@@ -1,19 +1,34 @@
 const Turn = require("../models/Turn");
-const { validateToken } = require("../config/token");
 const User = require("../models/User");
 const Branch = require("../models/Branch");
 
 // Traigo todos los turnos
-const getAllTurns = (req, res) => {
-  Turn.find().then((resp) => res.status(200).send(resp));
+const getAllTurns = async (req, res) => {
+  const limit = parseInt(req.query.limit) || 10;
+  const page = parseInt(req.query.page) || 1;
+
+  const turns = await Turn.paginate({}, { limit, page });
+  //Turn.find().then((resp) => res.status(200).send(resp));
+  res.json(turns);
+};
+
+// Traigo todos los turno por UserID
+const getTurnById = (req, res) => {
+  const userID = req.params.id;
+  Turn.find({ user: userID })
+    .then((resp) => res.status(200).send(resp))
+    .catch((error) => {
+      res
+        .status(400)
+        .json("An Error occured while trying to get your appoinments");
+    });
 };
 
 // creo un turno y le asigno un usuario q es el que lo crea
 const createdTurn = async (req, res, next) => {
-  const payload = validateToken(req.cookies.token);
-
-  const { fullName, email, phone } = req.body;
-  const user = await User.findById(payload.id);
+  const { fullName, email, phone, user, reservationDate, branchName } =
+    req.body;
+  const usuario = await User.findById(user);
   const branch = await Branch.findById(req.body.branch);
 
   const newTurn = new Turn({
@@ -21,15 +36,17 @@ const createdTurn = async (req, res, next) => {
     email,
     date: new Date(),
     phone,
-    user: user._id,
+    user: usuario._id,
     branch: branch._id,
+    reservationDate,
+    branchName,
   });
 
   try {
     const savedTurn = await newTurn.save();
-    user.turns = user.turns.concat(savedTurn._id);
+    usuario.turns = usuario.turns.concat(savedTurn._id);
     branch.turns = branch.turns.concat(savedTurn._id);
-    await user.save();
+    await usuario.save();
     await branch.save();
     res.send(savedTurn);
   } catch (error) {
@@ -72,6 +89,7 @@ const deletedTurn = async (req, res) => {
   }
 };
 
+
 const getOneTurns = async (req, res) => {
   const idTurn = req.params.id;
 
@@ -83,10 +101,13 @@ const getOneTurns = async (req, res) => {
   }
 };
 
+
 module.exports = {
   getAllTurns,
   createdTurn,
   updatedTurn,
   deletedTurn,
   getOneTurns,
+  getTurnById,
+
 };

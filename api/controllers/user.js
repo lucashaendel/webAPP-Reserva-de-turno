@@ -44,32 +44,37 @@ const createUser = async (req, res, next) => {
 
 // Ruta para hacer el login del usuario
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  const user = await User.findOne({ email });
-  const operator = await Operator.findOne({ email });
-  const admin = await Admin.findOne({ email });
+    const user = await User.findOne({ email });
+    const operator = await Operator.findOne({ email });
+    const admin = await Admin.findOne({ email });
 
-  const result = [user, operator, admin];
-  const resultado = result.filter((e) => e != null);
+    const result = [user, operator, admin];
+    const resultado = result.filter((e) => e != null);
 
-  bcrypt.compare(password, resultado[0].password, (err, data) => {
-    if (err) throw err;
-    if (data) {
-      let payload = {
-        id: resultado[0]._id,
-        fullName: resultado[0].fullName,
-        email: resultado[0].email,
-        role: resultado[0].role,
-        dni: resultado[0].dni,
-      };
-      let token = generateToken(payload);
-      res.cookie("token", token);
-      return res.json({ token, user: payload }); //ACORDARSE DE SACAR EL PAYLOAD
-    } else {
-      return res.status(401).json({ msg: "Invalid credencial" });
-    }
-  });
+    bcrypt.compare(password, resultado[0].password, (err, data) => {
+      if (err) throw err;
+      if (data) {
+        let payload = {
+          id: resultado[0]._id,
+          fullName: resultado[0].fullName,
+          email: resultado[0].email,
+          role: resultado[0].role,
+          dni: resultado[0].dni,
+        };
+        let token = generateToken(payload);
+        res.cookie("token", token);
+        return res.json({ token, user: payload });
+      } else {
+        return res.status(401).json({ msg: "Invalid credencial" });
+      }
+    });
+  } catch (error) {
+    res.send(error);
+  }
+
 };
 
 // Ruta para el logout del usuario
@@ -84,11 +89,8 @@ const updateUser = (req, res) => {
   const data = req.body;
 
   const newData = {
-    fullName: data.fullName,
-
-    dni: data.dni,
-    email: data.email,
     password: data.password,
+    telephone: data.telephone,
   };
 
   User.findByIdAndUpdate(id, newData, { new: true })
