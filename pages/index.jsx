@@ -26,7 +26,16 @@ const Login = () => {
     if (authContext.auth) {
       const { auth } = authContext;
       const role = auth?.user?.role;
-      if (role) router.push(`/${role}`);
+      if (role) {
+        Swal.fire({
+          title: "Exito",
+          text: "Ingresaste correctamente!",
+          icon: "success",
+          timer: 1000,
+          allowOutsideClick: false,
+        });
+        router.push(`/${role}`);
+      }
     }
   }, [authContext]);
 
@@ -34,7 +43,6 @@ const Login = () => {
     !!!authContext?.isFetching && (
       <div>
         <TopBanner />
-        {/* <Navbar /> */}
 
         <div className="container-login">
           <div className="head-login">

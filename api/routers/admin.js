@@ -13,10 +13,10 @@ const {
 } = require("../controllers/admin");
 
 router.post("/registerAdmin", createAdmin);
-router.post("/newOperator", createOperator); // borre el is admin
-router.get("/myProfile/:id", getData); // borre el is admin
-router.get("/", validateUser, isAdmin, allAdmin); // borre el is admin
-router.get("/operatorsList", allOperators); // borre el isAdmin
+router.post("/newOperator", createOperator);
+router.get("/myProfile/:id", getData);
+router.get("/", allAdmin);
+router.get("/operatorsList", allOperators);
 router.put("/myProfile/:id/modifyPassword", changePassword);
 
 module.exports = router;

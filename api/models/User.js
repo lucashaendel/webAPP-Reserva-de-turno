@@ -36,6 +36,9 @@ const userSchema = new Schema(
         ref: "Turn",
       },
     ],
+    telephone: {
+      type: Number,
+    },
 
     salt: {
       type: String,

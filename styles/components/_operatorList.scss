@@ -2,7 +2,8 @@
   /* Administrador: Listado de operadores */
   position: relative;
   max-width: 1920px;
-  left: 86px;
+  top: 20px;
+  left: 140px;
   height: 1068px;
   background: $white;
   
@@ -11,7 +12,7 @@
 .Header {
   height: 76px;
   width: 1920px;
-  left: 0px;
+ 
   top: 36px;
   border-radius: 0px;
   padding: 16px 96px 16px 96px;
@@ -26,8 +27,8 @@
   height: 76px;
   left: 0px;
   top: 36px;
-  background: $white;
-  @include shadowBox();
+ 
+  
 
   .CTA-desktop-2 {
     /* CTA-Desktop-2 */
@@ -279,3 +280,8 @@
    
  
 }
+
+
+.top-bann{ margin-top: 5px;}
+
+.navb{margin-top: 115px;}

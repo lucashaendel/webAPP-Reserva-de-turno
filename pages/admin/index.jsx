@@ -1,12 +1,16 @@
 import React from "react";
 import Navbar from "../../comps/Navbar";
+import TopBanner from "../../comps/TopBanner";
 
-const index = ({ data }) => {
-  console.log(data);
+const Index = ({ data }) => {
   return (
     <>
       <div className="box">
+        <div>
+          <TopBanner />
+        </div>
         <Navbar />
+
         <div className="title">
           <span>Sucursales</span>
         </div>
@@ -61,7 +65,7 @@ const index = ({ data }) => {
 export async function getServerSideProps(context) {
   const res = await fetch("http://localhost:5000/api/branch");
   const data = await res.json();
-  console.log(data);
+
   return {
     props: {
       data,
@@ -69,4 +73,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default index;
+export default Index;

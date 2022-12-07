@@ -6,7 +6,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
-const newOperator = ({ data }) => {
+const NewOperator = ({ data }) => {
   const [fullName, setFullName] = useState("");
   const [dni, setDni] = useState(null);
   const [email, setEmail] = useState("");
@@ -59,8 +59,8 @@ const newOperator = ({ data }) => {
   return (
     <div>
       <TopBanner />
+      <Navbar />
       <div>
-        <Navbar />
         <form onSubmit={handleSubmit}>
           <div className="formularioFormulario">
             <span className="formularioText SemiBold·20·24">
@@ -118,13 +118,13 @@ const newOperator = ({ data }) => {
                   </span>
                 </div>
                 <select
-                  value={branch}
                   className="formularioInputDesktop13"
                   onChange={handleChangeBranch}
                   required
                 >
-                  {" "}
-                  <option className="optionText">Seleccionar sucursal</option>
+                  <option className="optionText" value="select">
+                    Seleccione Sucursal
+                  </option>
                   {data.map((suc) => (
                     <option value={suc._id}>{suc.name}</option>
                   ))}
@@ -187,4 +187,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default newOperator;
+export default NewOperator;

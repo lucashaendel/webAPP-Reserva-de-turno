@@ -1,36 +1,32 @@
-
 .frameDummyContainer {
-position: absolute;
-width: 1920px;
-height: 36px;
-right: -90px;
-top: 0px;
-background: #F0F0F0;
-
-
-  }
-  .frameFrame {
-position: absolute;
-width: 16px;
-height: 16px;
-right: 96px;
-top: 12px;
-
-  }
-  .txt{
-position: absolute;
-height: 16px;
-left: 96px;
-right: 96px;
-top: calc(50% - 16px/2 + 2px);
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 12px;
-line-height: 16px;
-align-items: center;
-text-align: center;
-font-feature-settings: 'ss01' on, 'case' on;
-color: #A442F1;
-  }
- 
+  position: absolute;
+  width: 1920px;
+  height: 36px;
+  right: -90px;
+  top: 0px;
+  background: #f0f0f0;
+  z-index: 2;
+}
+.frameFrame {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 96px;
+  top: 12px;
+}
+.txt {
+  position: absolute;
+  height: 16px;
+  left: 96px;
+  right: 96px;
+  top: calc(50% - 40px / 2 + 2px);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "ss01" on, "case" on;
+  color: #a442f1;
+}

@@ -4,6 +4,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
+  left: 8px;
   background: $grey1;
 }
 
@@ -14,7 +15,7 @@
   position: absolute;
   width: 878px;
   height: 488px;
-  left: 305px;
+  left: 340px;
   top: 160px;
   background: $white;
   @include shadowBox();
@@ -176,7 +177,7 @@
   /* User Interface */
   width: 20px;
   height: 20px;
-border: none;
+  border: none;
 }
 .dropdown-vector {
   position: absolute;
@@ -470,18 +471,19 @@ border: none;
   width: 20px;
   height: 20px;
 }
-.buttonSendText{width: 750px;
+.buttonSendText {
+  width: 750px;
   height: 20px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   align-items: center;
   text-align: center;
-  font-feature-settings: 'zero' on;
+  font-feature-settings: "zero" on;
   color: $white;
   flex: none;
   order: 1;
-  flex-grow: 1;}
-
+  flex-grow: 1;
+}
