@@ -13,6 +13,19 @@ const getAllTurns = async (req, res) => {
   res.json(turns);
 };
 
+// Traigo todos los turno por UserID
+const getTurnById = (req, res) => {
+  const userID = req.params.id;
+  // console.log(userID);
+  Turn.find({ user: userID })
+    .then((resp) => res.status(200).send(resp))
+    .catch((error) => {
+      res
+        .status(400)
+        .json("An Error occured while trying to get your appoinments");
+    });
+};
+
 // creo un turno y le asigno un usuario q es el que lo crea
 const createdTurn = async (req, res, next) => {
   // const payload = validateToken(req.cookies.token);
@@ -78,4 +91,10 @@ const deletedTurn = async (req, res) => {
   }
 };
 
-module.exports = { getAllTurns, createdTurn, updatedTurn, deletedTurn };
+module.exports = {
+  getAllTurns,
+  createdTurn,
+  updatedTurn,
+  deletedTurn,
+  getTurnById,
+};

@@ -7,6 +7,7 @@ const {
   createdTurn,
   updatedTurn,
   deletedTurn,
+  getTurnById,
 } = require("../controllers/turn");
 
 // Traigo todos los turnos
@@ -18,5 +19,7 @@ router.post("/", createdTurn);
 router.put("/:id", updatedTurn);
 
 router.delete("/:id", deletedTurn);
+
+router.get("/user/:id", getTurnById);
 
 module.exports = router;
