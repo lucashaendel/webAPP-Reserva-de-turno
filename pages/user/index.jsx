@@ -56,19 +56,18 @@ const Index = ({ data }) => {
     setReservation(finishDate);
   };
   const handleSubmit = async () => {
-
     if (confirm === "confirm") {
-     
-      .post("http://localhost:5000/api/turn/", {
-        fullName,
-        email,
-        phone,
-        user: id,
-        branch: sucursal,
-        reservationDate: reservation,
-        branchName,
-      })
-      .then((res) => console.log(res));
+      axios
+        .post("http://localhost:5000/api/turn/", {
+          fullName,
+          email,
+          phone,
+          user: id,
+          branch: sucursal,
+          reservationDate: reservation,
+          branchName,
+        })
+        .then((res) => console.log(res));
 
       Swal.fire({
         title: "Exito",
