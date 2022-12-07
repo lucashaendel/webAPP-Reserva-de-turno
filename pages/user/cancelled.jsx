@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import React from "react";
 import { useState, useEffect } from "react";
@@ -13,18 +12,41 @@ const Cancelled = () => {
   const [cancelledTwo, setCancelledTwo] = useState(false);
   const [cancelledThree, setCancelledThree] = useState(false);
   const [cancelledFour, setCancelledFour] = useState(false);
-
-  const router = useRouter();
-
-  const auth = useAuth();
   const [id, setId] = useState(null);
   const [fullName, setFullName] = useState(null);
 
+  const router = useRouter();
+  const user = useAuth();
   const acepted = true;
 
+  const [turn, setTurn] = useState([]);
+  const [lastTurn, setLastTurn] = useState({});
+  const [branchName, setBranchName] = useState("");
+  const [reservation, setReservation] = useState([]);
   useEffect(() => {
-    const ID = auth?.auth?.id;
-    const NAME = auth?.auth?.fullName;
+    if (user.auth) {
+      axios
+        .get(`http://localhost:5000/api/turn/user/${user.auth.id}`)
+        .then((res) => res.data)
+        .then((turn) => {
+          setTurn(turn);
+          setLastTurn(turn[turn.length - 1]);
+          setReservation(turn[turn.length - 1].reservationDate.split(" "));
+        })
+        .catch((error) => console.error(error));
+    }
+    if (lastTurn.branch) {
+      axios
+        .get(`http://localhost:5000/api/branch/${lastTurn.branch}`)
+        .then((res) => res.data)
+        .then((branchName) => setBranchName(branchName.name))
+        .catch((error) => console.error(error));
+    }
+  }, [user]);
+
+  useEffect(() => {
+    const ID = user?.auth?.id;
+    const NAME = user?.auth?.fullName;
 
     if (ID) {
       setId(ID);
@@ -32,13 +54,13 @@ const Cancelled = () => {
     if (NAME) {
       setFullName(NAME);
     }
-  }, [auth]);
+  }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (acepted) {
       axios
-        .delete(`http://localhost:5000/api/turn/${id}`)
+        .delete(`http://localhost:5000/api/turn/${lastTurn._id}`)
         .then((res) => res.data)
         .catch((err) => alert(err));
       Swal.fire({
@@ -238,7 +260,7 @@ const Cancelled = () => {
             <span>Información de la reserva</span>
           </span>
           <span className="cancelado-text26">
-            <span>Ivan Cruce</span>
+            <span>{fullName}</span>
           </span>
         </div>
         <div className="cancelado-div-content">
@@ -247,7 +269,7 @@ const Cancelled = () => {
               <span>Día</span>
             </span>
             <span className="cancelado-text30">
-              <span>12/10/2022</span>
+              <span>{reservation[0]}</span>
             </span>
           </div>
           <div className="cancelado-div-txt2">
@@ -255,7 +277,7 @@ const Cancelled = () => {
               <span>Horario:</span>
             </span>
             <span className="cancelado-text34">
-              <span>13:00 hs</span>
+              <span>{`${reservation[1]} Hs`} </span>
             </span>
           </div>
           <div className="cancelado-div-txt3">
@@ -263,7 +285,7 @@ const Cancelled = () => {
               <span>Sucursal:</span>
             </span>
             <span className="cancelado-text38">
-              <span>Villa Crespo</span>
+              <span>{branchName}</span>
             </span>
           </div>
         </div>
