@@ -11,7 +11,7 @@ const Index = ({ data }) => {
   const [pageCount, setPageCount] = useState(0);
 
   const docs = data.docs;
-
+  console.log(docs);
   useEffect(() => {
     const paginas = data?.totalPages;
     if (paginas) {
@@ -61,7 +61,7 @@ const Index = ({ data }) => {
                   <span>Reserva</span>
                 </span>
                 <span className="fecha" key={dato._id}>
-                  <span>Dia reservado</span>
+                  <span>{`${dato.reservationDate} hs`}</span>
                 </span>
               </div>
               <div className="divDia">
