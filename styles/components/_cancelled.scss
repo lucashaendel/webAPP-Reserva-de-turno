@@ -14,7 +14,7 @@
   width: 779px;
   height: 20px;
   left: 380px; //antes tenia 96px
-  top: 132px;
+  top: 110px;
 
   border-radius: 8px;
 }
@@ -233,7 +233,7 @@
 
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
+ 
   font-size: 14px;
   line-height: 16px;
   /* identical to box height, or 114% */
@@ -243,7 +243,7 @@
 
   /* Black */
 
-  color: $black;
+color:  #505050;
 
   /* Inside auto layout */
 
@@ -339,6 +339,7 @@
 
   background: $error;
   border-radius: 8px;
+  border: none;
 
   /* Inside auto layout */
 
@@ -511,6 +512,7 @@
 
   width: 779px;
   height: 20px;
+  color:  #505050;
 
   /* Inside auto layout */
 
