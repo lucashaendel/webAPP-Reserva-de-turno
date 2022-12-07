@@ -61,6 +61,7 @@ const loginUser = async (req, res) => {
         fullName: resultado[0].fullName,
         email: resultado[0].email,
         role: resultado[0].role,
+        dni: resultado[0].dni,
       };
       let token = generateToken(payload);
       res.cookie("token", token);

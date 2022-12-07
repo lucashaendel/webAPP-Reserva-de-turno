@@ -7,10 +7,14 @@ const {
   createdTurn,
   updatedTurn,
   deletedTurn,
+  getOneTurns,
 } = require("../controllers/turn");
 
 // Traigo todos los turnos
 router.get("/", getAllTurns);
+
+// Traigo un turno por su id
+router.get("/:id", getOneTurns);
 
 // creo un turno y le asigno un usuario q es el que lo crea
 router.post("/", createdTurn);
