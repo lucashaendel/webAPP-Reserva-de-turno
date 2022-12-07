@@ -1,7 +1,8 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../context/authContext";
+import TopBanner from "../../comps/TopBanner";
+import Navbar from "../../comps/Navbar";
 
 const BookingPanel = () => {
   const user = useAuth();

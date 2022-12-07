@@ -5,10 +5,7 @@ import TopBanner from "../../comps/TopBanner";
 const Index = ({ data }) => {
   return (
     <>
-      <TopBanner />
-      <Navbar />
       <div className="box">
-
         <div>
           <TopBanner />
         </div>
