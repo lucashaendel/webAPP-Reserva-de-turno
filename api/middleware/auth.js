@@ -14,16 +14,6 @@ const validateUser = async (req, res, next) => {
       res.status(401).send("No estas autorizado");
     }
   }
-
-  // console.log(token);
-  // if (!token) {
-  //   res.status(401).send("No token provided");
-  // } else {
-  //   const payload = validateToken(token);
-
-  //   req.userId = payload.id;
-  //   if (payload) return next();
-  // }
 };
 
 module.exports = validateUser;

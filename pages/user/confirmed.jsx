@@ -12,6 +12,7 @@ const Confirmed = () => {
   const [lastTurn, setLastTurn] = useState({});
   const [branchName, setBranchName] = useState("");
   const [reservation, setReservation] = useState([]);
+
   useEffect(() => {
     if (user.auth) {
       console.log("entrado al axios");
@@ -33,8 +34,6 @@ const Confirmed = () => {
     }
   }, [user]);
 
-  console.log(lastTurn.branch, "the last one");
-  console.log(branchName);
   return (
     <>
       <TopBanner />

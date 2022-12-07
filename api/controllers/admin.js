@@ -9,7 +9,7 @@ const createAdmin = async (req, res, next) => {
     const { body } = req;
     const { fullName, dni, email, password } = body;
     const admin = await Admin.find({ $or: [{ email }, { dni }] });
-    console.log(admin);
+
     if (admin[0]) return res.status(401).send("El usuario ya existe");
     else {
       const saltRounds = 10;

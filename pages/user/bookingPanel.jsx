@@ -46,7 +46,7 @@ const BookingPanel = () => {
               <p>{dato._id}</p>
             </div>
             <button>
-              Editar{" "}
+              Editar
               <svg
                 width="16"
                 height="10"

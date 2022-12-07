@@ -23,6 +23,7 @@ const Cancelled = () => {
   const [lastTurn, setLastTurn] = useState({});
   const [branchName, setBranchName] = useState("");
   const [reservation, setReservation] = useState([]);
+
   useEffect(() => {
     if (user.auth) {
       axios

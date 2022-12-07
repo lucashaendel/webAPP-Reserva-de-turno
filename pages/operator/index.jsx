@@ -11,7 +11,7 @@ const Index = ({ data }) => {
   const [pageCount, setPageCount] = useState(0);
 
   const docs = data.docs;
-  console.log(docs);
+
   useEffect(() => {
     const paginas = data?.totalPages;
     if (paginas) {
@@ -34,7 +34,6 @@ const Index = ({ data }) => {
     });
   };
 
-
   return (
     <>
       <div className="topb">
@@ -47,15 +46,13 @@ const Index = ({ data }) => {
         </div>
 
         <div className="divReservas">
-          {data.map((dato, index) => (
-            <div className="divPedido" key={index}>
           {docs.map((dato, index) => (
             <div className="divPedido">
               <div className="divNombre">
                 <span className="spanNombre">
                   <span>Nombre</span>
                 </span>
-                <span className="spanNombre2">
+                <span className="spanNombre2" key={dato._id}>
                   <span>{dato.fullName}</span>
                 </span>
               </div>
@@ -63,17 +60,15 @@ const Index = ({ data }) => {
                 <span className="tituloFecha">
                   <span>Reserva</span>
                 </span>
-
                 <span className="fecha" key={dato._id}>
                   <span>{`${dato.reservationDate} hs`}</span>
-
                 </span>
               </div>
               <div className="divDia">
                 <span className="tituloDia">
                   <span>Día de la reserva</span>
                 </span>
-                <span className="spanDia">
+                <span className="spanDia" key={dato._id}>
                   <span>{dato.date}</span>
                 </span>
               </div>
@@ -81,7 +76,7 @@ const Index = ({ data }) => {
                 <span className="tituloNumReserva">
                   <span>N° de la reserva</span>
                 </span>
-                <span className="numReserva">
+                <span className="numReserva" key={dato._id}>
                   <span>{index}</span>
                 </span>
               </div>
@@ -138,6 +133,7 @@ export function LikeButton({ obj }) {
       .put(`http://localhost:5000/api/operator/reservations/turn/${obj._id}`, {
         attendance: estado,
       })
+
       .catch((err) => alert(err));
   };
 

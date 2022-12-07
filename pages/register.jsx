@@ -110,13 +110,11 @@ const Register = () => {
 
   return (
     <>
-      {" "}
       <TopBanner />
       <div className="divRegistar">
         <div className="loginMailHead">
           <div className="CTADesktop3">
             <Link href="/">
-              {" "}
               <svg
                 className="loginVector"
                 width="20"
@@ -134,9 +132,8 @@ const Register = () => {
             <Link href="/">
               <span className="backText Semibold·14·16">Atrás</span>{" "}
             </Link>
-          </div>{" "}
+          </div>
           <div className="crearCuenta">
-            {" "}
             <h2> Crear cuenta</h2>
           </div>
         </div>
@@ -246,7 +243,7 @@ const Register = () => {
                     checks.letterToLowerCase ? "valid" : "invalid"
                   }
                 />
-              }{" "}
+              }
             </div>
           </div>
           <button className="loginMailCtaDesktop1" type="submit">

@@ -6,10 +6,12 @@ import { useAuth } from "../../context/authContext";
 import Swal from "sweetalert2";
 import Link from "next/link";
 import Navbar from "../../comps/Navbar";
+import { useRouter } from "next/router";
 
 const Profile = () => {
-const inputPassword = useRef();
-  const [fullname, setFullName] = useState("");
+  const inputPassword = useRef();
+  const [fullName, setFullName] = useState("");
+  const router = useRouter();
 
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState(null);
@@ -18,8 +20,6 @@ const inputPassword = useRef();
 
   const auth = useAuth();
   const [id, setId] = useState(null);
-
-  console.log(id);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -156,7 +156,7 @@ const inputPassword = useRef();
                   <span className="txtHorario2">
                     <span onClick={() => inputPassword.current.focus()}>
                       Editar contraseña
-                    </span>{" "}
+                    </span>
                   </span>
                 </Link>
               </div>

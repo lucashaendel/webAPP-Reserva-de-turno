@@ -15,58 +15,52 @@ const OperatorList = ({ data }) => {
         <div className="operatorsContainer">
           {data.map((dato, index) => {
             if (dato.operators.length > 0) {
-              // dato.operator.length
-
-              return dato.operators.map(
-                (
-                  operador // dato.operator.map
-                ) => (
+              return dato.operators.map((operador) => (
+                <div>
                   <div>
+                    <div>Nombre</div>
                     <div>
-                      <div>Nombre</div>
-                      <div>
-                        <span className="inputText" key={index}>
-                          {operador.fullName}
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div>Email</div>
-                      <div>
-                        <span className="inputText" key={index}>
-                          {operador.email}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="administrador-listadodeoperadores-info22">
-                      <span className="administrador-listadodeoperadores-text100 Regular·12·16">
-                        <span>Sucursal</span>
-                      </span>
-                      <span
-                        className="administrador-listadodeoperadores-text102 Semibold·14·16"
-                        key={index}
-                      >
-                        <span>{data[index].name}</span>
+                      <span className="inputText" key={index}>
+                        {operador.fullName}
                       </span>
                     </div>
-                    <div className="administrador-listadodeoperadores-info23">
-                      <span className="administrador-listadodeoperadores-text104 Regular·12·16">
-                        <span>Contraseña</span>
-                      </span>
-                      <span
-                        className="administrador-listadodeoperadores-text106 Semibold·14·16"
-                        key={index}
-                      >
-                        <span>*****</span>
-                      </span>
-                    </div>
-                    <button className="editButton">
-                      <span>Editar</span>
-                    </button>
                   </div>
-                )
-              );
+                  <div>
+                    <div>Email</div>
+                    <div>
+                      <span className="inputText" key={index}>
+                        {operador.email}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="administrador-listadodeoperadores-info22">
+                    <span className="administrador-listadodeoperadores-text100 Regular·12·16">
+                      <span>Sucursal</span>
+                    </span>
+                    <span
+                      className="administrador-listadodeoperadores-text102 Semibold·14·16"
+                      key={index}
+                    >
+                      <span>{data[index].name}</span>
+                    </span>
+                  </div>
+                  <div className="administrador-listadodeoperadores-info23">
+                    <span className="administrador-listadodeoperadores-text104 Regular·12·16">
+                      <span>Contraseña</span>
+                    </span>
+                    <span
+                      className="administrador-listadodeoperadores-text106 Semibold·14·16"
+                      key={index}
+                    >
+                      <span>*****</span>
+                    </span>
+                  </div>
+                  <button className="editButton">
+                    <span>Editar</span>
+                  </button>
+                </div>
+              ));
             }
           })}
         </div>

@@ -16,7 +16,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use("/api", routers);
-console.log(process.env.MONGO_URI);
+
 mongoose
   .connect(
     "mongodb+srv://admin:admin1234@webappturnos.cvscsqu.mongodb.net/?retryWrites=true&w=majority"

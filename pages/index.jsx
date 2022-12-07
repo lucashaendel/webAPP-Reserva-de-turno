@@ -43,7 +43,6 @@ const Login = () => {
     !!!authContext?.isFetching && (
       <div>
         <TopBanner />
-        {/* <Navbar /> */}
 
         <div className="container-login">
           <div className="head-login">
